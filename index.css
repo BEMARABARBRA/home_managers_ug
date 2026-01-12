@@ -94,10 +94,7 @@ body {
   
 
 
-/* =====================================================
-   NAVIGATION LINKS (DESKTOP)
-   ===================================================== */
-
+/* ================= NAVIGATION LINKS (DESKTOP) ================= */
 .nav-links {
   display: flex;                   /* Horizontal layout */
   gap: 28px;                       /* Space between links */
@@ -105,42 +102,51 @@ body {
 
 /* Individual nav link */
 .nav-links a {
-  text-shadow: 1px 1px  rgba(238, 229, 229, 0.3); /* Subtle shadow for depth */
+  text-shadow: 1px 0 1px rgba(12, 12, 12, 0.3); /* Subtle shadow for depth */
   position: relative;              /* Needed for underline animation */
   text-decoration: none;           /* Remove underline */
   font-size: 18px;                 /* Readable size */
-  font-weight: 700;                /* Medium weight */
-  color: black;                  /* Dark text */
+  font-weight: 700;                /* Bold */
+  color: rgb(204, 198, 198);       /* Default color */
   padding: 6px 0;                  /* Vertical spacing */
   transition: all 0.35s ease;      /* Smooth hover transition */
 }
 
 /* Underline effect hidden initially */
 .nav-links a::after {
-  content: "";                     /* Required for pseudo-element */
-  position: absolute;              /* Position relative to link */
-  left: 0;                         /* Start from left */
-  bottom: -4px;                    /* Slightly below text */
-  width: 100%;                     /* Full width underline */
-  height: 2px;                     /* Thin, elegant line */
-  background: #111111;             /* Match text color */
-  transform: scaleX(0);            /* Initially hidden */
-  transform-origin: right;         /* Animate from right */
-  transition: transform 0.35s ease; /* Smooth animation */
+  content: "";                     
+  position: absolute;              
+  left: 0;                         
+  bottom: -4px;                    
+  width: 100%;                     
+  height: 2px;                     
+  background: #111111;             
+  transform: scaleX(0);            
+  transform-origin: right;         
+  transition: transform 0.35s ease;
 }
 
 /* Show underline on hover */
 .nav-links a:hover::after {
-  transform: scaleX(1);            /* Reveal underline */
-  transform-origin: left;          /* Animate left to right */
+  transform: scaleX(1);            
+  transform-origin: left;          
 }
 
 /* Subtle lift on hover */
 .nav-links a:hover {
-  color: #222222;                  /* Slightly darker text */
-  transform: translateY(-2px);     /* Subtle lift for elegance */
+  color: #222222;                  
+  transform: translateY(-2px);     
 }
 
+/* ================= NAV LINKS ON SCROLL ================= */
+/* When navbar has scrolled class, turn links black */
+.navbar.scrolled .nav-links a {
+  color: #000000;                   /* Black text on scroll */
+}
+
+.navbar.scrolled .nav-links a:hover {
+  color: #111111;                   /* Slightly darker on hover while scrolled */
+}
 
 /* =====================================================
    MOBILE MENU ICON (HAMBURGER)
@@ -888,258 +894,147 @@ body {
     line-height: 1.8;                   /* Maintain comfort */
   }
 }
-
-
-/* ================= FOOTER ================= */
-
-/* Main footer container */
+/* ================= MAIN FOOTER ================= */
 .footer {
-  background-color: #111111;          /* Dark grey background */
-  color: #e5e5e5;                     /* Soft white text */
-  padding: 60px 6% 40px;              /* Top, side, bottom spacing */
-  font-family: 'Roboto', sans-serif;  /* Modern clean font */
+  background-color: #111111;
+  color: #e5e5e5;
+  padding: 60px 6% 40px;
+  font-family: 'Roboto', sans-serif;
 }
 
-/* Row holding main columns */
 .footer .row {
-  display: flex;                      /* Flex layout for columns */
-  flex-wrap: wrap;                     /* Allow wrapping on small screens */
-  justify-content: space-between;     /* Spread columns evenly */
-  gap: 40px;                           /* Space between columns */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-/* Each main column */
 .footer .col {
-  flex: 1;                             /* Equal width */
-  min-width: 180px;                     /* Prevent columns from collapsing */
+  flex: 1;
+  min-width: 180px;
 }
 
-/* Brand / heading */
-.footer .col h1 {
-  font-size: 1.8rem;                   /* Large brand text */
-  color: #ffffff;                       /* White for contrast */
-  margin-bottom: 12px;                  /* Space below heading */
-  font-weight: 600;                     /* Semi-bold */
-  letter-spacing: 0.5px;                /* Slight spacing */
-}
-
-/* Section headings (Address, Contact, Emails, Socials) */
 .footer .col h4 {
-  font-size: 0.95rem;                   /* Small heading size */
-  color: #ffffff;                        /* White text */
-  margin-bottom: 8px;                    /* Space below heading */
-  font-weight: 500;                      /* Medium weight */
-  text-transform: uppercase;             /* Uppercase headings */
-  letter-spacing: 1px;                   /* Letter spacing */
+  font-size: 0.95rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Paragraph text in columns */
 .footer .col p {
-  font-size: 0.95rem;                    /* Text size */
-  line-height: 1.6;                      /* Comfortable line spacing */
-  color: #b5b5b5;                        /* Lighter grey for hierarchy */
-  margin-bottom: 6px;                     /* Space between lines */
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #b5b5b5;
+  margin-bottom: 6px;
+  word-wrap: break-word;
 }
 
-/* Hover effect for clickable items */
 .footer .col p:hover {
-  color: #ffffff;                        /* White on hover */
-  cursor: pointer;                        /* Pointer cursor */
-  transition: color 0.3s ease;           /* Smooth transition */
+  color: #ffffff;
 }
 
-.whatsapp-link {
+/* ================= TOOLTIP ================= */
+.tooltip {
   position: relative;
-  text-decoration: none;
   color: inherit;
+  text-decoration: none;
   cursor: pointer;
 }
 
-/* Tooltip text */
-.whatsapp-link::after {
+/* Tooltip box */
+.tooltip::after {
   content: attr(data-tooltip);
   position: absolute;
   bottom: 130%;
   left: 50%;
-  transform: translateX(-50%);
-  background-color: #25D366; /* WhatsApp green */
-  color: #ffffff;
-  padding: 6px 10px;
+  transform: translateX(-50%) scale(0.8);
+  background-color: #333;
+  color: #fff;
+  padding: 6px 12px;
   border-radius: 6px;
   font-size: 12px;
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: all 0.25s ease;
+  z-index: 1000;
 }
 
 /* Tooltip arrow */
-.whatsapp-link::before {
+.tooltip::before {
   content: "";
   position: absolute;
-  bottom: 115%;
+  bottom: 120%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) scale(0.8);
   border-width: 6px;
   border-style: solid;
-  border-color: #25D366 transparent transparent transparent;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Show tooltip on hover */
-.whatsapp-link:hover::after,
-.whatsapp-link:hover::before {
-  opacity: 1;
-}
-
-.email-link {
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
-
-/* Tooltip text */
-.email-link::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 130%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #1e73be; /* Professional email blue */
-  color: #ffffff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: nowrap;
+  border-color: #333 transparent transparent transparent;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: all 0.25s ease;
+  z-index: 1000;
 }
 
-/* Tooltip arrow */
-.email-link::before {
-  content: "";
-  position: absolute;
-  bottom: 115%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: #1e73be transparent transparent transparent;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* Show tooltip on hover */
-.email-link:hover::after,
-.email-link:hover::before {
+/* Show tooltip on hover (desktop) */
+.tooltip:hover::after,
+.tooltip:hover::before {
   opacity: 1;
+  transform: translateX(-50%) scale(1);
 }
 
+/* Specific colors */
+.whatsapp-link::after { background-color: #25D366; }
+.whatsapp-link::before { border-color: #25D366 transparent transparent transparent; }
 
-.social-link {
-  position: relative;
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
+.email-link::after { background-color: #1e73be; }
+.email-link::before { border-color: #1e73be transparent transparent transparent; }
 
-/* Tooltip text */
-.social-link::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 130%;          /* Tooltip above the link */
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ffffff;
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 12px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
+.social-link.facebook::after { background-color: #1877f2; }
+.social-link.facebook::before { border-color: #1877f2 transparent transparent transparent; }
 
-/* Tooltip arrow */
-.social-link::before {
-  content: "";
-  position: absolute;
-  bottom: 115%;
-  left: 50%;
-  transform: translateX(-50%);
-  border-width: 6px;
-  border-style: solid;
-  border-color: transparent transparent transparent transparent;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 10;
-}
+.social-link.linkedin::after { background-color: #0a66c2; }
+.social-link.linkedin::before { border-color: #0a66c2 transparent transparent transparent; }
 
-/* Show tooltip on hover */
-.social-link:hover::after,
-.social-link:hover::before {
-  opacity: 1;
-}
-
-/* Facebook colors */
-.social-link.facebook::after {
-  background-color: #1877f2;
-}
-.social-link.facebook::before {
-  border-color: #1877f2 transparent transparent transparent;
-}
-
-/* LinkedIn colors */
-.social-link.linkedin::after {
-  background-color: #0a66c2;
-}
-.social-link.linkedin::before {
-  border-color: #0a66c2 transparent transparent transparent;
-}
-
-
-/* ================= COPYRIGHT ROW ================= */
-
-/* Copyright column */
+/* ================= COPYRIGHT ================= */
 .footer .col.copyright {
-  flex: 0 0 100%;                        /* Force full width */
-  max-width: 100%;                        /* Ensure it spans full row */
-  text-align: center;                     /* Center text */
-  border-top: 1px solid #2a2a2a;         /* Subtle dividing line */
-  margin-top: 40px;                        /* Space above copyright */
-  padding-top: 20px;                       /* Padding inside top */
+  flex: 0 0 100%;
+  max-width: 100%;
+  text-align: center;
+  border-top: 1px solid #2a2a2a;
+  margin-top: 40px;
+  padding-top: 20px;
 }
 
-/* Copyright text */
 .footer .col.copyright p {
-  font-size: 0.85rem;                     /* Smaller text */
-  color: #8f8f8f;                         /* Muted grey */
+  font-size: 0.85rem;
+  color: #8f8f8f;
+}
+
+/* ================= LINK HOVER ================= */
+.footer .col a:hover {
+  color: #fff;
+  transform: translateY(-2px);
 }
 
 /* ================= RESPONSIVE ================= */
-
-/* Tablets / medium screens */
 @media (max-width: 992px) {
-  .footer .col {
-    flex: 1 1 45%;                        /* Two columns per row */
-    min-width: 180px;
-  }
+  .footer .col { flex: 1 1 45%; min-width: 180px; }
 }
 
-/* Mobile / small screens */
 @media (max-width: 576px) {
   .footer .row {
-    flex-direction: column;                /* Stack vertically */
-    align-items: center;                   /* Center all columns */
-    gap: 25px;                             /* Reduced spacing */
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
   }
+  .footer .col { text-align: center; }
+}
 
-  .footer .col {
-    text-align: center;                     /* Center text */
-  }
+/* ================= ACCESSIBILITY ================= */
+.footer .col a:focus {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
 }
