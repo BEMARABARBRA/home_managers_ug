@@ -102,11 +102,11 @@ body {
 
 /* Individual nav link */
 .nav-links a {
-  text-shadow: 1px 0 1px rgba(12, 12, 12, 0.3); /* Subtle shadow for depth */
+  text-shadow: 1px 0 1px rgba(12, 12, 12, 0.329); /* Subtle shadow for depth */
   position: relative;              /* Needed for underline animation */
   text-decoration: none;           /* Remove underline */
-  font-size: 18px;                 /* Readable size */
-  font-weight: 700;                /* Bold */
+  font-size: 16px;                 /* Readable size */
+  font-weight: 900;                /* Bold */
   color: rgb(204, 198, 198);       /* Default color */
   padding: 6px 0;                  /* Vertical spacing */
   transition: all 0.35s ease;      /* Smooth hover transition */
@@ -134,7 +134,7 @@ body {
 
 /* Subtle lift on hover */
 .nav-links a:hover {
-  color: #222222;                  
+  color: #030303;                  
   transform: translateY(-2px);     
 }
 

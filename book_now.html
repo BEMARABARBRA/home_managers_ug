@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Home Managers Uganda</title>
+
+<!-- SEO -->
+<meta name="description" content="Contact Home Managers Uganda for professional home management, housekeeping, property supervision, and domestic staff services worldwide.">
+<meta name="keywords" content="Home Managers Uganda, home management, housekeeping, property supervision">
+<meta name="author" content="Home Managers Uganda">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="book_now.css">
+
+<!-- Intl Tel Input CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/css/intlTelInput.css">
+</head>
+<body>
+
+<!-- Background overlay -->
+<div class="background-overlay"></div>
+
+<!-- Back button -->
+<a href="index.html" class="back-btn">Home</a>
+
+<!-- Contact form container -->
+<div class="container">
+  <form id="contactForm">
+
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" placeholder="Your full name" required>
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" placeholder="Your email address" required>
+
+    <label for="phone">Contact Number</label>
+    <input type="tel" id="phone" placeholder="e.g. +256 777 657427" required>
+
+    <label for="district">District</label>
+    <input type="text" id="district" placeholder="Start typing your district..." autocomplete="off" required>
+    <div id="districtList" class="autocomplete-items"></div>
+
+    <label for="landmark">Area / Landmark</label>
+    <input type="text" id="landmark" placeholder="e.g. Lubowa, near Quality Shopping Village" required>
+
+    <label for="service">Service Required</label>
+    <select id="service" required>
+      <option value="">Select a service</option>
+      <option value="Home Management">Home Management</option>
+      <option value="Housekeeping">Housekeeping</option>
+      <option value="Property Supervision">Property Supervision</option>
+      <option value="Domestic Staff Management">Domestic Staff Management</option>
+      <option value="Short Stay Home Care">Short Stay Home Care</option>
+      <option value="Custom Support">Custom Home Support</option>
+    </select>
+
+    <label>Send Via</label>
+    <div class="delivery-options">
+      <input type="radio" id="whatsapp" name="delivery" value="whatsapp" checked>
+      <label for="whatsapp">WhatsApp</label>
+
+      <input type="radio" id="emailOption" name="delivery" value="email">
+      <label for="emailOption">Email</label>
+    </div>
+
+    <button type="submit">Send Message</button>
+    <p id="successMessage" class="success-msg"></p>
+
+  </form>
+</div>
+
+<!-- JS Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/intlTelInput.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/utils.js"></script>
+
+<script>
+  // ================= INTERNATIONAL PHONE INPUT =================
+  const phoneInput = document.querySelector("#phone");
+  const iti = window.intlTelInput(phoneInput, {
+    initialCountry: "ug",
+    separateDialCode: true,
+    nationalMode: false,
+    utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/utils.js",
+    dropdownContainer: document.body,
+    autoHideDialCode: false,
+    allowDropdown: true,
+    formatOnDisplay: true,
+  });
+  
+  // ================= FULL UGANDA DISTRICTS =================
+  const districts = [
+    "Abim","Adjumani","Agago","Alebtong","Amolatar","Amudat","Amuria","Amuru","Apac",
+    "Arua","Budaka","Bududa","Bugiri","Bugweri","Buhweju","Buikwe","Bukedea","Bukomansimbi",
+    "Bukwo","Bulambuli","Buliisa","Bundibugyo","Bushenyi","Busia","Butaleja","Butambala",
+    "Buvuma","Buyende","Dokolo","Gomba","Gulu","Hoima","Ibanda","Iganga","Isingiro","Jinja",
+    "Kaabong","Kabale","Kabarole","Kaberamaido","Kalangala","Kaliro","Kalungu","Kampala","Kamuli",
+    "Kamwenge","Kanungu","Kapchorwa","Kasese","Katakwi","Kayunga","Kibaale","Kiboga","Kibuku",
+    "Kikuube","Kiruhura","Kiryandongo","Kisoro","Kitgum","Kotido","Kumi","Kween","Kyankwanzi",
+    "Kyegegwa","Kyenjojo","Kyotera","Lamwo","Lira","Luuka","Luwero","Lwengo","Lyantonde","Manafwa",
+    "Maracha","Masaka","Masindi","Mayuge","Mbale","Mbarara","Mitooma","Mityana","Moroto","Moyo",
+    "Mpigi","Mubende","Mukono","Nakapiripirit","Nakaseke","Nakasongola","Namayingo","Namisindwa",
+    "Namutumba","Napak","Nebbi","Ngora","Ntoroko","Ntungamo","Nwoya","Omoro","Otuke","Oyam",
+    "Pader","Pakwach","Pallisa","Rakai","Rubirizi","Rubanda","Rukiga","Rukungiri","Sembabule",
+    "Serere","Sheema","Sironko","Soroti","Ssese Islands","Tororo","Wakiso","Yumbe","Zombo"
+  ];
+  
+  // ================= AUTOCOMPLETE FUNCTION =================
+  const districtInput = document.getElementById("district");
+  const districtList = document.getElementById("districtList");
+  
+  districtInput.addEventListener("input", function(){
+    const val = this.value.toLowerCase();
+    districtList.innerHTML = '';
+    if(!val) return;
+  
+    const matches = districts.filter(d => d.toLowerCase().startsWith(val));
+    matches.forEach(match => {
+      const div = document.createElement("div");
+      div.textContent = match;
+      div.classList.add("autocomplete-item");
+      div.addEventListener("click", function(){
+        districtInput.value = this.textContent;
+        districtList.innerHTML = '';
+      });
+      districtList.appendChild(div);
+    });
+  });
+  
+  document.addEventListener("click", function(e){
+    if(e.target !== districtInput) districtList.innerHTML = '';
+  });
+  
+  // ================= FORM SUBMISSION =================
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault(); // Prevent default form submission (page reload)
+
+    // ---------------- GET FORM VALUES ----------------
+    const name = document.getElementById("fullname").value; // Full name
+    const email = document.getElementById("email").value; // Email address
+    const phone = iti.getNumber(); // Internationally formatted phone number
+    const district = districtInput.value; // Selected district
+    const landmark = document.getElementById("landmark").value; // Landmark / Area
+    const service = document.getElementById("service").value; // Selected service
+    const message = document.getElementById("message") 
+        ? document.getElementById("message").value 
+        : "No additional message"; // Optional message field
+    const delivery = document.querySelector('input[name="delivery"]:checked').value; // WhatsApp or Email
+
+    // ---------------- FULL MESSAGE TO SEND ----------------
+    const fullMessage =
+`New Contact Form Message
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+District: ${district}
+Area / Landmark: ${landmark}
+Service: ${service}
+
+Message:
+${message}`;
+
+    // ---------------- SUCCESS MESSAGE ELEMENT ----------------
+    const success = document.getElementById("successMessage");
+
+    // ---------------- HANDLE WHATSAPP ----------------
+    if(delivery === "whatsapp"){
+        // ---------------- Generate wa.me URL with prefilled message ----------------
+        const whatsappNumber = "256753044293"; // Your WhatsApp number in international format
+        const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
+
+        // Open WhatsApp link in the same tab (client taps send in WhatsApp)
+        window.open(whatsappURL, "_blank"); // Opens WhatsApp in a new browser tab/window
+
+
+        // Show success message on the page (user will see it before being redirected)
+        success.textContent = "Your WhatsApp message is ready! Tap 'Send' in WhatsApp to deliver.";
+        success.style.display = "block";
+
+    // ---------------- HANDLE EMAIL ----------------
+    } else if(delivery === "email"){
+        // ---------------- Prefill email draft ----------------
+        const emailURL = `mailto:barbarabemara@gmail.com
+?subject=New Contact Form Message
+&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0APhone: ${encodeURIComponent(phone)}%0D%0ADistrict: ${encodeURIComponent(district)}%0D%0AArea/Landmark: ${encodeURIComponent(landmark)}%0D%0AService: ${encodeURIComponent(service)}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+
+        // Open user's default email client with prefilled info
+        window.location.href = emailURL;
+
+        // Show success message
+        success.textContent = "Your email draft has been prepared!";
+        success.style.display = "block";
+    }
+
+    // ---------------- RESET FORM ----------------
+    // Wait 1 second so user can see success message
+    setTimeout(() => this.reset(), 1000);
+});
+  </script>
+  
+</body>
+</html>

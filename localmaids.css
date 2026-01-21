@@ -1,0 +1,413 @@
+/* ============================================================
+   GLOBAL STYLES
+============================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    scroll-behavior: smooth; /* smooth scrolling */
+}
+
+body {
+    background-color: #1c1c1c;
+    color: #f5f5f5;
+    line-height: 1.6;
+
+    /* Background slideshow */
+    background-image:
+    linear-gradient(rgba(28,28,28,0.0), rgba(28,28,28,0.0)),
+        url("photos/4maids_in_uniform.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    animation: backgroundSlideshow 24s infinite ease-in-out;
+
+    
+}
+
+/* Remove default link styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ============================================================
+   BACK HOME BUTTON
+============================================================ */
+.back-home {
+    position: fixed;
+    top: 120px;
+    right: 20px;
+    padding: 10px 18px;
+    background-color: rgba(255,255,255,0.5);
+    color: #fff;
+    font-weight: 500;
+    font-size: 0.95rem;
+    border-radius: 30px;
+    border: 2px solid rgba(255,255,255,0.7);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    max-width: 180px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.back-home:hover {
+    background-color: rgba(255,255,255,0.25);
+    transform: translateY(-2px);
+}
+
+/* ============================================================
+   FLOATING WHATSAPP BUTTON
+============================================================ */
+.floating-whatsapp {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25D366;
+    color: #fff;
+    padding: 12px 18px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 9999;
+}
+
+.floating-whatsapp:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+.whatsapp-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ============================================================
+   HERO / HEADER SECTION
+============================================================ */
+.parallax1 {
+    font-size: 30px;
+    font-weight: 900;
+    text-shadow: 1px 0 1px 4px rgba(0, 0, 0, 0.753);
+    margin-top: 40px;
+    position: relative;        /* allows absolute positioning inside */
+    width: 100%;
+    display: flex;             /* use flexbox to center content */
+    justify-content: center;   /* horizontal centering */
+    align-items: center;       /* vertical centering */
+    text-align: center;
+    
+}
+
+.overlay {
+    display: inline-block;                     /* shrink to fit text */
+    background-color: rgba(28,28,28,0.0);     /* semi-transparent overlay */
+    padding: 30px 20px;                        /* spacing inside box */
+    border-radius: 12px;                       /* rounded corners */
+    animation: fadeInDown 1.2s ease forwards;  /* fade-in effect */
+    max-width: 90%;                             /* responsive width */
+}
+
+.overlay h1 {
+    color: #fff;
+    font-size: 4rem;
+    margin-bottom: 10px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.overlay p {
+    color: #ccc;
+    font-size: 1.2rem;
+    animation: fadeIn 2s ease forwards;
+}
+
+.overlay h1, .overlay p {
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .overlay h1 {
+        font-size: 2.5rem;
+    }
+    .overlay p {
+        font-size: 1rem;
+    }
+}
+
+/* ============================================================
+   CONTENT SECTIONS
+============================================================ */
+.content-section {
+    padding: 60px 20px;
+}
+
+.intro {
+    margin-bottom: 30px;
+    text-align: center;               /* Center the text horizontally */
+    font-size: 1.6rem;                /* Larger for prominence */
+    font-weight: 700;                 /* Bold for strong presence */
+    margin-bottom: 30px;              /* More space below the heading */
+    color: #ffffff;                   /* Bright on dark background */
+    /* text-transform: uppercase; */
+    letter-spacing: 1px;              /* Spacing between letters for readability */
+    line-height: 1.4;                 /* Comfortable line height */
+    position: relative;               /* For decorative pseudo-elements */
+    animation: fadeInUp 1s ease forwards; /* Subtle fade-in animation */
+}
+
+
+/* Fade-in animation */
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   SERVICES GRID
+============================================================ */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); /* Two per row on desktop, wraps on small screens */
+    gap: 18px; /* Gap between service boxes */
+    margin: 25px 0 30px 0;
+}
+
+.service-item {
+    border: 1px solid rgba(255,255,255,0.1);
+    background-color: #2c2c2c; /* dark card */
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    background-color: #3a3a3a; /* subtle hover highlight */
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* stack on mobile */
+    }
+
+    .service-item {
+        font-size: 1rem;
+        padding: 12px 16px;
+    }
+}
+
+
+.general-tasks {
+    list-style: disc inside;
+    margin-bottom: 20px;
+}
+
+.general-tasks li {
+    margin-bottom: 8px;
+    padding-left: 12px;
+    font-size: 1rem;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.note {
+    font-size: 0.95rem;
+    color: #bbb;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* ============================================================
+   CATEGORY CARDS
+============================================================ */
+.category {
+    background: linear-gradient(145deg, #2c2c2c, #262626);
+    border-radius: 16px;
+    padding: 30px 25px;
+    margin-bottom: 20px;
+    position: relative;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 0.8s forwards;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+.category .subheader { text-transform: uppercase; letter-spacing: 0.5px; }
+
+
+.number {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background-color: #fff;
+    color: #1c1c1c;
+    width: 45px;
+    height: 45px;
+    font-weight: 700;
+    font-size: 1.3rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.number:hover {
+    transform: scale(1.1);
+}
+
+.number {
+    animation: popIn 0.6s ease forwards;
+}
+
+@keyframes popIn {
+    0% { transform: scale(0); }
+    100% { transform: scale(1); }
+}
+
+.category h2 {
+    color: #f5f5f5;
+    margin-bottom: 8px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.category .subheader {
+    font-weight: 500;
+    color: #ccc;
+    margin-bottom: 15px;
+    font-size: 1rem;
+}
+
+.category p {
+    margin-bottom: 10px;
+}
+
+/* ============================================================
+   PREMIUM CTA BUTTONS
+============================================================ */
+.cta-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.cta-buttons a {
+    flex: 1;
+    text-align: center;
+    background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+    color: #1c1c1c;
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-buttons a:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+}
+
+.cta-buttons a::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255,255,255,0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+}
+
+.cta-buttons a:hover::after {
+    opacity: 1;
+    top: -30%;
+    left: -30%;
+}
+
+/* ============================================================
+   ANIMATIONS
+============================================================ */
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ============================================================
+   RESPONSIVE DESIGN
+============================================================ */
+@media (max-width: 768px) {
+    .back-home {
+        top: 10px;
+        right: 10px;
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        max-width: 140px;
+    }
+
+    .floating-whatsapp {
+        width: 50px;
+        height: 50px;
+        padding: 10px 12px;
+    }
+
+    .overlay h1 { font-size: 2rem; }
+    .overlay p { font-size: 1rem; }
+
+    .category h2 { font-size: 1.5rem; }
+    .category .subheader { font-size: 0.95rem; }
+    .pay { font-size: 1rem; }
+
+    .cta-buttons { flex-direction: column; }
+    .cta-buttons a { flex: unset; }
+}
