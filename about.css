@@ -1,299 +1,684 @@
-/* =========================================================
-   ROOT VARIABLES — BRAND COLORS
-========================================================= */
-:root {
-  --dark-grey: #1c1c1c;
-  --mid-grey: #2a2a2a;
-  --soft-grey: #3a3a3a;
-  --light-grey: #f4f4f4;
-  --white: #ffffff;
-}
-
-/* =========================================================
-   GLOBAL RESET
-========================================================= */
+/* =====================================================
+   GLOBAL RESET & BASE STYLES
+===================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-/* =========================================================
-   BODY
-========================================================= */
-body {
   font-family: 'Roboto', sans-serif;
-  background-color: var(--white);
-  color: var(--dark-grey);
-  line-height: 1.7;
-  overflow-x: hidden;
 }
 
-/* =========================================================
-   BACK TO HOME BUTTON
-========================================================= */
-.back-home {
+body {
+  background: #f9f9f9;
+  color: #111;
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background 0.3s ease;
+}
+
+/* ================= BACK BUTTON ================= */
+.back-btn {
   position: fixed;
   top: 20px;
-  left: 20px;
-  padding: 10px 18px;
-  background: var(--dark-grey);
-  color: var(--white);
+  right: 20px;
+  background: rgba(34, 34, 34, 0.85);
+  /*Darkgreyforcompanycolor*/backdrop-filter: blur(10px);
+  padding: 12px 20px;
+  border-radius: 10px;
+  color: #fff;
+  font-weight: 700;
   text-decoration: none;
-  font-size: 14px;
-  border-radius: 30px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   z-index: 1000;
   transition: all 0.3s ease;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.back-btn:hover {
+  background: #111; /* Darker grey hover */
+  transform: translateY(-2px); 
 }
 
-.back-home:hover {
-  background: var(--mid-grey);
-  transform: translateX(-4px);
-}
 
-/* =========================================================
-   HERO SECTION
-========================================================= */
+/* ================= HERO HEADER ================= */
 .hero-header {
-  height: 90vh;
-  background: linear-gradient(135deg, var(--dark-grey), var(--mid-grey));
+  position: relative;
+  width: 100%;
+  height: 95vh;
+  background: url('photos/laundry_clean.jpeg') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  color: var(--white);
-}
-
-.hero-header::after {
-  content: '';
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 50%;
-  top: -180px;
-  right: -180px;
 }
 
 .hero-overlay {
+  background: rgba(28,28,28,0.7);
+  padding: 40px 20px;
   text-align: center;
-  max-width: 850px;
-  padding: 20px;
-  animation: fadeUp 1s ease;
+  border-radius: 12px;
+  max-width: 900px;
 }
 
 .hero-title {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 48px;
+  font-weight: 900;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  color: #fff;
+  margin-bottom: 16px;
+  line-height: 1.2;
 }
 
 .hero-subtitle {
-  font-size: 1.1rem;
-  opacity: 0.9;
+  font-size: 20px;
+  color: #f0f0f0;
+  margin-bottom: 24px;
 }
 
-/* =========================================================
-   BUTTONS
-========================================================= */
 .btn {
   display: inline-block;
-  padding: 14px 30px;
-  border-radius: 30px;
-  font-weight: 500;
   text-decoration: none;
+  padding: 12px 28px;
+  font-weight: 600;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  margin-top: 20px;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background: var(--white);
-  color: var(--dark-grey);
+  background: #111;
+  color: #fff;
 }
 
 .btn-primary:hover {
-  background: var(--light-grey);
-  transform: translateY(-4px);
+  background: #333;
+  transform: translateY(-2px);
 }
 
 .btn-outline {
-  border: 2px solid var(--white);
-  color: var(--white);
+  background: transparent;
+  color: #111;
+  border: 2px solid #111;
 }
 
-/* =========================================================
-   SECTIONS (CONTENT ALWAYS VISIBLE)
-========================================================= */
+.btn-outline:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* ================= SECTIONS - FULL WIDTH BACKGROUNDS ================= */
 .section {
-  padding: 90px 20px;
+  width: 100%; /* Make section full-width */
+  padding: 80px 10%;
+  display: block;
+}
+
+/* =====================================================
+   SMOOTH GRADIENT SECTION EDGES
+===================================================== */
+
+.gradient-section {
   position: relative;
-  color: var(--dark-grey);
+  overflow: hidden;
 }
 
-.container {
-  max-width: 1100px;
-  margin: auto;
+/* Top fade */
+.gradient-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(
+    to bottom,
+    rgba(249,249,249,1),
+    rgba(249,249,249,0)
+  );
+  z-index: 2;
 }
 
-section h2 {
-  font-size: 2.3rem;
-  margin-bottom: 20px;
+/* Bottom fade */
+.gradient-section::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background: linear-gradient(
+    to top,
+    rgba(249,249,249,1),
+    rgba(249,249,249,0)
+  );
+  z-index: 2;
 }
 
-section p {
-  max-width: 850px;
+/* Keep content above fades */
+.gradient-section > * {
+  position: relative;
+  z-index: 3;
 }
 
-/* =========================================================
-   SCROLL REVEAL (SAFE — DOES NOT HIDE CONTENT)
-========================================================= */
-.reveal {
-  opacity: 1;               /* CONTENT IS ALWAYS VISIBLE */
-  transform: none;
+/* Dark hero fade */
+.gradient-dark::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to top,
+    rgba(249,249,249,1),
+    rgba(0,0,0,0)
+  );
+  z-index: 3;
 }
 
-/* Animation only enhances, not hides */
-.reveal.active {
-  animation: fadeUp 0.8s ease forwards;
+.section h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #111;
+  margin-bottom: 24px;
+  text-align: center;
+  position: relative;
 }
 
-/* =========================================================
-   GRIDS & CARDS
-========================================================= */
-.features-grid,
-.pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+/* ================= MISSION & VISION ================= */
+.mission-vision {
+  width: 100%;
+  background: url('photos/white_background2.jpeg') center/cover no-repeat; /* full-width background */
+  background-size: cover;
+  padding: 100px 10%;
+  position: relative;
+  background-color: white;
 }
 
-.feature,
-.pillar {
-  background: var(--light-grey);
-  padding: 30px;
-  border-radius: 18px;
+.mission-vision::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.1); /* overlay for readability */
+  z-index: 0;
+}
+
+.mission-vision .container {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1; /* above overlay */
+}
+
+.mission-vision .container > * {
+  flex: 1 1 45%;
+  min-width: 280px;
+  background: rgba(255,255,255,0.85); /* semi-transparent card */
+  padding: 20px 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+.mission-vision h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.mission-vision p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .mission-vision .container {
+    flex-direction: column;
+    gap: 25px;
+  }
+}
+
+/* ================= WHY CHOOSE US ================= */
+.why-choose-us {
+  width: 100%;
+  background: url('photos/clean_dirty_bedroom.jpeg') center/cover no-repeat;
+  background-size: cover;
+  padding: 100px 10%;
+  position: relative;
+}
+
+.why-choose-us::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.05); /* slight overlay */
+  z-index: 0;
+}
+
+.features-grid {
+  display: flex;
+  gap: 32px;
+  margin-top: 40px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 1; /* above overlay */
+}
+
+.feature {
+  flex: 1 1 45%;
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.feature:hover,
-.pillar:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+.feature h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
+  color: #111;
 }
 
-/* =========================================================
-   FOUNDER SECTION
-========================================================= */
-.founder-img {
+.feature p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* ================= PILLARS ================= */
+.pillars {
   width: 100%;
-  border-radius: 18px;
-  margin-bottom: 30px;
+  background: url('photos/white_background2.jpeg') center/cover no-repeat;
+  background-size: cover;
+  padding: 100px 10%;
+  position: relative;
 }
 
-blockquote {
-  font-size: 1.2rem;
-  background: var(--light-grey);
-  padding: 30px;
-  border-left: 6px solid var(--dark-grey);
+.pillars::before {
+  content: "";
+  position: absolute;
+  top:0; left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.05);
+  z-index: 0;
 }
 
-/* =========================================================
-   CTA SECTION (DARK BACKGROUND FIXED)
-========================================================= */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.pillar {
+  background: #fff;
+  border-radius: 12px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.pillar p {
+  font-size: 16px;
+  color: #555;
+}
+
+.pillar:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+/* ================= FOUNDER QUOTE ================= */
+.founder-quote {
+  width: 100%;
+  background: url('photos/womaninuniforminkitchen.png') center/cover no-repeat;
+  padding: 120px 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* Darken image slightly */
+.founder-quote::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Quote card */
+.founder-quote blockquote {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+  padding: 40px 50px;
+  background: rgba(0, 0, 0, 0.55); /* transparent readable layer */
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  color: #fff;
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1.6;
+  text-align: center;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+/* Founder name styling */
+.founder-quote blockquote span {
+  display: block;
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.75);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .founder-quote {
+    padding: 80px 6%;
+  }
+
+  .founder-quote blockquote {
+    font-size: 20px;
+    padding: 30px 25px;
+  }
+}
+
+/* ================= CTA SECTION ================= */
 .cta {
-  background: var(--dark-grey);
-  color: var(--white);
+  width: 100%;
+  background: url('photos/white_background2.jpeg') center/cover no-repeat;
+  padding: 120px 8%;
+  position: relative;
   text-align: center;
 }
 
-.cta p,
+/* Light overlay */
+.cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.75);
+  z-index: 0;
+}
+
+/* Container */
+.cta .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Heading */
 .cta h2 {
-  color: var(--white);
+  font-size: 42px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 20px;
 }
 
-.cta-img {
+/* Text — no artificial wrapping */
+.cta-text {
+  font-size: 18px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+/* Buttons */
+.cta .buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+/* Primary button */
+.btn-primary {
+  background: #111;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: #000;
+  transform: translateY(-2px);
+}
+
+/* Outline buttons */
+.btn-outline {
+  background: transparent;
+  color: #111;
+  padding: 14px 28px;
+  border-radius: 10px;
+  border: 2px solid #111;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-outline:hover {
+  background: #111;
+  color: #fff;
+}
+
+/* Mobile refinement */
+@media (max-width: 768px) {
+  .cta h2 {
+    font-size: 30px;
+  }
+
+  .cta-text {
+    font-size: 16px;
+  }
+}
+
+
+/* ================= FAQ SECTION ================= */
+.faq {
   width: 100%;
-  max-width: 750px;
-  margin-top: 40px;
-  border-radius: 18px;
+  background: url('photos/mopper_image.jpeg') center/cover no-repeat;
+  padding: 120px 8%;
+  position: relative;
 }
 
-/* =========================================================
-   FAQ ACCORDION
-========================================================= */
+/* Dark overlay for readability */
+.faq::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 0;
+}
+
+/* Container */
+.faq .container {
+  position: relative;
+  z-index: 1;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Section title */
+.faq h2 {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 50px;
+}
+
+/* Accordion wrapper */
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Accordion card */
 .accordion-item {
-  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 14px;
   overflow: hidden;
-  background: var(--light-grey);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease;
 }
 
+.accordion-item:hover {
+  transform: translateY(-2px);
+}
+
+/* Accordion header */
 .accordion-header {
   width: 100%;
-  padding: 18px 22px;
-  background: var(--dark-grey);
-  color: var(--white);
+  padding: 22px 26px;
+  background: none;
   border: none;
+  outline: none;
   text-align: left;
+  font-size: 18px;
+  font-weight: 600;
+  color: #222;
   cursor: pointer;
-  font-size: 16px;
+  position: relative;
 }
 
+/* Plus / minus icon */
+.accordion-header::after {
+  content: "+";
+  position: absolute;
+  right: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 22px;
+  font-weight: 500;
+  transition: transform 0.3s ease;
+}
+
+/* Active state */
+.accordion-header.active::after {
+  content: "–";
+}
+
+/* Accordion body */
 .accordion-body {
-  max-height: none;        /* CONTENT ALWAYS VISIBLE */
-  background: var(--white);
-  padding: 22px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.3s ease;
+  padding: 0 26px;
 }
 
-/* =========================================================
-   FLOATING WHATSAPP BUTTON
-========================================================= */
-.whatsapp-float {
+.accordion-body p {
+  color: #444;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Open state */
+.accordion-body.open {
+  padding: 0 26px 22px;
+  max-height: 300px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .faq {
+    padding: 90px 6%;
+  }
+
+  .faq h2 {
+    font-size: 28px;
+  }
+
+  .accordion-header {
+    font-size: 16px;
+  }
+}
+
+
+
+/* ================= FLOATING WHATSAPP ================= */
+.floating-whatsapp {
   position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 60px;
-  height: 60px;
-  background: #25D366;
-  color: var(--white);
-  border-radius: 50%;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25D366;   /* WhatsApp green */
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 50px;         /* Smooth pill shape */
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 26px;
-  text-decoration: none;
-  z-index: 1000;
-  animation: pulse 2s infinite;
+  gap: 10px;                   /* Space between icon and text */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  z-index: 9999;
 }
 
-/* =========================================================
-   ANIMATIONS
-========================================================= */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
 }
 
-@keyframes pulse {
-  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.6); }
-  70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+.whatsapp-icon {
+  width: 24px;
+  height: 24px;
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+  .hero-title { font-size: 40px; } /* Smaller title on tablets */
+  .hero-subtitle { font-size: 18px; } /* Smaller subtitle */
+  .section h2 { font-size: 32px; } /* Smaller section headings */
+}
+
 @media (max-width: 768px) {
-  .hero-title {
-    font-size: 2.2rem;
-  }
-
-  .section {
-    padding: 65px 15px;
-  }
+  .hero-header { height: 60vh; } /* Shorter hero on mobile */
+  .hero-title { font-size: 32px; } /* Smaller title */
+  .hero-subtitle { font-size: 16px; } /* Smaller subtitle */
+  .features-grid, .pillars-grid { gap: 20px; } /* Less gap on grids */
+  .cta .buttons { flex-direction: column; } /* Stack buttons */
 }

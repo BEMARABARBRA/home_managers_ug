@@ -3,38 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Home Managers Uganda: Uganda's premier agency for professional household staffing and management.">
+  <meta name="description" content="Home Managers Uganda: Premier agency for professional household staffing and management. Mission, Vision, and why Ugandan households choose us.">
+  <meta name="keywords" content="Home Managers Uganda, Domestic Staffing, Household Management, Professional Home Managers">
+  <meta name="author" content="Home Managers Uganda">
   <title>About Us | Home Managers Uganda</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="about.css">
 </head>
 <body>
 
-  <!-- BACK TO HOME BUTTON -->
-<a href="index.html" class="back-home" aria-label="Back to Home Page">
-  ← Back Home
-</a>
+  <!-- Back button -->
+<a href="index.html" class="back-btn">Home</a>
 
-  <!-- HERO HEADER -->
+  <!-- HERO HEADER SECTION -->
   <header class="hero-header">
     <div class="hero-overlay">
       <h1 class="hero-title">Redefining the Standard of Domestic Excellence</h1>
       <p class="hero-subtitle">Professional home managers delivering service with excellence, integrity, and heart.</p>
-      <a href="#services" class="btn btn-primary">View Our Services</a>
+      <a href="index.html" class="btn btn-primary">View Our Services</a>
+
     </div>
   </header>
 
-  <!-- MISSION & VISION -->
+  <!-- MISSION & VISION SECTION -->
   <section class="mission-vision section reveal">
     <div class="container">
-      <h2>Our Mission</h2>
-      <p>To provide Ugandan households with peace of mind by connecting them with highly-vetted, professional home managers who deliver service with excellence, integrity, and heart.</p>
-      <h2>Our Vision</h2>
-      <p>To be the most trusted partner in home management across East Africa, professionalizing domestic work and elevating the quality of life for the families we serve.</p>
+      <div class="card">
+        <h2>Our Mission</h2>
+        <p>To provide Ugandan households with peace of mind by connecting them with highly-vetted, professional home managers who deliver service with excellence, integrity, and heart.</p>
+      </div>
+      <div class="card">
+        <h2>Our Vision</h2>
+        <p>To be the most trusted partner in home management across East Africa, professionalizing domestic work and elevating the quality of life for the families we serve.</p>
+      </div>
     </div>
   </section>
 
-  <!-- WHY CHOOSE US -->
+  <!-- WHY CHOOSE US SECTION -->
   <section class="why-choose-us section reveal">
     <div class="container">
       <h2>Why Choose Us?</h2>
@@ -59,7 +64,7 @@
     </div>
   </section>
 
-  <!-- PILLARS -->
+  <!-- PILLARS SECTION -->
   <section class="pillars section reveal">
     <div class="container">
       <h2>Meet the Pillars of Our Service</h2>
@@ -80,31 +85,54 @@
     </div>
   </section>
 
-  <!-- FOUNDER QUOTE -->
+  <!-- FOUNDER QUOTE SECTION -->
   <section class="founder-quote section reveal">
     <div class="container">
-      <img src="https://via.placeholder.com/800x400" alt="Precision in Service" class="founder-img">
+      <!-- <img src="https://via.placeholder.com/800x400" alt="Precision in Service" class="founder-img"> -->
       <blockquote>
         "Home Managers Uganda was born out of a passion for organization and a desire to help busy families reclaim their time. You aren't just getting a worker; you are gaining a partner in your home’s success."
-        <span>- Founder</span>
+        <br><span>- Founder</span>
       </blockquote>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="cta section reveal" id="services">
-    <div class="container">
-      <h2>Ready to Experience the Difference?</h2>
-      <p>Join the hundreds of families who have transformed their homes into stress-free havens.</p>
-      <div class="buttons">
-        <a href="services.html" class="btn btn-primary">View Our Services</a>
-        <a href="contact.html" class="btn btn-outline">Contact Our Relationship Manager</a>
-      </div>
-      <img src="https://via.placeholder.com/750x400" alt="Consultation Setting" class="cta-img">
-    </div>
-  </section>
+  <!-- CTA SECTION -->
+<section class="cta section reveal" id="services">
+  <div class="container">
+    <h2>Ready to Experience the Difference?</h2>
 
-  <!-- FAQ -->
+    <p class="cta-text">
+      Join hundreds of families who have transformed their homes into stress-free,
+      professionally managed havens.
+    </p>
+
+    <div class="buttons">
+      <a href="localmaids.html" class="btn btn-primary">
+        View Our Services
+      </a>
+
+      <!-- WhatsApp (works on mobile & desktop) -->
+      <a href="https://wa.me/256753044293" class="btn btn-outline">
+        WhatsApp Our Relationship Manager
+      </a>
+
+      <!-- Email (works even without a local mail app) -->
+      <a
+        href="https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Home%20Management%20Inquiry"
+        class="btn btn-outline"
+        target="_blank"
+        rel="noopener"
+      >
+        Email Our Relationship Manager
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- FAQ SECTION -->
   <section class="faq section reveal">
     <div class="container">
       <h2>Frequently Asked Questions</h2>
@@ -132,14 +160,80 @@
   </section>
 
   <!-- FLOATING WHATSAPP BUTTON -->
-<a 
-href="https://wa.me/256753044293" 
-class="whatsapp-float" 
-target="_blank" 
-aria-label="Chat with us on WhatsApp">
-💬
-</a>
+  <a 
+    href="https://wa.me/256753044293?text=Hello!%20Welcome%20to%20the%20Home%20Managers%20Uganda%20family."
+    target="_blank"
+    class="floating-whatsapp"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp icon" class="whatsapp-icon">
+    Chat with us
+  </a>
 
-  <script src="about.js"></script>
+<!-- ========================== JS ======================== -->
+<script>
+  /* =====================================================
+     TRANSPARENT SECTION EDGE GRADIENTS
+     Edit ONLY the color & opacity values below
+  ===================================================== */
+  
+  const baseColor = "255,255,255";   // RGB for white
+  const startOpacity = 1.35;      // Strong edge
+  const endOpacity = 0;           // Fully transparent
+  const gradientHeight = "90px";  // Fade size
+  
+  document.querySelectorAll("section").forEach(section => {
+    section.style.position = "relative";
+    section.style.overflow = "hidden";
+  
+    const topFade = document.createElement("div");
+    const bottomFade = document.createElement("div");
+  
+    topFade.style.cssText = `
+      position:absolute;
+      top:0;
+      left:0;
+      width:100%;
+      height:${gradientHeight};
+      background:linear-gradient(
+        to bottom,
+        rgba(${baseColor},${startOpacity}),
+        rgba(${baseColor},${endOpacity})
+      );
+      pointer-events:none;
+      z-index:1;
+    `;
+  
+    bottomFade.style.cssText = `
+      position:absolute;
+      bottom:0;
+      left:0;
+      width:100%;
+      height:${gradientHeight};
+      background:linear-gradient(
+        to top,
+        rgba(${baseColor},${startOpacity}),
+        rgba(${baseColor},${endOpacity})
+      );
+      pointer-events:none;
+      z-index:1;
+    `;
+  
+    section.prepend(topFade);
+    section.append(bottomFade);
+  });
+  </script>
+  
+  <!-- frequently asked questions section -->
+  <script>
+    document.querySelectorAll('.accordion-header').forEach(button => {
+      button.addEventListener('click', () => {
+        const body = button.nextElementSibling;
+        button.classList.toggle('active');
+        body.classList.toggle('open');
+      });
+    });
+  </script>
+  
 </body>
 </html>

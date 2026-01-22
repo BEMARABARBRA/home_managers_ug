@@ -61,7 +61,7 @@
       <label for="whatsapp">WhatsApp</label>
 
       <input type="radio" id="emailOption" name="delivery" value="email">
-      <label for="emailOption">Email</label>
+<label for="emailOption">Email</label>
     </div>
 
     <button type="submit">Send Message</button>
@@ -197,6 +197,19 @@ ${message}`;
     // Wait 1 second so user can see success message
     setTimeout(() => this.reset(), 1000);
 });
+  </script>
+
+  <!-- ------------ for the email ----------- -->
+  <script>
+    document.getElementById("emailOption").addEventListener("change", function () {
+      if (this.checked) {
+        window.open(
+          "https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Home%20Management%20Inquiry",
+          "_blank",
+          "noopener"
+        );
+      }
+    });
   </script>
   
 </body>
