@@ -106,11 +106,23 @@
     transition: 0.3s;
   }
   
-  .cta-buttons .btn-whatsapp { background: #25D366; }
-  .cta-buttons .btn-whatsapp:hover { opacity: 0.85; }
+  .cta-buttons .btn-whatsapp { 
+    background: #1b9448;
+   }
+  .cta-buttons .btn-whatsapp:hover { 
+    opacity: 0.85; 
+    background-color: #25D366;}
   
-  .cta-buttons .btn-email { background: #4a4a4a; }
-  .cta-buttons .btn-email:hover { opacity: 0.85; }
+  .cta-buttons .btn-email {
+     background: #f8f3f3;
+     color: black;
+    
+    }
+  .cta-buttons .btn-email:hover { 
+    opacity: 0.85; 
+    background-color: #111;
+    color: #fff;
+  }
 
   
   
