@@ -30,7 +30,9 @@
   <div class="overlay"></div>
 
   <!-- ================= BACK BUTTON (RIGHT SIDE) ================= -->
-  <a href="index.html" class="back-home">← Back Home</a>
+  <!-- Back button -->
+<a href="index.html" class="back-btn">Home</a>
+
 
   <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
   <a 
@@ -131,7 +133,7 @@
       <div class="category">
         <div class="number">5</div>
         <h2>Large Estates / Multiple Helpers</h2>
-        <p class="subheader">Household size: 6–10 adults | 3–5 children | 5+ bedrooms</p>
+        <p class="subheader">Household size: 6–10 adults | 3–5 children | Up to 8 bedrooms</p>
         <p>Chores: Full household support, children’s routines, elderly care, multiple helpers recommended</p>
         <p class="pay"> Monthly Pay<br>Female - Live-In: UGX 600,000 | Live-Out: UGX 650,000<br>Male - Live-In: UGX 650,000 | Live-Out: UGX 650,000</p>
         <div class="cta-buttons">
@@ -157,34 +159,40 @@
 
   </section>
 
+  <!-- ============ whatsapp and email in categories  ============ -->
 
   <script>
-    // Wait for the DOM to fully load
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', () => {
+      const categories = document.querySelectorAll('.category');
     
-      // Select all WhatsApp buttons inside category cards
-      const whatsappButtons = document.querySelectorAll('.cta-buttons a.whatsapp-auto');
+      categories.forEach(category => {
+        // Get all relevant text under the category
+        const infoText = Array.from(category.querySelectorAll('h2, .subheader, p:not(.cta-buttons a)'))
+                              .map(el => el.textContent.trim())
+                              .join('\n'); // use line breaks for readability
     
-      whatsappButtons.forEach(function(button) {
-        // Get the parent category card
-        const categoryCard = button.closest('.category');
-        
-        if(categoryCard){
-          // Get the category title
-          const categoryTitle = categoryCard.querySelector('h2').innerText;
+        // Create WhatsApp message
+        const waMessage = `Hello, I am interested in this service:\n${infoText}`;
+        // Create Email subject and body
+        const emailSubject = `Home Management Inquiry`;
+        const emailBody = `Hello,\nI would like more information about this service:\n${infoText}`;
     
-          // Construct the prefilled message
-          const message = `Hello, I am interested in ${categoryTitle} helper service`;
+        // Find CTA buttons container
+        const ctaContainer = category.querySelector('.cta-buttons');
     
-          // Encode the message for URL
-          const encodedMessage = encodeURIComponent(message);
-    
-          // Set the href dynamically
-          button.href = `https://wa.me/256753044293?text=${encodedMessage}`;
+        if(ctaContainer){
+          // WhatsApp button
+          const waButton = ctaContainer.querySelector('a:nth-child(1)');
+          waButton.href = `https://wa.me/256753044293?text=${encodeURIComponent(waMessage)}`;
+          
+          // Email button
+          const emailButton = ctaContainer.querySelector('a:nth-child(2)');
+          emailButton.href = `https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
         }
       });
     });
     </script>
+    
     
 </body>
 </html>

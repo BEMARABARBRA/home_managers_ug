@@ -1,0 +1,177 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* ================= BODY ================= */
+  body {
+    background: #111; /* dark grey */
+    color: #fff;
+    overflow-x: hidden;
+  }
+  
+  /* ================= SLIDESHOW ================= */
+  .bg-slideshow {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    overflow: hidden;
+  }
+  
+  .bg-slideshow .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* ================= OVERLAY ================= */
+  .overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: -1;
+  }
+  
+  /* ================= BACK BUTTON ================= */
+.back-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(34, 34, 34, 0.85);
+    /*Darkgreyforcompanycolor*/backdrop-filter: blur(10px);
+    padding: 12px 20px;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: 700;
+    text-decoration: none;
+    border: 2px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+    transition: all 0.3s ease;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  .back-btn:hover {
+    background: #111; /* Darker grey hover */
+    transform: translateY(-2px); 
+  }
+  
+  
+  /* ================= FLOATING WHATSAPP ================= */
+  .floating-whatsapp {
+    position: fixed;
+    bottom: 20px; right: 20px;
+    background: #25D366;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    z-index: 1000;
+    transition: opacity 0.3s;
+  }
+  .floating-whatsapp:hover { opacity: 0.8; }
+  
+
+  /* ===================whatsapp and email category buttons ========================= */
+  .cta-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+  }
+  
+  .cta-buttons a {
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    color: #fff;
+    transition: 0.3s;
+  }
+  
+  .cta-buttons .btn-whatsapp { background: #25D366; }
+  .cta-buttons .btn-whatsapp:hover { opacity: 0.85; }
+  
+  .cta-buttons .btn-email { background: #4a4a4a; }
+  .cta-buttons .btn-email:hover { opacity: 0.85; }
+
+  
+  
+  /* ================= HERO ================= */
+  .hero {
+    text-align: center;
+    padding: 80px 5% 40px 5%;
+  }
+
+  .hero h1 { 
+    font-size: 3.5rem; 
+    font-weight: 900; 
+    margin-bottom: 10px; 
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+}
+
+  .hero .subtitle { 
+    font-size: 1.5rem; 
+    margin-bottom: 15px; 
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+}
+
+  .hero .intro { 
+    font-size: 1.1rem; 
+    max-width: 800px; 
+    margin: auto; 
+    line-height: 1.5; 
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+}
+  
+  /* ================= CHEF CARDS GRID ================= */
+  .chef-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
+    gap: 20px;
+    padding: 20px 5%;
+  }
+  
+  /* ================= CHEF CARD ================= */
+  .chef-card {
+    background: rgba(47, 47, 47, 0.8); /* 0.7 = 70% opacity */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .chef-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+  }
+  .chef-card h3 { font-size: 1.6rem; margin-bottom: 6px; }
+  .chef-card .focus, .chef-card .best-for, .chef-card .key-difference { font-size: 0.95rem; margin-bottom: 6px; }
+  .chef-card .pricing {
+    background: #4a4a4a;
+    padding: 10px;
+    border-radius: 6px;
+    margin: 10px 0;
+    font-weight: bold;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  }
+  .chef-card .note { font-size: 0.85rem; color: #ccc; margin-top: 4px; }
+  
+  /* ================= RESPONSIVE ================= */
+  @media screen and (max-width: 768px){
+    .hero h1 { font-size: 2rem; }
+    .hero .subtitle { font-size: 1rem; }
+    .chef-cards { grid-template-columns: 1fr; }
+  }
+  
