@@ -11,6 +11,7 @@
     background: #111; /* dark grey */
     color: #fff;
     overflow-x: hidden;
+    line-height: 1.4;
   }
   
   /* ================= SLIDESHOW ================= */
@@ -69,22 +70,26 @@
   }
   
   
-  /* ================= FLOATING WHATSAPP ================= */
-  .floating-whatsapp {
-    position: fixed;
-    bottom: 20px; right: 20px;
-    background: #25D366;
-    color: #fff;
-    padding: 12px 20px;
-    border-radius: 50px;
-    font-weight: 600;
-    text-decoration: none;
-    z-index: 1000;
-    transition: opacity 0.3s;
-  }
-  .floating-whatsapp:hover { opacity: 0.8; }
-  
+  /* ==================== FLOATING WHATSAPP ===================== */
 
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  padding: 10px 16px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #fff;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.whatsapp-icon {
+  width: 24px;
+}
   /* ===================whatsapp and email category buttons ========================= */
   .cta-buttons {
     display: flex;
@@ -146,7 +151,8 @@
   
   /* ================= CHEF CARD ================= */
   .chef-card {
-    background: rgba(47, 47, 47, 0.8); /* 0.7 = 70% opacity */
+    background: rgba(247, 243, 243, 0.6); /* 0.7 = 70% opacity */
+    color: #111;
     padding: 20px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.5);
@@ -164,7 +170,7 @@
     border-radius: 6px;
     margin: 10px 0;
     font-weight: bold;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+    /* text-shadow: 1px 1px 4px rgba(0,0,0,0.5); */
   }
   .chef-card .note { font-size: 0.85rem; color: #ccc; margin-top: 4px; }
   

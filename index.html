@@ -183,11 +183,22 @@
       </div>
   
       <!-- Contact Details -->
-      <div class="col">
-        <h4>Contact Details</h4>
-        <p>Client Relationship</p>
-        <a href="https://wa.me/256753044293" target="_blank" class="tooltip whatsapp-link" data-tooltip="Chat with us on WhatsApp">+256 753 044 293</a>
-      </div>
+<div class="col">
+  <h4>Contact Details</h4>
+  <p>Client Relationship</p>
+
+  <a
+  href="https://wa.me/256753044293?text=Hello%20Welcome%20to%20the%20Home%20Managers%20Uganda%20family.%20We%20make%20home%20management%20effortless.%20How%20can%20we%20assist%20you%20today?"
+  target="_blank"
+  rel="noopener"
+  class="tooltip whatsapp-link"
+  data-tooltip="Chat with us on WhatsApp"
+>
+  +256 753 044 293
+</a>
+
+</div>
+
   
       <!-- Emails -->
       <div class="col">
@@ -226,11 +237,14 @@
   <!-- ================= JS ================= -->
   <script>
     /* ================= MOBILE MENU ================= */
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
+    document.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('menuToggle');
+
+  toggle.addEventListener('click', () => {
+    toggle.classList.toggle('active'); // Animate to X and back
+  });
+});
+
 
     /* ================= SLIDER ================= */
     const slides = document.querySelectorAll('.slide');
@@ -274,7 +288,27 @@
       const navbar = document.querySelector(".navbar");
       navbar.classList.toggle("scrolled", window.scrollY > 50);
     });
-  </script>
+  // </script>
 
+  <!-- ========= whatsapp prefilled message in the footer ======= -->
+  <script>
+    function openWhatsAppFooter(event) {
+      event.preventDefault();
+    
+      const phone = "256753044293";
+    
+      const message =
+        "Hello! Welcome to the Home Managers Uganda family. " +
+        "We make home management effortless, so you can enjoy a stress-free, organized home. " +
+        "How can we assist you today?";
+    
+      const encodedMessage = encodeURIComponent(message);
+    
+      const url = `https://wa.me/${phone}?text=${encodedMessage}`;
+    
+      window.open(url, "_blank");
+    }
+    </script>
+    
 </body>
 </html>
