@@ -458,7 +458,7 @@ body {
     background-color: #ffffff;              /* White background */
 
     /* Background image */
-  background-image: url('../photos/white_background.jpeg'); /* Elegant background image */
+    background-image: url('photos/white_background.jpeg'); /* Elegant background image */
   background-size: cover;                 /* Fill entire section */
   background-position: center;            /* Center focal point */
   background-repeat: no-repeat;            /* Prevent tiling */
@@ -603,7 +603,7 @@ body {
     position: relative;                                  /* For overlay positioning */
     width: 100%;                                         /* Full width section */
     padding: 60px 6%;                                    /* Vertical & horizontal spacing */
-    background: url('../photos/womaninuniforminkitchen.png') no-repeat center center; /* Background image */
+    background: url('photos/womaninuniforminkitchen.png') no-repeat center center; /* Background image */
     background-size: cover;                              /* Cover entire section */
     background-attachment: fixed;                        /* Static on scroll */
     display: flex;                                       /* Flex container */
