@@ -1,181 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ================= BASIC META ================= -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- ================= SEO META ================= -->
   <meta name="description" content="Premium home management featuring UAE-trained professionals. International standards of cleaning, cooking, and household care in Uganda.">
   <meta name="author" content="Everyday Home Helpers Uganda">
+  <meta name="robots" content="index, follow">
 
+  <!-- ================= TITLE ================= -->
   <title>Elite Home Helpers | UAE-Experienced Professionals</title>
 
+  <!-- ================= PERFORMANCE ================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- ================= FONTS ================= -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- ================= STYLES ================= -->
   <link rel="stylesheet" href="experienced_maids.css">
 </head>
+
 <body>
 
-  <div class="bg-slideshow">
+  <!-- ================= BACKGROUND SLIDESHOW ================= -->
+  <div class="bg-slideshow" aria-hidden="true">
     <div class="slide" style="background-image: url('photos/uae_kitchen_image3.jpeg');"></div>
     <div class="slide" style="background-image: url('photos/maidwashingutensils.png');"></div>
     <div class="slide" style="background-image: url('photos/uaemaid_withelderywoman.png');"></div>
   </div>
 
-  <div class="overlay"></div>
+  <div class="overlay" aria-hidden="true"></div>
 
-  <!-- Back button -->
-<a href="index.html" class="back-btn">Home</a>
-
+  <!-- ================= NAV ================= -->
+  <nav aria-label="Primary Navigation">
+    <a href="index.html" class="back-btn">Home</a>
+  </nav>
 
   <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
-<a 
-href="https://wa.me/256753044293?text=Hello!%20Welcome%20to%20the%20Home%20Managers%20Uganda%20family.%20We%20make%20home%20management%20effortless,%20so%20you%20can%20enjoy%20a%20stress-free,%20organized%20home.%20How%20can%20we%20assist%20you%20today?"
-target="_blank"
-class="floating-whatsapp"
-aria-label="Chat with us on WhatsApp"
->
-<img 
-  src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-  alt="WhatsApp icon" 
-  class="whatsapp-icon"
->
-Chat with us
-</a>
+  <a 
+    href="https://wa.me/256753044293?text=Hello!%20Welcome%20to%20the%20Home%20Managers%20Uganda%20family.%20We%20make%20home%20management%20effortless,%20so%20you%20can%20enjoy%20a%20stress-free,%20organized%20home.%20How%20can%20we%20assist%20you%20today?"
+    target="_blank"
+    class="floating-whatsapp"
+    aria-label="Chat with us on WhatsApp"
+  >
+    <img 
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp icon"
+      class="whatsapp-icon"
+      loading="lazy"
+    >
+    Chat with us
+  </a>
 
-  <section class="content-section">
+  <!-- ================= MAIN CONTENT ================= -->
+  <main>
 
-    <section class="intro-section">
-      <h1>Elite Home Management</h1>
-      <h4>UAE-Experienced Professionals | International Standards</h4>
-      <p class="intro"><strong>Premium Household Support for Discerning Homes</strong></p>
-      <!-- <p style="color: #fff; font-size: 0.9em; margin-top: 10px;"><em>All our professionals arrive fully uniformed, with house shoes, and are screened for health and fitness to perform their assigned duties. They also provide proof of permanent address for verification purposes.</em></p> -->
-      <p style="color: #fff; font-size: 1em; margin-top: 30px; margin-bottom: 50px;"><em>Our Returnee Program connects skilled professionals with families who value expertise and mutual respect. <br> </em></p>
+    <section class="content-section">
+
+      <!-- ================= INTRO ================= -->
+      <section class="intro-section">
+        <h1>Elite Home Management</h1>
+        <h4>UAE-Experienced Professionals | International Standards</h4>
+        <p class="intro"><strong>Premium Household Support for Discerning Homes</strong></p>
+
+        <p style="color: #fff; font-size: 1em; margin-top: 30px; margin-bottom: 50px;">
+          <em>
+            Our Returnee Program connects skilled professionals with families who value expertise and mutual respect.
+            <br>
+          </em>
+        </p>
+      </section>
+
+      <!-- ================= SERVICES ================= -->
+      <div class="services-grid">
+        <div class="service-item">Advanced Housekeeping (Modern appliances & surfaces)</div>
+        <div class="service-item">International & Local Meal Preparation</div>
+        <div class="service-item">Professional Laundry & Steam Ironing</div>
+        <div class="service-item">Organized Kitchen & Inventory Management</div>
+        <div class="service-item">Premium Childcare (Routines & school prep)</div>
+        <div class="service-item">Elderly Care (Hygiene, medication & companionship)</div>
+        <div class="service-item">Expert Household Organization</div>
+        <div class="service-item">Strict Professional Etiquette & Punctuality</div>
+        <div class="service-item">Fluent English & Communication</div>
+        <div class="service-item">Mandatory 1 Rest Day Per Week</div>
+        <div class="service-item">Zero-Tolerance for Mistreatment</div>
+        <div class="service-item">Safe & Dignified Working Environment</div>
+      </div>
+
+      <p class="note">
+        All our professionals arrive fully uniformed, with house shoes, and are screened for health and fitness to perform their assigned duties.
+        They also provide proof of permanent address for verification purposes.
+      </p>
+
+      <!-- ================= CATEGORIES ================= -->
+      <div class="categories-grid">
+
+        <!-- CATEGORY 1 -->
+        <div class="category">
+          <div class="number">1</div>
+          <h2>Executive / Small Home</h2>
+          <p class="subheader">Household size: 1–2 adults | 1–3 bedrooms</p>
+          <p>Chores: Specialized cleaning, laundry, and professional meal prep.</p>
+          <p class="pay">
+            Monthly Pay<br>
+            Female - Live-In: UGX 300,000 | Live-Out: UGX 350,000<br>
+            Male - Live-In: UGX 350,000 | Live-Out: UGX 350,000
+          </p>
+          <div class="cta-buttons">
+            <a target="_blank">WhatsApp Us</a>
+            <a class="btn btn-outline" target="_blank">Email Us</a>
+          </div>
+        </div>
+
+        <!-- CATEGORY 2 -->
+        <div class="category">
+          <div class="number">2</div>
+          <h2>Premium Family Home</h2>
+          <p class="subheader">Household size: 2–4 adults | 1–2 children | 2–4 bedrooms</p>
+          <p>Chores: Full household care plus advanced childcare and school routines.</p>
+          <p class="pay">
+            Monthly Pay<br>
+            Female - Live-In: UGX 400,000 | Live-Out: UGX 500,000<br>
+            Male - Live-In: UGX 500,000 | Live-Out: UGX 500,000
+          </p>
+          <div class="cta-buttons">
+            <a target="_blank">WhatsApp Us</a>
+            <a class="btn btn-outline" target="_blank">Email Us</a>
+          </div>
+        </div>
+
+        <!-- CATEGORY 3 -->
+        <div class="category">
+          <div class="number">3</div>
+          <h2>Large Estate Management</h2>
+          <p class="subheader">Household size: 4–6 adults | 2–4 children | 4–6 bedrooms</p>
+          <p>Chores: Comprehensive management of large homes and hosting support.</p>
+          <p class="pay">
+            Monthly Pay<br>
+            Female - Live-In: UGX 600,000 | Live-Out: UGX 600,000<br>
+            Male - Live-In: UGX 650,000 | Live-Out: UGX 650,000
+          </p>
+          <div class="cta-buttons">
+            <a target="_blank">WhatsApp Us</a>
+            <a class="btn btn-outline" target="_blank">Email Us</a>
+          </div>
+        </div>
+
+        <!-- CATEGORY 4 -->
+        <div class="category">
+          <div class="number">4</div>
+          <h2>Elite Elderly Care</h2>
+          <p class="subheader">Household size: 1–3 supporting family members | 1–2 elderly | 2–4 bedrooms</p>
+          <p>Chores: Full household management including Dedicated elderly support and companionship.</p>
+          <p class="pay">
+            Monthly Pay<br>
+            Female - Live-In: UGX 600,000 | Live-Out: UGX 600,000<br>
+            Male - Live-In: UGX 600,000 | Live-Out: UGX 600,000
+          </p>
+          <div class="cta-buttons">
+            <a target="_blank">WhatsApp Us</a>
+            <a class="btn btn-outline" target="_blank">Email Us</a>
+          </div>
+        </div>
+
+        <!-- CATEGORY 5 -->
+        <div class="category">
+          <div class="number">5</div>
+          <h2>Luxury Multi-Staff Estates</h2>
+          <p class="subheader">Household size: 6–10 adults | 3–5 children | Up to 10 bedrooms</p>
+          <p>Chores: Full-scale management and oversight of domestic operations.</p>
+          <p class="pay">
+            Monthly Pay<br>
+            Female - Live-In: UGX 800,000 | Live-Out: UGX 800,000<br>
+            Male - Live-In: UGX 800,000 | Live-Out: UGX 800,000
+          </p>
+          <div class="cta-buttons">
+            <a target="_blank">WhatsApp Us</a>
+            <a class="btn btn-outline" target="_blank">Email Us</a>
+          </div>
+        </div>
+
+        <!-- CATEGORY 6 -->
+        <div class="category">
+          <div class="number">6</div>
+          <h2>Bespoke Short-Term Elite</h2>
+          <p class="subheader">Events, holiday support, or deep-cleaning turnarounds.</p>
+          <p>Chores: Tailored to premium requirements.</p>
+          <p class="pay">Pricing varies by scope. Contact us for a premium quote.</p>
+          <div class="cta-buttons">
+            <a target="_blank">WhatsApp Us</a>
+            <a class="btn btn-outline" target="_blank">Email Us</a>
+          </div>
+        </div>
+
+      </div>
+
     </section>
+  </main>
 
-    <div class="services-grid">
-      <div class="service-item">Advanced Housekeeping (Modern appliances & surfaces)</div>
-      <div class="service-item">International & Local Meal Preparation</div>
-      <div class="service-item">Professional Laundry & Steam Ironing</div>
-      <div class="service-item">Organized Kitchen & Inventory Management</div>
-      <div class="service-item">Premium Childcare (Routines & school prep)</div>
-      <div class="service-item">Elderly Care (Hygiene, medication & companionship)</div>
-      <div class="service-item">Expert Household Organization</div>
-      <div class="service-item">Strict Professional Etiquette & Punctuality</div>
-      <div class="service-item">Fluent English & Communication</div>
-      <div class="service-item">Mandatory 1 Rest Day Per Week</div>
-      <div class="service-item">Zero-Tolerance for Mistreatment</div>
-      <div class="service-item">Safe & Dignified Working Environment</div>
-    </div>
-
-    <p class="note">All our professionals arrive fully uniformed, with house shoes, and are screened for health and fitness to perform their assigned duties. They also provide proof of permanent address for verification purposes.</p>
-
-    <div class="categories-grid">
-
-      <div class="category">
-        <div class="number">1</div>
-        <h2>Executive / Small Home</h2>
-        <p class="subheader">Household size: 1–2 adults | 1–3 bedrooms</p>
-        <p>Chores: Specialized cleaning, laundry, and professional meal prep.</p>
-        <p class="pay"> Monthly Pay<br>Female - Live-In: UGX 300,000 | Live-Out: UGX 350,000<br>Male - Live-In: UGX 350,000 | Live-Out: UGX 350,000</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/256753044293?text=Inquiry:+Elite+Small+Home+Service" target="_blank">WhatsApp Us</a>
-          <a href="https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Elite%20Home%20Inquiry" class="btn btn-outline" target="_blank">Email Us</a>
-        </div>
-      </div>
-
-      <div class="category">
-        <div class="number">2</div>
-        <h2>Premium Family Home</h2>
-        <p class="subheader">Household size: 2–4 adults | 1–2 children | 2–4 bedrooms</p>
-        <p>Chores: Full household care plus advanced childcare and school routines.</p>
-        <p class="pay"> Monthly Pay<br>Female - Live-In: UGX 400,000 | Live-Out: UGX 500,000<br>Male - Live-In: UGX 500,000 | Live-Out: UGX 500,000</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/256753044293?text=Inquiry:+Elite+Family+Home+Service" target="_blank">WhatsApp Us</a>
-          <a href="https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Elite%20Home%20Inquiry" class="btn btn-outline" target="_blank">Email Us</a>
-        </div>
-      </div>
-
-      <div class="category">
-        <div class="number">3</div>
-        <h2>Large Estate Management</h2>
-        <p class="subheader">Household size: 4–6 adults | 2–4 children | 4–6 bedrooms</p>
-        <p>Chores: Comprehensive management of large homes and hosting support.</p>
-        <p class="pay"> Monthly Pay<br>Female - Live-In: UGX 600,000 | Live-Out: UGX 600,000<br>Male - Live-In: UGX 650,000 | Live-Out: UGX 650,000</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/256753044293?text=Inquiry:+Elite+Large+Estate+Service" target="_blank">WhatsApp Us</a>
-          <a href="https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Elite%20Home%20Inquiry" class="btn btn-outline" target="_blank">Email Us</a>
-        </div>
-      </div>
-
-      <div class="category">
-        <div class="number">4</div>
-        <h2>Elite Elderly Care</h2>
-        <p class="subheader">Household size: 1–3  supporting family members | 1–2 elderly | 2–4 bedrooms</p>
-        <p>Chores: Full household management including Dedicated elderly support and companionship.</p>
-        <p class="pay"> Monthly Pay<br>Female - Live-In: UGX 600,000 | Live-Out: UGX 600,000<br>Male - Live-In: UGX 600,000 | Live-Out: UGX 600,000</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/256753044293?text=Inquiry:+Elite+Elderly+Care" target="_blank">WhatsApp Us</a>
-          <a href="https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Elite%20Home%20Inquiry" class="btn btn-outline" target="_blank">Email Us</a>
-        </div>
-      </div>
-
-      <div class="category">
-        <div class="number">5</div>
-        <h2>Luxury Multi-Staff Estates</h2>
-        <p class="subheader">Household size: 6–10 adults | 3–5 children | Up to 10 bedrooms</p>
-        <p>Chores: Full-scale management and oversight of domestic operations.</p>
-        <p class="pay"> Monthly Pay<br>Female - Live-In: UGX 800,000 | Live-Out: UGX 800,000<br>Male - Live-In: UGX 800,000 | Live-Out: UGX 800,000</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/256753044293?text=Inquiry:+Elite+Luxury+Estate" target="_blank">WhatsApp Us</a>
-          <a href="https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Elite%20Home%20Inquiry" class="btn btn-outline" target="_blank">Email Us</a>
-        </div>
-      </div>
-
-      <div class="category">
-        <div class="number">6</div>
-        <h2>Bespoke Short-Term Elite</h2>
-        <p class="subheader">Events, holiday support, or deep-cleaning turnarounds.</p>
-        <p>Chores: Tailored to premium requirements.</p>
-        <p class="pay"> Pricing varies by scope. Contact us for a premium quote.</p>
-        <div class="cta-buttons">
-          <a href="https://wa.me/256753044293?text=Inquiry:+Elite+Specialized+Services" target="_blank">WhatsApp Us</a>
-          <a href="https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Elite%20Home%20Inquiry" class="btn btn-outline" target="_blank">Email Us</a>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ============== JS for whatsapp and email category buttons =========== -->
+  <!-- ================= CTA SCRIPT ================= -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Select all category cards
       const categories = document.querySelectorAll('.category');
-    
+
       categories.forEach(category => {
-        // Get the category title
         const title = category.querySelector('h2').innerText;
-    
-        // Get all relevant text under the category
         let details = [];
+
         category.querySelectorAll('p, .pay').forEach(p => {
           details.push(p.innerText);
         });
-    
-        // Combine into a single message
+
         const message = `Hello, I am interested in ${title}:\n\n${details.join('\n')}`;
-    
-        // Encode for URL
         const encodedMessage = encodeURIComponent(message);
-    
-        // Set WhatsApp button href
+
         const whatsappBtn = category.querySelector('.cta-buttons a:nth-child(1)');
-        if(whatsappBtn) whatsappBtn.href = `https://wa.me/256753044293?text=${encodedMessage}`;
-    
-        // Set Email button href
+        if (whatsappBtn) {
+          whatsappBtn.href = `https://wa.me/256753044293?text=${encodedMessage}`;
+        }
+
         const emailBtn = category.querySelector('.cta-buttons a:nth-child(2)');
-        if(emailBtn) emailBtn.href = `https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=${encodeURIComponent(title + ' Inquiry')}&body=${encodedMessage}`;
+        if (emailBtn) {
+          emailBtn.href = `https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=${encodeURIComponent(title + ' Inquiry')}&body=${encodedMessage}`;
+        }
       });
     });
-    </script>
-    
+  </script>
+
 </body>
 </html>

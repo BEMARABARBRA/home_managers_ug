@@ -13,12 +13,16 @@
   <meta name="description" content="Home Managers Uganda provides professional home management services including housekeeping, childcare, senior care, and pet care. Trust our highly vetted staff for a perfectly managed home.">
   <meta name="keywords" content="Home management Uganda, housekeeping services, child care, senior care, domestic help, professional maids">
   <meta name="author" content="Home Managers Uganda">
+  <meta name="robots" content="index, follow">
+
+  <!-- ================= CANONICAL ================= -->
+  <link rel="canonical" href="https://bemarabarbra.github.io/home_managers_ug/">
 
   <!-- ================= OPEN GRAPH / SOCIAL SHARING ================= -->
   <meta property="og:title" content="Home Managers Uganda">
   <meta property="og:description" content="Professional home management services including housekeeping, childcare, senior care, and pet care.">
-  <meta property="og:image" content="/photos/3maids_in_uniform.png">
-  <meta property="og:url" content="https://BEMARABARBRA.github.io/home_managers_ug/">
+  <meta property="og:image" content="photos/3maids_in_uniform.png">
+  <meta property="og:url" content="https://bemarabarbra.github.io/home_managers_ug/">
   <meta property="og:type" content="website">
 
   <!-- ================= FONT ================= -->
@@ -32,24 +36,21 @@
 <body>
 
   <!-- ================= NAVBAR ================= -->
-  <nav class="navbar">
-    <!-- Logo -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+
     <div class="logo">
       <a href="index.html">Home Managers Uganda</a>
     </div>
-    
-    <!-- Mobile menu toggle -->
-    <div class="menu-toggle" id="menuToggle">
+
+    <div class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </div>
 
-    <!-- Navigation links -->
     <div class="nav-links" id="navLinks">
       <a href="about.html">About</a>
       <a href="localmaids.html">Local Housemaids</a>
       <a href="experienced_maids.html">Experienced Housemaids</a>
       <a href="home_chefs.html">Home Chefs</a>
-      <!-- <a href="#">Memberships</a> -->
       <a href="book_now.html">Book Now</a>
     </div>
 
@@ -58,23 +59,20 @@
   <!-- ================= HERO SLIDER ================= -->
   <header class="slider">
 
-    <!-- Slides with descriptive alt text for SEO -->
-    <img src="photos/womanwithbabyplaying.png" class="slide active" alt="Home manager playing with baby">
-<img src="photos/womaninthekitchen.png" class="slide" alt="Professional maid working in the kitchen">
-<img src="photos/maninuniformironing.png" class="slide" alt="Home manager ironing clothes">
-<img src="photos/maidfeedinganoldwoman.png" class="slide" alt="Caregiver feeding an elderly woman">
-<img src="photos/dogwithmaid.png" class="slide" alt="Home manager taking care of a pet dog">
+    <img src="photos/womanwithbabyplaying.png" class="slide active" alt="Home manager playing with baby" loading="eager" decoding="async">
+    <img src="photos/womaninthekitchen.png" class="slide" alt="Professional maid working in the kitchen" loading="lazy" decoding="async">
+    <img src="photos/maninuniformironing.png" class="slide" alt="Home manager ironing clothes" loading="lazy" decoding="async">
+    <img src="photos/maidfeedinganoldwoman.png" class="slide" alt="Caregiver feeding an elderly woman" loading="lazy" decoding="async">
+    <img src="photos/dogwithmaid.png" class="slide" alt="Home manager taking care of a pet dog" loading="lazy" decoding="async">
 
-    <!-- Overlay -->
     <div class="overlay"></div>
 
-    <!-- Hero text -->
     <div class="hero-content">
       <h1 id="hero-title"></h1>
       <p id="hero-subtitle"></p>
     </div>
 
-  </header> 
+  </header>
 
   <!-- ================= FLOATING WHATSAPP BUTTON ================= -->
   <a 
@@ -83,7 +81,7 @@
     class="floating-whatsapp"
     aria-label="Chat with us on WhatsApp"
   >
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp icon" class="whatsapp-icon">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp icon" class="whatsapp-icon" loading="lazy">
     Chat with us
   </a>
 
@@ -91,13 +89,11 @@
   <div class="hero-section">
     <div class="hero-row">
 
-      <!-- Image Column -->
       <div class="hero-image">
-        <img src="photos/3maids_in_uniform.png" alt="Professional Home Managers Uganda staff">
-        <div class="cover-star"></div> <!-- overlay to hide star if present -->
+        <img src="photos/3maids_in_uniform.png" alt="Professional Home Managers Uganda staff" loading="lazy" decoding="async">
+        <div class="cover-star"></div>
       </div>
 
-      <!-- Text Column -->
       <div class="hero-text glass-box">
         <h1><strong>Home Managers Uganda</strong></h1>
         <h3><strong>Your Home. Perfectly Managed.</strong></h3>
@@ -114,7 +110,6 @@
         </p>
 
         <h4><strong><em>Experience home management that sets the standard.</em></strong></h4>
-
       </div>
 
     </div>
@@ -126,31 +121,31 @@
 
     <div class="row">
       <div class="col">
-        <img src="photos/excellence_icon.png" alt="Excellence icon">
+        <img src="photos/excellence_icon.png" alt="Excellence icon" loading="lazy">
         <h5>Excellence</h5>
         <p>Setting the benchmark for professional home management.</p>
       </div>
 
       <div class="col">
-        <img src="photos/Discretion_icon.png" alt="Discretion icon">
+        <img src="photos/Discretion_icon.png" alt="Discretion icon" loading="lazy">
         <h5>Discretion</h5>
         <p>Absolute privacy for you and your family.</p>
       </div>
 
       <div class="col">
-        <img src="photos/Precision_icon.png" alt="Precision icon">
+        <img src="photos/Precision_icon.png" alt="Precision icon" loading="lazy">
         <h5>Precision</h5>
         <p>Meticulous attention to every detail of your household.</p>
       </div>
 
       <div class="col">
-        <img src="photos/Reliability_icon.png" alt="Reliability icon">
+        <img src="photos/Reliability_icon.png" alt="Reliability icon" loading="lazy">
         <h5>Reliability</h5>
         <p>Trusted professionals who show up and deliver, every time.</p>
       </div>
 
       <div class="col">
-        <img src="photos/Selectivity_icon.png" alt="Selectivity icon">
+        <img src="photos/Selectivity_icon.png" alt="Selectivity icon" loading="lazy">
         <h5>Selectivity</h5>
         <p>Hand-picking only the top 1% of domestic talent.</p>
       </div>
@@ -165,42 +160,35 @@
     </p>
   </section>
 
+  <!-- ================= FOOTER (UNCHANGED) ================= -->
   <footer class="footer">
-
     <div class="row">
-  
-      <!-- Brand / Logo -->
+
       <div class="col">
         <div class="logo">
           <a href="index.html" title="Home Managers Uganda">Home Managers Uganda</a>
         </div>
       </div>
-  
-      <!-- Address -->
+
       <div class="col">
         <h4>Address</h4>
         <p>Plot 443, Akright Estate, Entebbe Road</p>
       </div>
-  
-      <!-- Contact Details -->
-<div class="col">
-  <h4>Contact Details</h4>
-  <p>Client Relationship</p>
 
-  <a
-  href="https://wa.me/256753044293?text=Hello%20Welcome%20to%20the%20Home%20Managers%20Uganda%20family.%20We%20make%20home%20management%20effortless.%20How%20can%20we%20assist%20you%20today?"
-  target="_blank"
-  rel="noopener"
-  class="tooltip whatsapp-link"
-  data-tooltip="Chat with us on WhatsApp"
->
-  +256 753 044 293
-</a>
+      <div class="col">
+        <h4>Contact Details</h4>
+        <p>Client Relationship</p>
+        <a
+          href="https://wa.me/256753044293?text=Hello%20Welcome%20to%20the%20Home%20Managers%20Uganda%20family.%20We%20make%20home%20management%20effortless.%20How%20can%20we%20assist%20you%20today?"
+          target="_blank"
+          rel="noopener"
+          class="tooltip whatsapp-link"
+          data-tooltip="Chat with us on WhatsApp"
+        >
+          +256 753 044 293
+        </a>
+      </div>
 
-</div>
-
-  
-      <!-- Emails -->
       <div class="col">
         <h4>Emails</h4>
         <p>Business Development</p>
@@ -215,38 +203,30 @@
             barbarabemara@gmail.com
           </a>
         </p>
-        
       </div>
-  
-      <!-- Social Links -->
+
       <div class="col">
         <h4>Socials</h4>
         <p><a href="https://www.facebook.com/" target="_blank" class="tooltip social-link facebook" data-tooltip="Visit our Facebook page">Facebook</a></p>
         <p><a href="https://www.linkedin.com/" target="_blank" class="tooltip social-link linkedin" data-tooltip="Visit our LinkedIn profile">LinkedIn</a></p>
       </div>
-  
-      <!-- Copyright -->
+
       <div class="col copyright">
         <p>&copy; 2024 Home Managers Uganda. All rights reserved.</p>
       </div>
-  
+
     </div>
   </footer>
-  
 
   <!-- ================= JS ================= -->
   <script>
-    /* ================= MOBILE MENU ================= */
     document.addEventListener('DOMContentLoaded', () => {
-  const toggle = document.getElementById('menuToggle');
+      const toggle = document.getElementById('menuToggle');
+      toggle.addEventListener('click', () => {
+        toggle.classList.toggle('active');
+      });
+    });
 
-  toggle.addEventListener('click', () => {
-    toggle.classList.toggle('active'); // Animate to X and back
-  });
-});
-
-
-    /* ================= SLIDER ================= */
     const slides = document.querySelectorAll('.slide');
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle = document.getElementById('hero-subtitle');
@@ -283,32 +263,11 @@
   </script>
 
   <script>
-    // Navbar scroll effect
     window.addEventListener("scroll", function () {
       const navbar = document.querySelector(".navbar");
       navbar.classList.toggle("scrolled", window.scrollY > 50);
     });
-  // </script>
+  </script>
 
-  <!-- ========= whatsapp prefilled message in the footer ======= -->
-  <script>
-    function openWhatsAppFooter(event) {
-      event.preventDefault();
-    
-      const phone = "256753044293";
-    
-      const message =
-        "Hello! Welcome to the Home Managers Uganda family. " +
-        "We make home management effortless, so you can enjoy a stress-free, organized home. " +
-        "How can we assist you today?";
-    
-      const encodedMessage = encodeURIComponent(message);
-    
-      const url = `https://wa.me/${phone}?text=${encodedMessage}`;
-    
-      window.open(url, "_blank");
-    }
-    </script>
-    
 </body>
 </html>
