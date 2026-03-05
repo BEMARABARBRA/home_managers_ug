@@ -1,195 +1,182 @@
-/* ================= RESET ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  /* ================= BODY ================= */
-  body {
-    background: #111; /* dark grey */
-    color: #fff;
-    overflow-x: hidden;
-    line-height: 1.4;
-  }
-  
-  /* ================= SLIDESHOW ================= */
-  .bg-slideshow {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2;
-    overflow: hidden;
-  }
-  
-  .bg-slideshow .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-  
-  /* ================= OVERLAY ================= */
-  .overlay {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    z-index: -1;
-  }
-  
-  /* ================= BACK BUTTON ================= */
-.back-btn {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(34, 34, 34, 0.85);
-    /*Darkgreyforcompanycolor*/backdrop-filter: blur(10px);
-    padding: 12px 20px;
-    border-radius: 10px;
-    color: #fff;
-    font-weight: 700;
-    text-decoration: none;
-    border: 2px solid rgba(255, 255, 255, 0.6);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    z-index: 1000;
-    transition: all 0.3s ease;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-  }
-  .back-btn:hover {
-    background: #111; /* Darker grey hover */
-    transform: translateY(-2px); 
-  }
-  
-  
-  /* ==================== FLOATING WHATSAPP ===================== */
+/* ==========================
+   Basic Body Styling
+========================== */
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  font-family: 'Montserrat', sans-serif; /* Font style */
+  background-color: #f5f5f5; /* Light background for readability */
+  color: #2c2c2c; /* Default text color */
+}
 
-.floating-whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  padding: 10px 16px;
-  border-radius: 50px;
+/* ==========================
+ Page Wrapper
+========================== */
+.page-wrapper {
+  max-width: 1200px; /* Limit content width for large screens */
+  margin: 0 auto; /* Center content */
+  padding: 20px; /* Padding around content */
+}
+
+/* ==========================
+ Header Section
+========================== */
+.chef-header {
+  text-align: center; /* Center align header content */
+  margin-bottom: 40px; /* Space below header */
+}
+
+.logo-area {
   display: flex;
   align-items: center;
-  gap: 8px;
-  color: #fff;
+  justify-content: center;
+  gap: 10px; /* Space between icon and text */
+  margin-bottom: 10px;
+}
+
+.logo-icon {
+  font-size: 36px; /* Logo icon size */
+  color: #2c2c2c;
+}
+
+.logo-text {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.title-area .main-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 10px 0;
+}
+
+.accent-subtitle-box {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ff6600; /* Accent color */
+}
+
+/* ==========================
+ Chef Packages Section
+========================== */
+.chef-packages {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+}
+
+/* ==========================
+ Individual Chef Card
+========================== */
+.chef-card {
+  background-color: #ffffff; /* Card background */
+  border-radius: 12px; /* Rounded corners */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+}
+
+.chef-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+.chef-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.chef-price {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ff6600;
+  margin-bottom: 15px;
+}
+
+/* ==========================
+ Chef Highlights
+========================== */
+.chef-highlights {
+  list-style: none; /* Remove bullets */
+  padding: 0;
+  margin: 0 0 15px 0;
+}
+
+.chef-highlights li {
+  background-color: #f0f0f0; /* Highlight bubble */
+  padding: 6px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  margin: 0 5px 5px 0; /* Small spacing */
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* ==========================
+ Description & Book Button
+========================== */
+.chef-desc {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.book-btn {
   text-decoration: none;
-  z-index: 10;
+  text-align: center;
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: background-color 0.3s ease;
 }
 
-.whatsapp-icon {
-  width: 24px;
-}
-  /* ===================whatsapp and email category buttons ========================= */
-  .cta-buttons {
-    display: flex;
-    gap: 12px;
-    margin-top: 12px;
-  }
-  
-  .cta-buttons a {
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    color: #fff;
-    transition: 0.3s;
-  }
-  
-  .cta-buttons .btn-whatsapp { 
-    background: #1b9448;
-   }
-  .cta-buttons .btn-whatsapp:hover { 
-    opacity: 0.85; 
-    background-color: #25D366;}
-  
-  .cta-buttons .btn-email {
-     background: #f8f3f3;
-     color: black;
-    
-    }
-  .cta-buttons .btn-email:hover { 
-    opacity: 0.85; 
-    background-color: #111;
-    color: #fff;
-  }
-
-  
-  
-  /* ================= HERO ================= */
-  .hero {
-    text-align: center;
-    padding: 80px 5% 40px 5%;
-  }
-
-  .hero h1 { 
-    font-size: 3.5rem; 
-    font-weight: 900; 
-    margin-bottom: 10px; 
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+.book-btn:hover {
+  background-color: #e65c00;
 }
 
-  .hero .subtitle { 
-    font-size: 1.5rem; 
-    margin-bottom: 15px; 
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+/* ==========================
+ Footer Section
+========================== */
+.chef-footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #555;
 }
 
-  .hero .intro { 
-    font-size: 1.1rem; 
-    max-width: 800px; 
-    margin: auto; 
-    line-height: 1.5; 
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.9);
+.footer-contact i {
+  color: #25D366; /* WhatsApp green */
+  margin-right: 5px;
 }
-  
-  /* ================= CHEF CARDS GRID ================= */
-  .chef-cards {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row */
-    gap: 20px;
-    padding: 20px 5%;
+
+/* ==========================
+ Responsive Adjustments
+========================== */
+@media (max-width: 768px) {
+  .chef-header .main-title {
+      font-size: 28px;
   }
-  
-  /* ================= CHEF CARD ================= */
+
   .chef-card {
-    background: rgba(247, 243, 243, 0.6); /* 0.7 = 70% opacity */
-    color: #111;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 15px;
   }
-  .chef-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+
+  .chef-highlights li {
+      font-size: 13px;
   }
-  .chef-card h3 { font-size: 1.6rem; margin-bottom: 6px; }
-  .chef-card .focus, .chef-card .best-for, .chef-card .key-difference { font-size: 0.95rem; margin-bottom: 6px; }
-  .chef-card .pricing {
-    background: #4a4a4a;
-    padding: 10px;
-    border-radius: 6px;
-    margin: 10px 0;
-    font-weight: bold;
-    /* text-shadow: 1px 1px 4px rgba(0,0,0,0.5); */
+}
+
+@media (max-width: 480px) {
+  .chef-header .main-title {
+      font-size: 24px;
   }
-  .chef-card .note { font-size: 0.85rem; color: #ccc; margin-top: 4px; }
-  
-  /* ================= RESPONSIVE ================= */
-  @media screen and (max-width: 768px){
-    .hero h1 { font-size: 2rem; }
-    .hero .subtitle { font-size: 1rem; }
-    .chef-cards { grid-template-columns: 1fr; }
+
+  .chef-card {
+      padding: 12px;
   }
-  
+}
