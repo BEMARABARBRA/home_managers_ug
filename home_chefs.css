@@ -1,182 +1,751 @@
-/* ==========================
-   Basic Body Styling
-========================== */
+/* ================================================== */
+/* GLOBAL RESET & BASE STYLES                         */
+/* ================================================== */
+
+/* Apply box-sizing border-box to all elements to prevent padding overflow */
+* {
+  /* Include padding and borders in the element's total width and height */
+  box-sizing: border-box;
+  /* Remove default margins applied by browsers */
+  margin: 0;
+  /* Remove default paddings applied by browsers */
+  padding: 0;
+/* Close universal selector */
+}
+
+/* Base styles for the entire body */
 body {
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove default padding */
-  font-family: 'Montserrat', sans-serif; /* Font style */
-  background-color: #f5f5f5; /* Light background for readability */
-  color: #2c2c2c; /* Default text color */
+  /* Main body font set to Montserrat, fallback to sans-serif */
+  font-family: 'Montserrat', sans-serif;
+  /* Set a dark background color in case the flyer doesn't reach the bottom on massive screens */
+  background-color: #111;
+  /* Hide horizontal overflow to prevent side-scrolling */
+  overflow-x: hidden;
+/* Close body selector */
 }
 
-/* ==========================
- Page Wrapper
-========================== */
-.page-wrapper {
-  max-width: 1200px; /* Limit content width for large screens */
-  margin: 0 auto; /* Center content */
-  padding: 20px; /* Padding around content */
-}
+/* ================================================== */
+/* FLOATING ACTION BUTTONS                            */
+/* ================================================== */
 
-/* ==========================
- Header Section
-========================== */
-.chef-header {
-  text-align: center; /* Center align header content */
-  margin-bottom: 40px; /* Space below header */
-}
-
-.logo-area {
+/* Shared styles for both floating buttons */
+.floating-btn {
+  /* Position buttons fixed relative to the browser window */
+  position: fixed;
+  /* Ensure buttons stay above all flyer content */
+  z-index: 9999;
+  /* Display as flex to align icons and text */
   display: flex;
-  align-items: center;
+  /* Center contents horizontally */
   justify-content: center;
-  gap: 10px; /* Space between icon and text */
-  margin-bottom: 10px;
+  /* Center contents vertically */
+  align-items: center;
+  /* Remove default link underlines */
+  text-decoration: none;
+  /* Apply a smooth transition for hover effects */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* Add a premium drop shadow */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+/* Close shared floating btn selector */
 }
 
-.logo-icon {
-  font-size: 36px; /* Logo icon size */
-  color: #2c2c2c;
+/* Hover effect for both floating buttons */
+.floating-btn:hover {
+  /* Scale the button up slightly on hover */
+  transform: scale(1.05);
+/* Close hover state */
 }
 
-.logo-text {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.title-area .main-title {
-  font-size: 32px;
-  font-weight: 700;
-  margin: 10px 0;
-}
-
-.accent-subtitle-box {
-  font-size: 16px;
+/* Specific styles for the Back button */
+.btn-back {
+  /* Distance from the top of the screen */
+  top: 20px;
+  /* Distance from the left of the screen */
+  left: 20px;
+  /* Dark grey background */
+  background-color: #333333;
+  /* White text color */
+  color: #ffffff;
+  /* Top/bottom padding 10px, left/right padding 20px */
+  padding: 10px 20px;
+  /* Round corners fully to make a pill shape */
+  border-radius: 30px;
+  /* Set font size */
+  font-size: 14px;
+  /* Set font weight to bold */
   font-weight: 600;
-  color: #ff6600; /* Accent color */
+  /* Add a small gap between icon and text */
+  gap: 8px;
+  /* Thin white border for premium contrast */
+  border: 1px solid #555555;
+/* Close back button selector */
 }
 
-/* ==========================
- Chef Packages Section
-========================== */
-.chef-packages {
+/* Hover background change for Back button */
+.btn-back:hover {
+  /* Change background to a lighter grey on hover */
+  background-color: #555555;
+/* Close hover state */
+}
+
+/* Specific styles for the WhatsApp button */
+.btn-wa {
+  /* Distance from the bottom of the screen */
+  bottom: 100px;
+  /* Distance from the right of the screen */
+  right: 30px;
+  /* Official WhatsApp Green background */
+  background-color: #25D366;
+  /* Pure white icon color for high contrast */
+  color: #ffffff;
+  /* Fixed width to make a perfect circle */
+  width: 60px;
+  /* Fixed height to match width */
+  height: 60px;
+  /* Fully rounded corners to create a circle */
+  border-radius: 50%;
+  /* Huge font size for the WhatsApp icon */
+  font-size: 32px;
+/* Close WA button selector */
+}
+
+/* Hover background change for WhatsApp button */
+.btn-wa:hover {
+  /* Darker WhatsApp green on hover (#128C7E is their official dark green) */
+  background-color: #538c12;
+  /* Keep icon white on hover */
+  color: #ffffff;
+/* Close hover state */
+}
+
+/* ================================================== */
+/* MAIN FLYER WRAPPER                                 */
+/* ================================================== */
+
+/* Wrapper covering the full page */
+.flyer-wrapper {
+  /* Make wrapper take at least full viewport height */
+  min-height: 100vh;
+  /* Make wrapper take full width */
+  width: 100%;
+  /* Display as flexbox to easily stack top and bottom sections */
+  display: flex;
+  /* Stack elements vertically */
+  flex-direction: column;
+/* Close wrapper selector */
+}
+
+/* ================================================== */
+/* FLYER TOP SECTION (LIGHT THEME)                    */
+/* ================================================== */
+
+/* Container for the light top half */
+.flyer-top {
+  /* Position relative to contain absolute background and circles */
+  position: relative;
+  /* Set background color to light grey */
+  background-color: #f2f2f2;
+  /* Add generous padding. Extra bottom padding to leave room for overlapping circles */
+  padding: 60px 20px 140px;
+  /* Center align all text inside */
+  text-align: center;
+  /* Ensure it has a z-index context */
+  z-index: 1;
+/* Close top section selector */
+}
+
+/* Sunburst background effect mimicking flyer texture */
+.sunburst-bg {
+  /* Position absolute to cover the entire top section */
+  position: absolute;
+  /* Stretch to top */
+  top: 0;
+  /* Stretch to left */
+  left: 0;
+  /* 100% width of parent */
+  width: 100%;
+  /* 100% height of parent */
+  height: 100%;
+  /* CSS conic gradient to create alternating light grey rays */
+  background: repeating-conic-gradient(from 0deg, #f2f2f2 0deg 10deg, #e8e8e8 10deg 20deg);
+  /* Push background behind text */
+  z-index: -1;
+/* Close sunburst selector */
+}
+
+/* Container for cursive, title, and ribbon */
+.title-container {
+  /* Relative positioning to adjust vertical placement easily */
+  position: relative;
+  /* Push content down slightly */
+  margin-top: 20px;
+/* Close title container selector */
+}
+
+/* Cursive 'Premium' text replacing flyer's 'Special' */
+.cursive-text {
+  /* Use elegant cursive font */
+  font-family: 'Great Vibes', cursive;
+  /* Huge font size */
+  font-size: 70px;
+  /* Dark grey color */
+  color: #333333;
+  /* Shift text downwards to overlap the main title slightly like the flyer */
+  margin-bottom: -35px;
+  /* Shift text slightly to the right */
+  margin-left: -100px;
+  /* Elevate z-index so it sits above the bold title */
+  position: relative;
+  z-index: 2;
+  /* Slight angle rotation to match flyer dynamism */
+  transform: rotate(-5deg);
+/* Close cursive text selector */
+}
+
+/* Main massive 'CHEF SOURCING' text replacing 'FOOD MENU' */
+.main-title {
+  /* Use Oswald for tall, bold, industrial look */
+  font-family: 'Oswald', sans-serif;
+  /* Extremely large font size */
+  font-size: 90px;
+  /* Force uppercase */
+  text-transform: uppercase;
+  /* Very dark grey color */
+  color: #1a1a1a;
+  /* Squeeze letter spacing for blocky look */
+  letter-spacing: -2px;
+  /* Squeeze line height */
+  line-height: 1;
+  /* Add text shadow to lift it off the background */
+  text-shadow: 4px 4px 0px #ffffff, 6px 6px 10px rgba(0,0,0,0.1);
+/* Close main title selector */
+}
+
+/* Ribbon styled container replacing 'BEST RESTAURANT IN TOWN' */
+.ribbon-box {
+  /* Inline-block so background wraps tightly around text */
+  display: inline-block;
+  /* Dark grey background */
+  background-color: #222222;
+  /* White text */
+  color: #ffffff;
+  /* Add padding inside the ribbon */
+  padding: 8px 30px;
+  /* Margin to push it down from main title */
+  margin-top: 10px;
+  /* Relative position for decorative arrows (if added later) */
+  position: relative;
+/* Close ribbon box selector */
+}
+
+/* Text inside the ribbon */
+.ribbon-box span {
+  /* Oswald font */
+  font-family: 'Oswald', sans-serif;
+  /* Uppercase text */
+  text-transform: uppercase;
+  /* Letter spacing for premium feel */
+  letter-spacing: 2px;
+  /* Font size */
+  font-size: 16px;
+  /* Font weight */
+  font-weight: 500;
+/* Close ribbon text selector */
+}
+
+/* ================================================== */
+/* OVERLAPPING CENTER CIRCLES                         */
+/* ================================================== */
+
+/* Wrapper holding the 3 circles */
+.center-circles-wrapper {
+  /* Position absolute to allow overlapping the top and bottom sections */
+  position: absolute;
+  /* Anchor to bottom of the light section */
+  bottom: 0;
+  /* Anchor to horizontal center */
+  left: 50%;
+  /* Translate -50% horizontally to perfectly center, +50% vertically to drop half into the dark section */
+  transform: translate(-50%, 50%);
+  /* Flexbox to align the 3 circles in a row */
+  display: flex;
+  /* Center them horizontally */
+  justify-content: center;
+  /* Align them vertically in the middle */
+  align-items: center;
+  /* Ensure they sit above backgrounds */
+  z-index: 10;
+/* Close circles wrapper selector */
+}
+
+/* Shared styles for all 3 circles */
+.circle {
+  /* Perfectly round shape */
+  border-radius: 50%;
+  /* Thick white border matching flyer aesthetic */
+  border: 8px solid #ffffff;
+  /* Dark grey background inside circle */
+  background-color: #222222;
+  /* Flexbox to center the icons inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Strong drop shadow for 3D effect */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+/* Close shared circle selector */
+}
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fills the circle without squishing */
+  border-radius: 50%; /* Makes the image perfectly round to match the div */
+}
+/* Icons inside the circles */
+.circle i {
+  /* White color for icons */
+  color: #ffffff;
+/* Close circle icon selector */
+}
+
+/* Specific size for the large center circle */
+.center-circle {
+  /* Width */
+  width: 240px;
+  /* Height */
+  height: 240px;
+  /* Highest z-index so it overlaps the side circles */
+  z-index: 3;
+  /* Negative horizontal margin to pull the side circles underneath it */
+  margin: 0 -30px;
+  /* Extra thick border for the center one */
+  border-width: 10px;
+/* Close center circle selector */
+}
+
+/* Set massive icon size for center */
+.center-circle i {
+  font-size: 80px;
+}
+
+/* Specific size for the two side circles */
+.side-circle {
+  /* Smaller width */
+  width: 160px;
+  /* Smaller height */
+  height: 160px;
+  /* Lower z-index so center overlaps them */
+  z-index: 2;
+/* Close side circle selector */
+}
+
+/* Set smaller icon size for side circles */
+.side-circle i {
+  font-size: 50px;
+}
+
+/* ================================================== */
+/* FLYER BOTTOM SECTION (DARK THEME)                  */
+/* ================================================== */
+
+/* Container for the dark bottom half */
+.flyer-bottom {
+  /* Allow element to grow and fill remaining vertical space */
+  flex-grow: 1;
+  /* Very dark grey background */
+  background-color: #1a1a1a;
+  /* Top padding is huge to clear the overlapping center circles */
+  padding: 160px 40px 60px;
+/* Close bottom section selector */
+}
+
+/* Grid layout for the menu columns */
+.menu-grid {
+  /* Max width to keep lines readable, auto margins to center */
+  max-width: 1000px;
+  margin: 0 auto;
+  /* CSS Grid */
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
-  gap: 20px; /* Space between cards */
+  /* 2 equal columns */
+  grid-template-columns: 1fr 1fr;
+  /* Gap between columns */
+  gap: 60px;
+/* Close menu grid selector */
 }
 
-/* ==========================
- Individual Chef Card
-========================== */
-.chef-card {
-  background-color: #ffffff; /* Card background */
-  border-radius: 12px; /* Rounded corners */
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow */
+/* Container for a single column (e.g., 'CLASSIC CHEFS') */
+.menu-column {
+  /* Flex column to stack items */
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect */
+/* Close menu column selector */
 }
 
-.chef-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+/* Title at the top of each column */
+.column-title {
+  /* Oswald font */
+  font-family: 'Oswald', sans-serif;
+  /* Light grey/white text */
+  color: #eeeeee;
+  /* Font size */
+  font-size: 28px;
+  /* Uppercase text */
+  text-transform: uppercase;
+  /* Center align title */
+  text-align: center;
+  /* Margin bottom */
+  margin-bottom: 30px;
+  /* Letter spacing */
+  letter-spacing: 2px;
+/* Close column title selector */
 }
 
-.chef-name {
-  font-size: 22px;
+/* Individual package container */
+.menu-item {
+  /* Margin bottom to separate packages */
+  margin-bottom: 30px;
+/* Close menu item selector */
+}
+
+/* Container for Name + Dots + Price */
+.item-header {
+  /* Flexbox to arrange horizontally */
+  display: flex;
+  /* Align to baseline of text */
+  align-items: baseline;
+  /* Margin below header */
+  margin-bottom: 8px;
+/* Close item header selector */
+}
+
+/* Package Name */
+.item-name {
+  /* Oswald font for name */
+  font-family: 'Oswald', sans-serif;
+  /* Pure white color */
+  color: #ffffff;
+  /* Font size */
+  font-size: 20px;
+  /* Uppercase */
+  text-transform: uppercase;
+  /* Letter spacing */
+  letter-spacing: 1px;
+  /* Prevent name from wrapping lines */
+  white-space: nowrap;
+/* Close item name selector */
+}
+
+/* Dotted leader line connecting name to price */
+.item-dots {
+  /* Flex-grow 1 forces it to take all remaining horizontal space */
+  flex-grow: 1;
+  /* Bottom border creates the dots */
+  border-bottom: 2px dotted #666666;
+  /* Left and right margins to detach dots from text */
+  margin: 0 10px;
+/* Close item dots selector */
+}
+
+/* Package Price */
+.item-price {
+  /* Oswald font */
+  font-family: 'Oswald', sans-serif;
+  /* Pure white color */
+  color: #ffffff;
+  /* Font size matching name */
+  font-size: 20px;
+  /* Font weight bold */
   font-weight: 700;
-  margin-bottom: 5px;
+/* Close item price selector */
 }
 
-.chef-price {
-  font-size: 18px;
-  font-weight: 600;
-  color: #ff6600;
-  margin-bottom: 15px;
+/* Package Description */
+.item-desc {
+  /* Light grey color for contrast against white title */
+  color: #aaaaaa;
+  /* Smaller font size */
+  font-size: 13px;
+  /* Line height for readability */
+  line-height: 1.6;
+  /* Margin below description */
+  margin-bottom: 12px;
+/* Close item desc selector */
 }
 
-/* ==========================
- Chef Highlights
-========================== */
-.chef-highlights {
-  list-style: none; /* Remove bullets */
-  padding: 0;
-  margin: 0 0 15px 0;
-}
-
-.chef-highlights li {
-  background-color: #f0f0f0; /* Highlight bubble */
-  padding: 6px 10px;
-  border-radius: 8px;
-  display: inline-block;
-  margin: 0 5px 5px 0; /* Small spacing */
-  font-weight: 600;
-  font-size: 14px;
-}
-
-/* ==========================
- Description & Book Button
-========================== */
-.chef-desc {
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
+/* Premium 'Book Now' Button */
 .book-btn {
+  /* Inline block */
+  display: inline-block;
+  /* Dark grey background */
+  background-color: #333333;
+  /* White text */
+  color: #ffffff;
+  /* Remove link underline */
   text-decoration: none;
-  text-align: center;
-  background-color: #ff6600;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 8px;
+  /* Padding */
+  padding: 6px 15px;
+  /* Border radius */
+  border-radius: 4px;
+  /* Small font size */
+  font-size: 12px;
+  /* Uppercase text */
+  text-transform: uppercase;
+  /* Bold text */
   font-weight: 700;
-  transition: background-color 0.3s ease;
+  /* Letter spacing */
+  letter-spacing: 1px;
+  /* Subtle border */
+  border: 1px solid #555555;
+  /* Transition for hover */
+  transition: all 0.3s ease;
+/* Close book btn selector */
 }
 
+/* Hover effect for Book Now button */
 .book-btn:hover {
-  background-color: #e65c00;
+  /* Pure white background */
+  background-color: #ffffff;
+  /* Dark text */
+  color: #111111;
+/* Close hover state */
 }
 
-/* ==========================
- Footer Section
-========================== */
-.chef-footer {
-  text-align: center;
-  margin-top: 50px;
+/* ================================================== */
+/* FOOTER STRIP                                       */
+/* ================================================== */
+
+/* Footer container mimicking flyer bottom edge */
+.flyer-footer {
+  /* Very dark background */
+  background-color: #0a0a0a;
+  /* Padding */
+  padding: 20px 40px;
+  /* Flexbox to arrange left and right sections */
+  display: flex;
+  /* Space between left and right */
+  justify-content: space-between;
+  /* Center vertically */
+  align-items: center;
+  /* Top border to define edge */
+  border-top: 2px solid #333333;
+/* Close footer selector */
+}
+
+/* Left container (Icon + Phone) */
+.footer-left {
+  /* Flexbox */
+  display: flex;
+  /* Center vertically */
+  align-items: center;
+  /* Gap between icon and text */
+  gap: 15px;
+/* Close footer left selector */
+}
+
+/* Large icon in footer */
+.footer-icon {
+  /* White color */
+  color: #ffffff;
+  /* Large size */
+  font-size: 35px;
+/* Close footer icon selector */
+}
+
+/* Text wrapper in footer left */
+.footer-contact-text {
+  /* Flex column to stack "Secure Booking" over phone number */
+  display: flex;
+  flex-direction: column;
+/* Close contact text selector */
+}
+
+/* Small text above phone number */
+.small-text {
+  /* Light grey */
+  color: #999999;
+  /* Small size */
+  font-size: 12px;
+  /* Uppercase */
+  text-transform: uppercase;
+/* Close small text selector */
+}
+
+/* Massive phone number text */
+.big-phone {
+  /* Oswald font */
+  font-family: 'Oswald', sans-serif;
+  /* Pure white */
+  color: #ffffff;
+  /* Large size */
+  font-size: 26px;
+  /* Bold */
+  font-weight: 700;
+  /* Tight line height */
+  line-height: 1.1;
+/* Close big phone selector */
+}
+
+/* Vertical dividing line matching flyer */
+.footer-divider {
+  /* Width of line */
+  width: 2px;
+  /* Height of line */
+  height: 50px;
+  /* Color of line */
+  background-color: #444444;
+/* Close divider selector */
+}
+
+/* Right container (Address/Email) */
+.footer-right {
+  /* Flex column to stack lines */
+  display: flex;
+  flex-direction: column;
+  /* Right align text */
+  text-align: right;
+  /* Light grey color */
+  color: #bbbbbb;
+  /* Font size */
   font-size: 14px;
-  color: #555;
+  /* Line height */
+  line-height: 1.6;
+/* Close footer right selector */
 }
 
-.footer-contact i {
-  color: #25D366; /* WhatsApp green */
-  margin-right: 5px;
+/* ================================================== */
+/* RESPONSIVE MEDIA QUERIES                           */
+/* ================================================== */
+
+/* Tablets and small desktops (max width 992px) */
+@media (max-width: 992px) {
+  /* Reduce gap between menu columns */
+  .menu-grid {
+      gap: 30px;
+  }
+  
+  /* Shrink the center circle slightly */
+  .center-circle {
+      width: 200px;
+      height: 200px;
+      margin: 0 -20px;
+  }
+  
+  /* Shrink the side circles slightly */
+  .side-circle {
+      width: 140px;
+      height: 140px;
+  }
+  
+  /* Shrink icons inside circles */
+  .center-circle i { font-size: 70px; }
+  .side-circle i { font-size: 45px; }
+/* Close 992px media query */
 }
 
-/* ==========================
- Responsive Adjustments
-========================== */
+/* Mobile Devices (max width 768px) */
 @media (max-width: 768px) {
-  .chef-header .main-title {
-      font-size: 28px;
+  /* Adjust top padding and reduce bottom padding */
+  .flyer-top {
+      padding: 50px 15px 100px;
   }
 
-  .chef-card {
-      padding: 15px;
+  /* Reduce main title font size */
+  .main-title {
+      font-size: 60px;
   }
 
-  .chef-highlights li {
-      font-size: 13px;
+  /* Adjust cursive text positioning and size */
+  .cursive-text {
+      font-size: 50px;
+      margin-left: -50px;
+      margin-bottom: -25px;
   }
+
+  /* Shrink the center circle for mobile */
+  .center-circle {
+      width: 150px;
+      height: 150px;
+      margin: 0 -15px;
+      border-width: 6px;
+  }
+  
+  /* Shrink the side circles for mobile */
+  .side-circle {
+      width: 100px;
+      height: 100px;
+      border-width: 4px;
+  }
+  
+  /* Adjust icon sizes for mobile circles */
+  .center-circle i { font-size: 50px; }
+  .side-circle i { font-size: 30px; }
+
+  /* Adjust bottom section padding based on smaller circles */
+  .flyer-bottom {
+      padding: 100px 20px 40px;
+  }
+
+  /* Collapse the 2-column menu into a single column */
+  .menu-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+  }
+
+  /* Stack footer elements vertically instead of horizontally */
+  .flyer-footer {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+      padding: 30px 20px;
+  }
+
+  /* Hide the vertical divider on mobile */
+  .footer-divider {
+      display: none;
+  }
+
+  /* Center align footer right text */
+  .footer-right {
+      text-align: center;
+  }
+
+  /* Adjust floating buttons size/position for mobile screens */
+  .btn-back {
+      top: 10px;
+      left: 10px;
+      padding: 8px 15px;
+      font-size: 12px;
+  }
+
+  .btn-wa {
+      width: 50px;
+      height: 50px;
+      bottom: 20px;
+      right: 20px;
+      font-size: 26px;
+  }
+/* Close 768px media query */
 }
 
+/* Extra Small Mobile Devices (max width 480px) */
 @media (max-width: 480px) {
-  .chef-header .main-title {
-      font-size: 24px;
+  /* Further reduce main title */
+  .main-title {
+      font-size: 45px;
   }
-
-  .chef-card {
-      padding: 12px;
+  
+  /* Reduce ribbon text size */
+  .ribbon-box span {
+      font-size: 12px;
   }
+  
+  /* Reduce menu item name and price sizes */
+  .item-name, .item-price {
+      font-size: 18px;
+  }
+  
+  /* Reduce massive phone number size in footer */
+  .big-phone {
+      font-size: 22px;
+  }
+/* Close 480px media query */
 }

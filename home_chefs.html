@@ -1,104 +1,237 @@
+<!-- Declare document type as HTML5 for modern web standards -->
 <!DOCTYPE html>
+<!-- Start HTML document and set language to English -->
 <html lang="en">
+<!-- Head section containing meta data, titles, and styles -->
 <head>
-    <!-- Meta Tags for SEO and Responsiveness -->
+    <!-- Define the character encoding as UTF-8 -->
     <meta charset="UTF-8">
+    <!-- Ensure responsive scaling and proper width on mobile devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Homestaff Solutions offers professionally sourced chefs. Local, international, BBQ, and health-focused chefs available for family meals, events, and special functions.">
+    <!-- SEO Meta Description describing the page content clearly -->
+    <meta name="description" content="Premium Private Chef Sourcing by Homestaff Solutions. Hire elite local, international, BBQ, and wellness chefs.">
+    <!-- SEO Meta Keywords for search engine indexing -->
+    <meta name="keywords" content="private chef, elite catering, home staff, personal chef, uganda">
     
-    <!-- Page Title -->
-    <title>Private Chef Sourcing | Homestaff Solutions</title>
+    <!-- Title displayed in the browser tab -->
+    <title>Premium Chef Menu | Homestaff Solutions</title>
     
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Preconnect to Google Fonts API for faster font loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <!-- Preconnect to Google Fonts static resources -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Import Google Fonts: Great Vibes (Cursive), Oswald (Big Title), Montserrat (Body) -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
     
-    <!-- FontAwesome for icons -->
+    <!-- Import FontAwesome library for high-quality icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- External CSS -->
+    <!-- Link to the external CSS file -->
     <link rel="stylesheet" href="home_chefs.css">
+<!-- End of head section -->
 </head>
+<!-- Body section containing the visible structure -->
 <body>
 
-    <!-- Page Wrapper -->
-    <div class="page-wrapper">
+    <!-- Floating Back Button returning to index page -->
+    <a href="index.html" class="floating-btn btn-back">
+        <!-- FontAwesome arrow pointing left -->
+        <i class="fas fa-arrow-left"></i>
+        <!-- Text label for back button -->
+        <span>Back</span>
+    <!-- Close back button anchor -->
+    </a>
 
-        <!-- Header Section -->
-        <header class="chef-header">
-            <div class="logo-area">
-                <i class="fas fa-utensils logo-icon"></i>
-                <div class="logo-text">Homestaff<br>Solutions</div>
+    <!-- Floating WhatsApp Button with premium pre-filled message -->
+    <a href="https://wa.me/256753044293?text=Greetings%20Homestaff%20Solutions.%20I%20am%20inquiring%20about%20your%20premium%20private%20chef%20services.%20Kindly%20assist%20me." class="floating-btn btn-wa" target="_blank">
+        <!-- FontAwesome WhatsApp icon -->
+        <i class="fab fa-whatsapp"></i>
+    <!-- Close WhatsApp button anchor -->
+    </a>
+
+    <!-- Main Container wrapping the entire flyer layout -->
+    <div class="flyer-wrapper">
+
+        <!-- Top Half of the Flyer (Light Background) -->
+        <header class="flyer-top">
+            <!-- Div creating the repeating sunburst background effect -->
+            <div class="sunburst-bg"></div>
+            
+            <!-- Container for the top typography -->
+            <div class="title-container">
+                <!-- Cursive text mimicking the 'Special' text on the flyer -->
+                <div class="cursive-text">Premium</div>
+                <!-- Massive bold title mimicking 'FOOD MENU' -->
+                <h1 class="main-title">CHEF SOURCING</h1>
+                <!-- Ribbon styled container mimicking 'BEST RESTAURANT IN TOWN' -->
+                <div class="ribbon-box">
+                    <!-- Text inside the ribbon -->
+                    <span>HOMESTAFF SOLUTIONS</span>
+                <!-- Close ribbon box -->
+                </div>
+            <!-- Close title container -->
             </div>
-            <div class="title-area">
-                <h1 class="main-title">Private Chef Sourcing</h1>
-                <div class="accent-subtitle-box">Premium Household Chefs</div>
+
+            <!-- Wrapper for the 3 overlapping center circles -->
+            <div class="center-circles-wrapper">
+                <!-- Left smaller circle -->
+                <div class="circle side-circle">
+                    <!-- Icon representing global/international food -->
+                    <img src="photos/shawarma.jpeg" alt="Global Food">
+                <!-- Close left circle -->
+                </div>
+                <!-- Center largest circle -->
+                <div class="circle center-circle">
+                    <!-- Icon representing premium dining/cloche -->
+                    <img src="photos/luwombo.jpg" alt="Premium Chef">
+                <!-- Close center circle -->
+                </div>
+                <!-- Right smaller circle -->
+                <div class="circle side-circle">
+                    <!-- Icon representing BBQ/Grill -->
+                    <img src="photos/lamb_chops.jpeg" alt="BBQ Grill">
+                <!-- Close right circle -->
+                </div>
+            <!-- Close center circles wrapper -->
             </div>
+        <!-- Close flyer top section -->
         </header>
 
-        <!-- Chef Packages Section -->
-        <section class="chef-packages">
+        <!-- Bottom Half of the Flyer (Dark Background) -->
+        <main class="flyer-bottom">
+            <!-- Grid container for the menu columns -->
+            <div class="menu-grid">
 
-            <!-- Local Cuisine Chef -->
-            <article class="chef-card">
-                <h2 class="chef-name">Local Cuisine Chef</h2>
-                <span class="chef-price">250k</span>
-                <ul class="chef-highlights">
-                    <li>Traditional Dishes</li>
-                    <li>Budget Cooking</li>
-                    <li>Function Ready</li>
-                </ul>
-                <p class="chef-desc">Authentic Ugandan and African meals for family meals or events.</p>
-                <a href="https://wa.me/256753044293?text=Hello%20Homestaff%20Solutions,%20I%20am%20interested%20in%20Local%20Cuisine%20Chef%20(250k)." class="book-btn" target="_blank">Book Chef Search</a>
-            </article>
+                <!-- First Column: Standard Chefs -->
+                <div class="menu-column">
+                    <!-- Column Category Header mimicking 'DRINKS'/'CHICKEN' -->
+                    <h2 class="column-title">CLASSIC CHEFS</h2>
+                    
+                    <!-- Individual Menu Item 1: Local Cuisine -->
+                    <article class="menu-item">
+                        <!-- Header containing name, dots, and price -->
+                        <div class="item-header">
+                            <!-- Name of the package -->
+                            <span class="item-name">Local Cuisines</span>
+                            <!-- Dotted line connecting name to price -->
+                            <span class="item-dots"></span>
+                            <!-- Price of the package -->
+                            <span class="item-price">250k</span>
+                        <!-- Close item header -->
+                        </div>
+                        <!-- Description of the package -->
+                        <p class="item-desc">Authentic Ugandan & African meals. Budget cooking, traditional dishes, function ready.</p>
+                        <!-- Book Now button leading to WhatsApp -->
+                        <a href="https://wa.me/256753044293?text=Hello%20Homestaff%20Solutions.%20I%20want%20to%20book%20the%20Local%20Cuisine%20Chef%20(250k)." class="book-btn" target="_blank">Book Now</a>
+                    <!-- Close item 1 -->
+                    </article>
 
-            <!-- International Cuisine Chef -->
-            <article class="chef-card">
-                <h2 class="chef-name">International Cuisine Chef</h2>
-                <span class="chef-price">380k</span>
-                <ul class="chef-highlights">
-                    <li>Global Menus</li>
-                    <li>Fine Dining</li>
-                    <li>Custom Menus</li>
-                </ul>
-                <p class="chef-desc">Continental and international dishes for private dinners or special occasions.</p>
-                <a href="https://wa.me/256753044293?text=Hello%20Homestaff%20Solutions,%20I%20am%20interested%20in%20International%20Cuisine%20Chef%20(380k)." class="book-btn" target="_blank">Book Chef Search</a>
-            </article>
+                    <!-- Individual Menu Item 2: International Cuisine -->
+                    <article class="menu-item">
+                        <!-- Header containing name, dots, and price -->
+                        <div class="item-header">
+                            <!-- Name of the package -->
+                            <span class="item-name">International Cuisines</span>
+                            <!-- Dotted line connecting name to price -->
+                            <span class="item-dots"></span>
+                            <!-- Price of the package -->
+                            <span class="item-price">480k</span>
+                        <!-- Close item header -->
+                        </div>
+                        <!-- Description of the package -->
+                        <p class="item-desc">Continental fine dining. Global menus, custom meal plans, private dinners.</p>
+                        <!-- Book Now button leading to WhatsApp -->
+                        <a href="https://wa.me/256753044293?text=Hello%20Homestaff%20Solutions.%20I%20want%20to%20book%20the%20International%20Cuisine%20Chef%20(380k)." class="book-btn" target="_blank">Book Now</a>
+                    <!-- Close item 2 -->
+                    </article>
+                <!-- Close First Column -->
+                </div>
 
-            <!-- BBQ & Events Chef -->
-            <article class="chef-card">
-                <h2 class="chef-name">BBQ & Events Chef</h2>
-                <span class="chef-price">480k</span>
-                <ul class="chef-highlights">
-                    <li>Grill Mastery</li>
-                    <li>Event Catering</li>
-                    <li>Crowd Cooking</li>
-                </ul>
-                <p class="chef-desc">Perfect for parties and gatherings with professional BBQ and event menus.</p>
-                <a href="https://wa.me/256753044293?text=Hello%20Homestaff%20Solutions,%20I%20am%20interested%20in%20BBQ%20%26%20Events%20Chef%20(480k)." class="book-btn" target="_blank">Book Chef Search</a>
-            </article>
+                <!-- Second Column: Specialty Chefs -->
+                <div class="menu-column">
+                    <!-- Column Category Header mimicking 'FOODS' -->
+                    <h2 class="column-title">SPECIALTY CHEFS</h2>
 
-            <!-- Healthy Lifestyle Chef -->
-            <article class="chef-card">
-                <h2 class="chef-name">Healthy Lifestyle Chef</h2>
-                <span class="chef-price">420k</span>
-                <ul class="chef-highlights">
-                    <li>Diet Meals</li>
-                    <li>Nutritional Planning</li>
-                    <li>Wellness Focus</li>
-                </ul>
-                <p class="chef-desc">Balanced meals for health-conscious clients, diet plans, and wellness-focused cooking.</p>
-                <a href="https://wa.me/256753044293?text=Hello%20Homestaff%20Solutions,%20I%20am%20interested%20in%20Healthy%20Lifestyle%20Chef%20(420k)." class="book-btn" target="_blank">Book Chef Search</a>
-            </article>
+                    <!-- Individual Menu Item 3: BBQ & Events -->
+                    <article class="menu-item">
+                        <!-- Header containing name, dots, and price -->
+                        <div class="item-header">
+                            <!-- Name of the package -->
+                            <span class="item-name">BBQ & Events</span>
+                            <!-- Dotted line connecting name to price -->
+                            <span class="item-dots"></span>
+                            <!-- Price of the package -->
+                            <span class="item-price">350k</span>
+                        <!-- Close item header -->
+                        </div>
+                        <!-- Description of the package -->
+                        <p class="item-desc">Grill mastery and crowd cooking. Perfect for outdoor parties and large gatherings.</p>
+                        <!-- Book Now button leading to WhatsApp -->
+                        <a href="https://wa.me/256753044293?text=Hello%20Homestaff%20Solutions.%20I%20want%20to%20book%20the%20BBQ%20%26%20Events%20Chef%20(480k)." class="book-btn" target="_blank">Book Now</a>
+                    <!-- Close item 3 -->
+                    </article>
 
-        </section>
+                    <!-- Individual Menu Item 4: Healthy Lifestyle -->
+                    <article class="menu-item">
+                        <!-- Header containing name, dots, and price -->
+                        <div class="item-header">
+                            <!-- Name of the package -->
+                            <span class="item-name">Healthy Diet</span>
+                            <!-- Dotted line connecting name to price -->
+                            <span class="item-dots"></span>
+                            <!-- Price of the package -->
+                            <span class="item-price">420k</span>
+                        <!-- Close item header -->
+                        </div>
+                        <!-- Description of the package -->
+                        <p class="item-desc">Nutritional planning, wellness focus, and bespoke diet meals for healthy living.</p>
+                        <!-- Book Now button leading to WhatsApp -->
+                        <a href="https://wa.me/256753044293?text=Hello%20Homestaff%20Solutions.%20I%20want%20to%20book%20the%20Healthy%20Lifestyle%20Chef%20(420k)." class="book-btn" target="_blank">Book Now</a>
+                    <!-- Close item 4 -->
+                    </article>
+                <!-- Close Second Column -->
+                </div>
 
-        <!-- Footer Section -->
-        <footer class="chef-footer">
-            <div class="footer-contact"><i class="fab fa-whatsapp"></i> +256-753-044-293</div>
-            <div class="footer-tagline">Premium Household Chefs. One-Time Fee. Peace of Mind.</div>
+            <!-- Close menu grid -->
+            </div>
+        <!-- Close flyer bottom section -->
+        </main>
+
+        <!-- Footer Strip matching flyer layout -->
+        <footer class="flyer-footer">
+            <!-- Left side of footer (Contact) -->
+            <div class="footer-left">
+                <!-- Delivery/Truck Icon (Mapped to chef hat for relevance) -->
+                <i class="fas fa-truck-fast footer-icon"></i>
+                <!-- Text container next to icon -->
+                <div class="footer-contact-text">
+                    <!-- Small descriptive text -->
+                    <span class="small-text">Secure Booking</span>
+                    <!-- Bold phone number matching your request -->
+                    <span class="big-phone">+256 753 044 293</span>
+                <!-- Close text container -->
+                </div>
+            <!-- Close left side -->
+            </div>
+            
+            <!-- Vertical divider line -->
+            <div class="footer-divider"></div>
+
+            <!-- Right side of footer (Address/Web) -->
+            <div class="footer-right">
+                <!-- Business location text -->
+                <span>Premium Household Staffing - Kampala, Uganda</span>
+                <!-- Business email and website -->
+                <span>info@homestaff.com | www.homestaff.com</span>
+            <!-- Close right side -->
+            </div>
+        <!-- Close footer -->
         </footer>
 
+    <!-- Close main flyer wrapper -->
     </div>
 
+<!-- Close body tag -->
 </body>
+<!-- Close HTML document -->
 </html>
