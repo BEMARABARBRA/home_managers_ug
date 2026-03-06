@@ -1,94 +1,163 @@
+<!-- Declare HTML5 document type -->
 <!DOCTYPE html>
+<!-- Set language to English for SEO -->
 <html lang="en">
+<!-- Start of head section -->
 <head>
+<!-- Set character encoding to UTF-8 -->
 <meta charset="UTF-8">
+<!-- Ensure responsive scaling on mobile devices -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact Us | Home Managers Uganda</title>
+<!-- Title displayed in browser tab (Updated to Homestaff Solutions) -->
+<title>Contact Us | Homestaff Solutions</title>
 
-<!-- SEO -->
-<meta name="description" content="Contact Home Managers Uganda for professional home management, housekeeping, property supervision, and domestic staff services worldwide.">
-<meta name="keywords" content="Home Managers Uganda, home management, housekeeping, property supervision">
-<meta name="author" content="Home Managers Uganda">
+<!-- SEO description (Updated to Homestaff Solutions) -->
+<meta name="description" content="Contact Homestaff Solutions for professional home management, housekeeping, property supervision, and domestic staff services worldwide.">
+<!-- SEO keywords (Updated to Homestaff Solutions) -->
+<meta name="keywords" content="Homestaff Solutions, home management, housekeeping, property supervision">
+<!-- SEO author (Updated to Homestaff Solutions) -->
+<meta name="author" content="Homestaff Solutions">
 
-<!-- External CSS -->
+<!-- Link to your original external CSS file -->
 <link rel="stylesheet" href="book_now.css">
 
-<!-- Intl Tel Input CSS -->
+<!-- Link to Intl Tel Input external CSS for phone formatting -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/css/intlTelInput.css">
+<!-- End of head section -->
 </head>
+<!-- Start of body section -->
 <body>
 
-<!-- Background overlay -->
+<!-- Your background overlay div -->
 <div class="background-overlay"></div>
 
-<!-- Back button -->
+<!-- Your back button returning to the home page -->
 <a href="index.html" class="back-btn">Home</a>
 
-<!-- Contact form container -->
+<!-- Your contact form container -->
 <div class="container">
+  <!-- Start of the form element -->
   <form id="contactForm">
 
+    <!-- Label for full name -->
     <label for="fullname">Full Name</label>
+    <!-- Text input for full name -->
     <input type="text" id="fullname" placeholder="Your full name" required>
 
+    <!-- Label for email address -->
     <label for="email">Email Address</label>
+    <!-- Email input -->
     <input type="email" id="email" placeholder="Your email address" required>
 
+    <!-- Label for phone number -->
     <label for="phone">Contact Number</label>
+    <!-- Telephone input handled by Intl-Tel-Input -->
     <input type="tel" id="phone" placeholder="e.g. +256 777 657427" required>
 
+    <!-- Label for district -->
     <label for="district">District</label>
+    <!-- Text input for district with autocomplete disabled -->
     <input type="text" id="district" placeholder="Start typing your district..." autocomplete="off" required>
+    <!-- Div to hold the autocomplete dropdown list -->
     <div id="districtList" class="autocomplete-items"></div>
 
+    <!-- Label for landmark -->
     <label for="landmark">Area / Landmark</label>
+    <!-- Text input for landmark -->
     <input type="text" id="landmark" placeholder="e.g. Lubowa, near Quality Shopping Village" required>
 
+    <!-- Label for required service -->
     <label for="service">Service Required</label>
+    <!-- Dropdown select for services -->
     <select id="service" required>
+      <!-- Default placeholder option -->
       <option value="">Select a service</option>
-      <option value="Home Management">Home Management</option>
-      <option value="Housekeeping">Housekeeping</option>
+      <!-- Updated option 1 -->
+      <option value="Expert Housemaid">Expert Housemaid</option>
+      <!-- Updated option 2 -->
+      <option value="Professional Nanny">Professional Nanny / Babysitter</option>
+      <!-- Updated option 3 -->
+      <option value="Premium Private Chef">Premium Private Chef</option>
+      <!-- Updated option 4 -->
       <option value="Property Supervision">Property Supervision</option>
+      <!-- Updated option 5 -->
       <option value="Domestic Staff Management">Domestic Staff Management</option>
-      <option value="Short Stay Home Care">Short Stay Home Care</option>
-      <option value="Custom Support">Custom Home Support</option>
+      <!-- Updated option 6 -->
+      <option value="Short Stay Home Care">Short Stay Home Care (Airbnb/Vacation)</option>
+      <!-- Option triggering the "Other" text box -->
+      <option value="Other">Other / Custom Support</option>
+    <!-- End of select dropdown -->
     </select>
 
-    <label>Send Via</label>
-    <div class="delivery-options">
-      <input type="radio" id="whatsapp" name="delivery" value="whatsapp" checked>
-      <label for="whatsapp">WhatsApp</label>
-
-      <input type="radio" id="emailOption" name="delivery" value="email">
-<label for="emailOption">Email</label>
+    <!-- NEW: Hidden wrapper for the 'Other' text area -->
+    <div id="other-wrapper" style="display: none; margin-top: 10px;">
+      <!-- Label for the custom message -->
+      <label for="otherMessage">Please specify your needs (Max 200 words)</label>
+      <!-- Textarea for user to type custom request -->
+      <textarea id="otherMessage" rows="4" placeholder="Describe the service you need..." style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc; font-family: inherit; resize: vertical;"></textarea>
+      <!-- Word count tracker display -->
+      <small id="wordCountDisplay" style="display: block; text-align: right; font-size: 12px; color: #777; margin-top: 5px;">0 / 200 words</small>
+    <!-- Close hidden wrapper -->
     </div>
 
+    <!-- Label for delivery options -->
+    <label>Send Via</label>
+    <!-- Wrapper for radio buttons -->
+    <div class="delivery-options">
+      <!-- WhatsApp radio button, checked by default -->
+      <input type="radio" id="whatsapp" name="delivery" value="whatsapp" checked>
+      <!-- Label for WhatsApp -->
+      <label for="whatsapp">WhatsApp</label>
+
+      <!-- Email radio button -->
+      <input type="radio" id="emailOption" name="delivery" value="email">
+      <!-- Label for Email -->
+      <label for="emailOption">Email</label>
+    <!-- Close delivery options div -->
+    </div>
+
+    <!-- Submit button for the form -->
     <button type="submit">Send Message</button>
+    <!-- Paragraph to display success message after submission -->
     <p id="successMessage" class="success-msg"></p>
 
+  <!-- Close form -->
   </form>
+<!-- Close container -->
 </div>
 
-<!-- JS Libraries -->
+<!-- Link to external JS library for international phone input -->
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/intlTelInput.min.js"></script>
+<!-- Link to utilities script for phone formatting -->
 <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/utils.js"></script>
 
+<!-- Start of custom JavaScript -->
 <script>
   // ================= INTERNATIONAL PHONE INPUT =================
+  // Select the phone input field
   const phoneInput = document.querySelector("#phone");
+  // Initialize the intl-tel-input plugin
   const iti = window.intlTelInput(phoneInput, {
+    // Set default country to Uganda
     initialCountry: "ug",
+    // Separate the country code from the number
     separateDialCode: true,
+    // Disable national mode to enforce international format
     nationalMode: false,
+    // Provide path to utility script
     utilsScript: "https://cdn.jsdelivr.net/npm/intl-tel-input@18.2.0/build/js/utils.js",
+    // Append dropdown to body to prevent clipping
     dropdownContainer: document.body,
+    // Keep dial code visible
     autoHideDialCode: false,
+    // Allow users to open dropdown
     allowDropdown: true,
+    // Format number as user types
     formatOnDisplay: true,
   });
   
   // ================= FULL UGANDA DISTRICTS =================
+  // Array containing all districts in Uganda
   const districts = [
     "Abim","Adjumani","Agago","Alebtong","Amolatar","Amudat","Amuria","Amuru","Apac",
     "Arua","Budaka","Bududa","Bugiri","Bugweri","Buhweju","Buikwe","Bukedea","Bukomansimbi",
@@ -106,50 +175,128 @@
   ];
   
   // ================= AUTOCOMPLETE FUNCTION =================
+  // Get district input field
   const districtInput = document.getElementById("district");
+  // Get district dropdown list container
   const districtList = document.getElementById("districtList");
   
+  // Listen for user typing in district input
   districtInput.addEventListener("input", function(){
+    // Convert input to lowercase
     const val = this.value.toLowerCase();
+    // Clear list
     districtList.innerHTML = '';
+    // Stop if input is empty
     if(!val) return;
   
+    // Find districts that match input
     const matches = districts.filter(d => d.toLowerCase().startsWith(val));
+    // Loop through matches
     matches.forEach(match => {
+      // Create div for each match
       const div = document.createElement("div");
+      // Set text to district name
       div.textContent = match;
+      // Add class for styling
       div.classList.add("autocomplete-item");
+      // Listen for user clicking a district
       div.addEventListener("click", function(){
+        // Set input value to clicked district
         districtInput.value = this.textContent;
+        // Clear list
         districtList.innerHTML = '';
       });
+      // Add item to list
       districtList.appendChild(div);
     });
   });
   
+  // Listen for clicks outside autocomplete to close it
   document.addEventListener("click", function(e){
+    // If click is not on input, clear list
     if(e.target !== districtInput) districtList.innerHTML = '';
+  });
+
+  // ================= "OTHER" SERVICE & WORD COUNT LOGIC =================
+  // Get the service dropdown
+  const serviceSelect = document.getElementById("service");
+  // Get the wrapper for the custom text area
+  const otherWrapper = document.getElementById("other-wrapper");
+  // Get the text area input
+  const otherMessage = document.getElementById("otherMessage");
+  // Get the word count display element
+  const wordCountDisplay = document.getElementById("wordCountDisplay");
+
+  // Listen for changes on the service dropdown
+  serviceSelect.addEventListener("change", function() {
+    // If user selects 'Other'
+    if (this.value === "Other") {
+      // Show the text area wrapper
+      otherWrapper.style.display = "block";
+      // Make the text area required to submit
+      otherMessage.required = true;
+    // If user selects anything else
+    } else {
+      // Hide the text area wrapper
+      otherWrapper.style.display = "none";
+      // Remove the required attribute
+      otherMessage.required = false;
+      // Clear whatever they typed
+      otherMessage.value = "";
+      // Reset word count text
+      wordCountDisplay.textContent = "0 / 200 words";
+    }
+  });
+
+  // Listen for typing inside the custom text area
+  otherMessage.addEventListener("input", function() {
+    // Split text by spaces and filter out empty strings to count actual words
+    let words = this.value.trim().split(/\s+/).filter(word => word.length > 0);
+    // Get total number of words typed
+    let count = words.length;
+
+    // If word count goes over 200
+    if (count > 200) {
+      // Slice array to keep only the first 200 words
+      this.value = words.slice(0, 200).join(" ") + " ";
+      // Lock count at exactly 200
+      count = 200;
+    }
+    
+    // Update the visual display with current word count
+    wordCountDisplay.textContent = count + " / 200 words";
+    // Turn text red if they hit the maximum limit, otherwise keep it grey
+    wordCountDisplay.style.color = count === 200 ? "red" : "#777";
   });
   
   // ================= FORM SUBMISSION =================
-document.getElementById("contactForm").addEventListener("submit", function(e){
-    e.preventDefault(); // Prevent default form submission (page reload)
+  // Listen for the form submission event
+  document.getElementById("contactForm").addEventListener("submit", function(e){
+    // Prevent default form submission (page reload)
+    e.preventDefault(); 
 
     // ---------------- GET FORM VALUES ----------------
-    const name = document.getElementById("fullname").value; // Full name
-    const email = document.getElementById("email").value; // Email address
-    const phone = iti.getNumber(); // Internationally formatted phone number
-    const district = districtInput.value; // Selected district
-    const landmark = document.getElementById("landmark").value; // Landmark / Area
-    const service = document.getElementById("service").value; // Selected service
-    const message = document.getElementById("message") 
-        ? document.getElementById("message").value 
-        : "No additional message"; // Optional message field
-    const delivery = document.querySelector('input[name="delivery"]:checked').value; // WhatsApp or Email
+    // Get full name
+    const name = document.getElementById("fullname").value; 
+    // Get email address
+    const email = document.getElementById("email").value; 
+    // Get internationally formatted phone number
+    const phone = iti.getNumber(); 
+    // Get selected district
+    const district = districtInput.value; 
+    // Get landmark
+    const landmark = document.getElementById("landmark").value; 
+    // Get selected service
+    const service = document.getElementById("service").value; 
+    // Determine the message: Use text area if 'Other', else default text
+    const message = (service === "Other") ? otherMessage.value : "Standard service selected";
+    // Get selected delivery method (WhatsApp or Email)
+    const delivery = document.querySelector('input[name="delivery"]:checked').value; 
 
     // ---------------- FULL MESSAGE TO SEND ----------------
+    // Template string with the exact new business name "Homestaff Solutions"
     const fullMessage =
-`New Contact Form Message
+`New Homestaff Solutions Inquiry
 
 Name: ${name}
 Email: ${email}
@@ -158,59 +305,72 @@ District: ${district}
 Area / Landmark: ${landmark}
 Service: ${service}
 
-Message:
+Details:
 ${message}`;
 
     // ---------------- SUCCESS MESSAGE ELEMENT ----------------
+    // Get success message container
     const success = document.getElementById("successMessage");
 
     // ---------------- HANDLE WHATSAPP ----------------
+    // If WhatsApp is chosen
     if(delivery === "whatsapp"){
-        // ---------------- Generate wa.me URL with prefilled message ----------------
-        const whatsappNumber = "256753044293"; // Your WhatsApp number in international format
+        // Define WhatsApp number
+        const whatsappNumber = "256753044293"; 
+        // Generate WhatsApp link with prefilled, encoded text
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
 
-        // Open WhatsApp link in the same tab (client taps send in WhatsApp)
-        window.open(whatsappURL, "_blank"); // Opens WhatsApp in a new browser tab/window
+        // Open WhatsApp in a new tab
+        window.open(whatsappURL, "_blank"); 
 
-
-        // Show success message on the page (user will see it before being redirected)
+        // Show success message on the page
         success.textContent = "Your WhatsApp message is ready! Tap 'Send' in WhatsApp to deliver.";
+        // Make success message visible
         success.style.display = "block";
 
     // ---------------- HANDLE EMAIL ----------------
+    // If Email is chosen
     } else if(delivery === "email"){
-        // ---------------- Prefill email draft ----------------
-        const emailURL = `mailto:barbarabemara@gmail.com
-?subject=New Contact Form Message
-&body=Name: ${encodeURIComponent(name)}%0D%0AEmail: ${encodeURIComponent(email)}%0D%0APhone: ${encodeURIComponent(phone)}%0D%0ADistrict: ${encodeURIComponent(district)}%0D%0AArea/Landmark: ${encodeURIComponent(landmark)}%0D%0AService: ${encodeURIComponent(service)}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+        // Generate mailto link with updated Homestaff Solutions subject
+        const emailURL = `mailto:barbarabemara@gmail.com?subject=Homestaff%20Solutions%20Inquiry&body=${encodeURIComponent(fullMessage)}`;
 
-        // Open user's default email client with prefilled info
+        // Trigger default email client
         window.location.href = emailURL;
 
-        // Show success message
+        // Show success message on the page
         success.textContent = "Your email draft has been prepared!";
+        // Make success message visible
         success.style.display = "block";
     }
 
     // ---------------- RESET FORM ----------------
-    // Wait 1 second so user can see success message
-    setTimeout(() => this.reset(), 1000);
-});
-  </script>
+    // Wait 1.5 seconds after submission
+    setTimeout(() => {
+        // Reset all inputs
+        this.reset();
+        // Hide the 'Other' text area box again
+        otherWrapper.style.display = "none";
+    }, 1500);
+  });
+</script>
 
-  <!-- ------------ for the email ----------- -->
-  <script>
-    document.getElementById("emailOption").addEventListener("change", function () {
-      if (this.checked) {
-        window.open(
-          "https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Home%20Management%20Inquiry",
-          "_blank",
-          "noopener"
-        );
-      }
-    });
-  </script>
+<!-- ------------ for the email ----------- -->
+<script>
+  // Listen for user clicking the Email radio button
+  document.getElementById("emailOption").addEventListener("change", function () {
+    // If it gets checked
+    if (this.checked) {
+      // Open Gmail directly with the Homestaff Solutions subject updated
+      window.open(
+        "https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Homestaff%20Solutions%20Inquiry",
+        "_blank",
+        "noopener"
+      );
+    }
+  });
+</script>
   
+<!-- Close body tag -->
 </body>
+<!-- Close HTML document -->
 </html>
