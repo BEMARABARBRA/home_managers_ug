@@ -1,169 +1,219 @@
-/* --- GLOBAL RESET & ABSOLUTE DECORATION REMOVAL --- */
+/* --- GLOBAL RESET --- */
 * { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-    outline: none;
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  outline: none;
 }
+
+/* SEO Utility Class (Visually hidden but read by Google for structure) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Basic Body Styling */
 body { 
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif; 
-    color: #2c2c2c; 
-    background-color: #b9b7b7; /* fallback color */
-    overflow-x: hidden;
-    position: relative;
-  }
-  
-  /* Background Animation Layer */
-  body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -2; /* behind overlay and content */
-  
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  
-    /* Animation: slide through 5 images */
-    animation: backgroundSlider 30s infinite, fadeEffect 6s infinite;
-    transition: background-image 1.5s ease-in-out;
-  }
-  
-  /* Overlay Layer to dim background for readability */
-  body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* above background, below content */
-    
-    background: rgb(253, 253, 253, 0.4); /* semi-transparent black */
-    pointer-events: none; /* allows clicks through overlay */
-  }
-  
-  /* Keyframes for changing background images */
-  @keyframes backgroundSlider {
-    0%   { background-image: url("photos/hss_clean_laundryimage.jpeg"); }
-    20%  { background-image: url("photos/hss_maidwith3childr3ninkitchen.png"); }
-    40%  { background-image: url("photos/hss_maidlayingbed.png"); }
-    60%  { background-image: url("photos/ClinicalRehabnursepackage.jpeg"); }
-    80%  { background-image: url("photos/clean_dirty_bedroom.jpeg"); }
-    100% { background-image: url("photos/hss_clean_laundryimage.jpeg"); }
-  }
-  
-  /* Fade effect for smoother transitions */
-  @keyframes fadeEffect {
-    0%   { opacity: 1; }
-    50%  { opacity: 0.95; }
-    100% { opacity: 1; }
-  }
-
-/* DEFINITIVE FIX: Removes stars, wings, frames, and background decorators */
-.gallery-item::before, .gallery-item::after, 
-.accent-frame::before, .accent-frame::after,
-.gallery-item .accent-frame::after, /* Targets the star on lower right */
-.gallery-item .accent-frame::before,
-.bg-wing, .line-decorator::before, .line-decorator::after {
-    display: none !important;
-    content: none !important;
-    visibility: hidden !important;
-    background: none !important;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif; 
+  color: #2c2c2c; 
+  background-color: #b9b7b7; 
+  overflow-x: hidden;
+  position: relative;
 }
 
-/* --- MAIN CARD --- */
+/* Background Animation Layer */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2; 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: backgroundSlider 30s infinite, fadeEffect 6s infinite;
+  transition: background-image 1.5s ease-in-out;
+}
+
+/* Overlay Layer to dim background for text readability */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; 
+  background: rgb(253, 253, 253, 0.45); /* slightly darker for better contrast */
+  pointer-events: none; 
+}
+
+/* Keyframes for background images */
+@keyframes backgroundSlider {
+  0%   { background-image: url("photos/hss_clean_laundryimage.jpeg"); }
+  20%  { background-image: url("photos/hss_maidwith3childr3ninkitchen.png"); }
+  40%  { background-image: url("photos/hss_maidlayingbed.png"); }
+  60%  { background-image: url("photos/ClinicalRehabnursepackage.jpeg"); }
+  80%  { background-image: url("photos/clean_dirty_bedroom.jpeg"); }
+  100% { background-image: url("photos/hss_clean_laundryimage.jpeg"); }
+}
+
+@keyframes fadeEffect {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+/* --- MAIN CARD WRAPPER --- */
 .page-wrapper { display: flex; justify-content: center; padding: 40px 20px; }
 .main-card { 
-    background: #fff; width: 100%; max-width: 1200px; 
-    border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
+  background: #fff; width: 100%; max-width: 1200px; 
+  border-radius: 15px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
 }
 
 /* --- HEADER --- */
 .card-header { display: flex; justify-content: space-between; align-items: center; padding: 30px; border-bottom: 1px solid #eee; }
-.logo-icon { font-size: 2.5rem; color: #2c2c2c; }
+.logo-area { display: flex; align-items: center; gap: 12px; }
 .logo-text { font-family: 'Oswald', sans-serif; font-weight: 700; font-size: 1.2rem; line-height: 1; }
 .title-area { text-align: right; }
-.small-top-text { font-size: 0.7rem; letter-spacing: 3px; color: #888; }
+.small-top-text { font-size: 0.7rem; letter-spacing: 3px; color: #888; font-weight: 600; }
 .main-title { font-family: 'Oswald', sans-serif; font-size: 2.2rem; text-transform: uppercase; }
 .accent-subtitle-box { background: #2c2c2c; color: #fff; padding: 5px 15px; font-size: 0.8rem; letter-spacing: 2px; display: inline-block; margin-top: 5px; font-family: 'Montserrat', sans-serif;}
 
-/* --- GALLERY (PRISTINE IMAGES FIX) --- */
-.image-gallery-section { padding: 40px 20px; background: #fff; width: 100%; }
-.gallery-container { display: flex; gap: 20px; justify-content: center; align-items: center; max-width: 1100px; margin: 0 auto; }
-
-/* The container holding the image */
-.gallery-item { 
-    flex: 1; 
-    height: 280px; 
-    border-radius: 12px; 
-    overflow: hidden; 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.06); 
-    position: relative; /* Necessary for centering child image */
-    background: #fafafa;
+/* --- 3-COLUMN MASTER GRID --- */
+.packages-master-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Divides into exactly 3 columns */
+  gap: 25px;
+  padding: 40px;
+  background: #fafafa; 
 }
 
-/* The actual image */
-.gallery-item img { 
-    width: 100%; 
-    height: 110%; 
-    object-fit: cover; /* Ensures no stretching */
-    display: block; 
+/* The vertical container grouping Image + Text */
+.service-group {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* Make center image pop */
-.center-item { height: 350px; transform: scale(1.05); z-index: 2; }
-
-/* Ensure the accent-frame (which held the star) is completely clean */
-.accent-frame {
-    display: block;
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
+/* Images */
+.card-image {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  background: #eee;
+  margin: 0;
 }
 
-/* --- GRID SYSTEM (4 COLUMNS) --- */
-.text-grid-section { 
-    display: grid; 
-    grid-template-columns: repeat(4, 1fr); 
-    gap: 15px; padding: 40px; 
-    background: #fafafa; /* Slight grey background to separate grid */
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
-.text-column { background: #fff; padding: 25px; border: 1px solid #f0f0f0; border-radius: 10px; display: flex; flex-direction: column; transition: 0.3s ease; }
-.text-column:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); border-color: #ddd; }
+
+.side-image {
+  height: 250px;
+}
+
+.center-image {
+  height: 280px; /* Slightly taller to emphasize the middle */
+}
+
+/* Text Write-ups */
+.text-card {
+  background: #fff; 
+  padding: 25px; 
+  border: 1px solid #f0f0f0; 
+  border-radius: 10px; 
+  display: flex; 
+  flex-direction: column; 
+  box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+  transition: 0.3s ease; 
+}
+
+.text-card:hover { 
+  transform: translateY(-3px); 
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+  border-color: #ddd; 
+}
+
 .title-price-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.package-name { font-family: 'Oswald', sans-serif; font-size: 1.3rem; color: #2c2c2c; }
-.package-price { background: #2c2c2c; color: #fff; padding: 3px 10px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; font-family: 'Oswald', sans-serif;}
+.package-name { font-family: 'Oswald', sans-serif; font-size: 1.25rem; color: #2c2c2c; }
+.package-price { background: #2c2c2c; color: #fff; padding: 4px 12px; border-radius: 5px; font-weight: bold; font-size: 0.9rem; font-family: 'Oswald', sans-serif;}
 .dashed-divider { border-bottom: 1px dashed #ccc; margin-bottom: 15px; }
 .package-desc { font-size: 0.85rem; line-height: 1.6; color: #555; flex-grow: 1; margin-bottom: 20px; }
 
-/* --- PRICING BUTTONS --- */
+/* Pricing Button */
 .book-btn { 
-    display: block; text-align: center; background: #2c2c2c; color: #fff; 
-    text-decoration: none; padding: 12px; border-radius: 5px; 
-    font-size: 0.85rem; font-weight: bold; transition: 0.3s; 
-    font-family: 'Montserrat', sans-serif; text-transform: uppercase;
+  display: block; text-align: center; background: #2c2c2c; color: #fff; 
+  text-decoration: none; padding: 12px; border-radius: 5px; 
+  font-size: 0.85rem; font-weight: bold; transition: 0.3s; 
+  font-family: 'Montserrat', sans-serif; text-transform: uppercase;
 }
 .book-btn:hover { background: #444; }
 
 /* --- FOOTER --- */
-.wavy-footer { background: #2c2c2c; color: #fff; padding: 30px; display: flex; justify-content: space-between; align-items: center; }
-.footer-contact { font-weight: bold; font-family: 'Oswald', sans-serif;}
-.footer-tagline { font-size: 0.8rem; opacity: 0.7; }
+.wavy-footer { background: #2c2c2c; color: #fff; padding: 30px 40px; display: flex; justify-content: space-between; align-items: center; }
+
+/* Email strictly under Phone */
+.footer-contact { 
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  gap: 8px;
+  font-weight: bold; 
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+}
+
+.contact-phone {
+  color: inherit; 
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.contact-phone:hover {
+  color: #25d366;
+}
+
+.contact-phone i, .contact-email i {
+  color: #25d366;
+  margin-right: 8px;
+}
+
+.contact-email {
+  font-size: 0.7em; 
+  text-transform: lowercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #eeeeee;
+  display: flex;
+  align-items: center;
+}
+
+.footer-tagline { font-size: 0.9rem; opacity: 0.8; font-weight: 600;}
 
 /* --- FLOATING BUTTONS --- */
 .float-back-btn {
-  position: fixed; bottom: 30px; left: 30px; background: #fff; color: #2c2c2c;
-  padding: 12px 20px; border-radius: 50px; text-decoration: none;
-  font-family: 'Oswald', sans-serif; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  display: flex; align-items: center; gap: 10px; z-index: 1000; transition: 0.3s;
+position: fixed; bottom: 30px; left: 30px; background: #fff; color: #2c2c2c;
+padding: 12px 20px; border-radius: 50px; text-decoration: none;
+font-family: 'Oswald', sans-serif; box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+display: flex; align-items: center; gap: 10px; z-index: 1000; transition: 0.3s;
+border: 1px solid #eee;
 }
 .float-back-btn:hover { background: #2c2c2c; color: #fff; }
 
@@ -174,15 +224,43 @@ body {
 .float-wa-concierge:hover .wa-text-bubble { opacity: 1; transform: translateX(0); }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
-@media (max-width: 1024px) { .text-grid-section { grid-template-columns: repeat(2, 1fr); } }
+
+/* Tablets - switches to 1 column so the groups start stacking properly */
+@media (max-width: 992px) { 
+  .packages-master-section { 
+      grid-template-columns: 1fr; /* Instantly stacks everything perfectly */
+      padding: 30px 20px;
+      gap: 40px; /* Big gap between groups */
+  } 
+  
+  .card-image {
+      height: auto;
+  }
+  
+  .side-image, .center-image {
+      height: 280px; /* Uniform heights on mobile/tablet */
+  }
+}
+
+/* Mobile Screens */
 @media (max-width: 768px) {
-    .text-grid-section { grid-template-columns: 1fr; padding: 20px; }
-    .gallery-container { flex-direction: column; padding: 0 10px;}
-    .gallery-item { width: 100%; height: 250px; }
-    .center-item { transform: scale(1); height: 250px; }
-    .wa-text-bubble { display: none; }
-    .card-header { flex-direction: column; text-align: center; gap: 15px; }
-    .title-area { text-align: center; }
-    .float-back-btn span { display: none; }
-    .float-back-btn { padding: 12px; border-radius: 50%; }
+  .wa-text-bubble { display: none; }
+  .card-header { flex-direction: column; text-align: center; gap: 15px; }
+  .title-area { text-align: center; }
+  
+  .side-image, .center-image {
+      height: 240px; 
+  }
+  
+  .float-back-btn span { display: none; }
+  .float-back-btn { padding: 15px; border-radius: 50%; }
+  
+  .wavy-footer {
+      flex-direction: column;
+      gap: 20px;
+      text-align: center;
+  }
+  .footer-contact {
+      align-items: center; /* Centers stacked phone/email beautifully */
+  }
 }

@@ -1,19 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- ================= BASIC META ================= -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Homestaff Solutions: Premier agency for professional household staffing and management. Mission, Vision, and why Ugandan households choose us.">
-  <meta name="keywords" content="Homestaff Solutions, Domestic Staffing, Household Management, Professional Home Managers">
+  
+  <!-- ================= TITLE & SEO META ================= -->
+  <title>About Us | Homestaff Solutions | Professional House Maids & Domestic Staff in Uganda</title>
+  <meta name="description" content="Learn about Homestaff Solutions: Uganda's premier agency for professional household staffing, vetted house maids, nannies, and home managers. Discover our mission.">
+  <meta name="keywords" content="About Homestaff Solutions, Domestic Staffing Uganda, Household Management Kampala, Professional Home Managers, Vetted Maids Uganda, Nannies Kampala">
   <meta name="author" content="Homestaff Solutions">
-  <title>About Us | Homestaff Solutions</title>
+  <meta name="robots" content="index, follow">
+
+  <!-- ================= CANONICAL LINK ================= -->
+  <link rel="canonical" href="https://bemarabarbra.github.io/homestaff_solutions/about.html">
+
+  <!-- ================= OPEN GRAPH (For Social Media & WhatsApp Sharing) ================= -->
+  <meta property="og:title" content="About Homestaff Solutions | Premium Domestic Staff">
+  <meta property="og:description" content="Transforming household management in Uganda with elite, highly vetted domestic staff, maids, and nannies.">
+  <meta property="og:url" content="https://bemarabarbra.github.io/homestaff_solutions/about.html">
+  <meta property="og:type" content="website">
+
+  <!-- ================= FONT ================= -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- ================= CSS ================= -->
   <link rel="stylesheet" href="about.css">
+
+  <!-- ================= RESPONSIVENESS FIXES ================= -->
+  <style>
+    /* Prevents horizontal scrolling and screen breaking on mobile */
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+    /* Ensures images auto-scale beautifully */
+    img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    /* Forces grids and buttons to stack nicely on small phone screens */
+    @media screen and (max-width: 768px) {
+        .features-grid, .pillars-grid, .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            gap: 15px;
+        }
+        .feature, .pillar, .card {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px;
+        }
+        .buttons .btn {
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+        .hero-title {
+            font-size: 2rem;
+            line-height: 1.3;
+            padding: 0 10px;
+        }
+        .hero-subtitle {
+            padding: 0 15px;
+        }
+    }
+  </style>
+
+  <!-- ================= SCHEMA FOR GOOGLE ================= -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Homestaff Solutions",
+      "description": "To professionalize domestic labor by providing elite, structured household management in Uganda.",
+      "url": "https://bemarabarbra.github.io/homestaff_solutions/",
+      "telephone": "+256762620970",
+      "email": "homestaffsolutionsuganda@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Kampala",
+        "addressCountry": "Uganda"
+      }
+    }
+  }
+  </script>
 </head>
 <body>
 
   <!-- Back button -->
-<a href="index.html" class="back-btn">Home</a>
+  <a href="index.html" class="back-btn">Home</a>
 
   <!-- HERO HEADER SECTION -->
   <header class="hero-header">
@@ -21,7 +103,6 @@
       <h1 class="hero-title">Redefining the Standard of Domestic Excellence</h1>
       <p class="hero-subtitle">Professional home managers delivering service with excellence, integrity, and heart.</p>
       <a href="index.html" class="btn btn-primary">View Our Services</a>
-
     </div>
   </header>
 
@@ -30,11 +111,11 @@
     <div class="container">
       <div class="card">
         <h2>Our Mission</h2>
-        <p>To provide Ugandan households with peace of mind by connecting them with highly-vetted, professional home staff who deliver service with excellence, integrity, and heart.</p>
+        <p>To professionalize domestic labor by providing elite, structured household management that empowers the youth with safe, dignified local employment and offers homeowners world-class service standards.</p>
       </div>
       <div class="card">
         <h2>Our Vision</h2>
-        <p>To be the most trusted partner in Home Staffing  across East Africa, professionalizing domestic work and elevating the quality of life for the families we serve.</p>
+        <p>To become the benchmark for premium domestic management in Uganda, recognized for transforming the industry through integrity, innovation, and a commitment to keeping national talent within our borders.</p>
       </div>
     </div>
   </section>
@@ -111,9 +192,9 @@
         View Our Services
       </a>
 
-      <!-- WhatsApp (opens in new window with prefilled message) -->
+      <!-- WhatsApp (opens in new window with prefilled message) - UPDATED NUMBER -->
       <a 
-        href="https://wa.me/256753044293?text=Hello!%20Welcome%20to%20the%20Homestaff%20Solutions%20family.%20We%20make%20home%20management%20effortless,%20so%20you%20can%20enjoy%20a%20stress-free,%20organized%20home.%20How%20can%20we%20assist%20you%20today?"
+        href="https://wa.me/256762620970?text=Hello!%20Welcome%20to%20the%20Homestaff%20Solutions%20family.%20We%20make%20home%20management%20effortless,%20so%20you%20can%20enjoy%20a%20stress-free,%20organized%20home.%20How%20can%20we%20assist%20you%20today?"
         class="btn btn-outline"
         target="_blank"
         rel="noopener"
@@ -121,9 +202,9 @@
         WhatsApp Our Relationship Manager
       </a>
 
-      <!-- Email (Gmail compose with subject + prefilled body) -->
+      <!-- Email (Gmail compose with subject + prefilled body) - UPDATED EMAIL -->
       <a
-        href="https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Home%20Management%20Inquiry&body=Hello!%20Welcome%20to%20the%20Homestaff%20Solutions%20family.%20We%20make%20home%20management%20effortless,%20so%20you%20can%20enjoy%20a%20stress-free,%20organized%20home.%20How%20can%20we%20assist%20you%20today?"
+        href="https://mail.google.com/mail/?view=cm&to=homestaffsolutionsuganda@gmail.com&su=Home%20Management%20Inquiry&body=Hello!%20Welcome%20to%20the%20Homestaff%20Solutions%20family.%20We%20make%20home%20management%20effortless,%20so%20you%20can%20enjoy%20a%20stress-free,%20organized%20home.%20How%20can%20we%20assist%20you%20today?"
         class="btn btn-outline"
         target="_blank"
         rel="noopener"
@@ -133,10 +214,6 @@
     </div>
   </div>
 </section>
-
-
-
-
 
   <!-- FAQ SECTION -->
   <section class="faq section reveal">
@@ -165,9 +242,9 @@
     </div>
   </section>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
+  <!-- FLOATING WHATSAPP BUTTON - UPDATED NUMBER -->
 <a 
-href="https://wa.me/256753044293?text=Hello!%20Welcome%20to%20the%20Homestaff%20Solutions%20family.%20We%20make%20home%20management%20effortless,%20so%20you%20can%20enjoy%20a%20stress-free,%20organized%20home.%20How%20can%20we%20assist%20you%20today?"
+href="https://wa.me/256762620970?text=Hello!%20Welcome%20to%20the%20Homestaff%20Solutions%20family.%20We%20make%20home%20management%20effortless,%20so%20you%20can%20enjoy%20a%20stress-free,%20organized%20home.%20How%20can%20we%20assist%20you%20today?"
 target="_blank"
 class="floating-whatsapp"
 aria-label="Chat with us on WhatsApp"
@@ -175,7 +252,6 @@ aria-label="Chat with us on WhatsApp"
 <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp icon" class="whatsapp-icon">
 Chat with us
 </a>
-
 
 <!-- ========================== JS ======================== -->
 <script>

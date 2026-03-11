@@ -6,13 +6,25 @@
   outline: none;
 }
 
+/* Accessibility & SEO utility class (Hides elements visually but keeps them for search engines) */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Basic Body Styling */
 body { 
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif; 
   color: #2c2c2c; 
-  background-color: #b9b7b7; /* fallback color */
+  background-color: #b9b7b7; 
   overflow-x: hidden;
   position: relative;
 }
@@ -25,18 +37,15 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -2; /* behind overlay and content */
-
+  z-index: -2; 
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
-  /* Animation: slide through 5 images */
   animation: backgroundSlider 30s infinite, fadeEffect 6s infinite;
   transition: background-image 1.5s ease-in-out;
 }
 
-/* Overlay Layer to dim background for readability */
+/* Overlay Layer to dim background */
 body::after {
   content: "";
   position: fixed;
@@ -44,10 +53,9 @@ body::after {
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* above background, below content */
-  
-  background: rgb(253, 253, 253, 0.4); /* semi-transparent black */
-  pointer-events: none; /* allows clicks through overlay */
+  z-index: -1; 
+  background: rgb(253, 253, 253, 0.4); 
+  pointer-events: none; 
 }
 
 /* Keyframes for changing background images */
@@ -60,7 +68,6 @@ body::after {
   100% { background-image: url("photos/hss_clean_laundryimage.jpeg"); }
 }
 
-/* Fade effect for smoother transitions */
 @keyframes fadeEffect {
   0%   { opacity: 1; }
   50%  { opacity: 0.95; }
@@ -115,13 +122,6 @@ body::after {
   text-align: right; 
 }
 
-.small-top-text { 
-  font-size: 0.7rem; 
-  letter-spacing: 3px; 
-  color: #888; 
-  font-weight: 600;
-}
-
 .main-title { 
   font-family: 'Oswald', sans-serif; 
   font-size: 2.2rem; 
@@ -140,61 +140,65 @@ body::after {
   font-weight: 600;
 }
 
-/* --- GALLERY (PRISTINE IMAGES FIX) --- */
-.image-gallery-section { 
-  padding: 40px 20px; 
-  background: rgb(253, 253, 253); 
-  width: 100%; 
+/* --- MASTER PACKAGES GRID (Combines Image & Text) --- */
+.packages-master-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 40px;
+  /* Maintains exact color separation of original design */
+  background: linear-gradient(to bottom, rgb(253, 253, 253) 400px, #fafafa 400px); 
 }
 
-.gallery-container { 
-  display: flex; 
-  gap: 20px; 
-  justify-content: center; 
-  align-items: center; 
-  max-width: 1100px; 
-  margin: 0 auto; 
+.package-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.gallery-item { 
-  flex: 1; 
-  height: 280px; 
-  border-radius: 12px; 
-  overflow: hidden; 
-  box-shadow: 0 8px 20px rgba(0,0,0,0.06); 
-  position: relative; 
+/* Keeps the 3 images perfectly aligned on desktop */
+.image-wrapper {
+  height: 360px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery-item {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   background: #fafafa;
+  position: relative;
 }
 
-.gallery-item img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  display: block; 
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.center-item { 
-  height: 340px; 
-  transform: scale(1.05); 
-  z-index: 2; 
+.side-item {
+  height: 280px;
 }
 
-/* --- TEXT & PRICING GRID SYSTEM (3 COLUMNS) --- */
-.text-grid-section { 
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 20px; 
-  padding: 40px; 
-  background: #fafafa; 
+.center-item {
+  height: 340px;
+  transform: scale(1.05);
+  z-index: 2;
 }
 
+/* --- TEXT COLUMNS --- */
 .text-column { 
   background: #fff; 
   padding: 25px; 
   border: 1px solid #f0f0f0; 
   border-radius: 10px; 
   display: flex; 
-  flex-direction: column; 
+  flex-direction: column;
+  flex-grow: 1; /* Makes cards equal height */
   transition: 0.3s ease; 
 }
 
@@ -240,7 +244,6 @@ body::after {
   margin-bottom: 20px; 
 }
 
-/* PERK BADGES */
 .perk-highlight {
   display: inline-flex;
   align-items: center;
@@ -260,7 +263,6 @@ body::after {
   font-size: 0.85rem;
 }
 
-/* --- PRICING BUTTONS --- */
 .book-btn { 
   display: block; 
   text-align: center; 
@@ -290,17 +292,28 @@ body::after {
   align-items: center; 
 }
 
+/* Places Email strictly under Phone */
 .footer-contact { 
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;
+  gap: 8px;
   font-weight: bold; 
   font-family: 'Oswald', sans-serif;
   font-size: 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 10px;
 }
 
-.footer-contact i {
+.contact-phone i, .contact-email i {
   color: #25d366;
+  margin-right: 8px;
+}
+
+.contact-email {
+  font-size: 0.7em; 
+  text-transform: lowercase;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  color: #eeeeee;
 }
 
 .footer-tagline { 
@@ -382,28 +395,30 @@ body::after {
   transform: translateX(0); 
 }
 
-/* --- RESPONSIVE ADJUSTMENTS --- */
-@media (max-width: 1024px) { 
-  .text-grid-section { grid-template-columns: repeat(2, 1fr); } 
+/* --- RESPONSIVE ADJUSTMENTS (Instantly pairs Image + Text vertically) --- */
+@media (max-width: 992px) { 
+  .packages-master-section { 
+      grid-template-columns: 1fr; /* Stacks everything natively in correct order */
+      padding: 30px 20px; 
+      gap: 40px; /* Separation between packages */
+      background: #fafafa; /* Solid clean background for mobile */
+  } 
+  .package-column {
+      gap: 15px; /* Pulls image and text tighter together on mobile */
+  }
+  .image-wrapper {
+      height: auto; /* Lets images size naturally */
+  }
+  .gallery-item { 
+      height: 280px; 
+  }
+  .center-item { 
+      transform: scale(1); /* Resets zoom so it looks uniform on mobile */
+      height: 280px; 
+  }
 }
 
 @media (max-width: 768px) {
-  .text-grid-section { 
-      grid-template-columns: 1fr; 
-      padding: 20px; 
-  }
-  .gallery-container { 
-      flex-direction: column; 
-      padding: 0 10px;
-  }
-  .gallery-item { 
-      width: 100%; 
-      height: 250px; 
-  }
-  .center-item { 
-      transform: scale(1); 
-      height: 250px; 
-  }
   .wa-text-bubble { 
       display: none; 
   }
@@ -424,7 +439,10 @@ body::after {
   }
   .wavy-footer {
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
       text-align: center;
+  }
+  .footer-contact {
+      align-items: center; /* Centers stacked phone/email on mobile screens */
   }
 }
