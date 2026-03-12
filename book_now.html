@@ -52,7 +52,7 @@
     <!-- Label for phone number -->
     <label for="phone">Contact Number</label>
     <!-- Telephone input handled by Intl-Tel-Input -->
-    <input type="tel" id="phone" placeholder="e.g. +256 777 657427" required>
+    <input type="tel" id="phone" placeholder="e.g. +256 762 620970" required>
 
     <!-- Label for district -->
     <label for="district">District</label>
@@ -316,7 +316,7 @@ ${message}`;
     // If WhatsApp is chosen
     if(delivery === "whatsapp"){
         // Define WhatsApp number
-        const whatsappNumber = "256753044293"; 
+        const whatsappNumber = "256762620970"; 
         // Generate WhatsApp link with prefilled, encoded text
         const whatsappURL = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(fullMessage)}`;
 
@@ -332,7 +332,7 @@ ${message}`;
     // If Email is chosen
     } else if(delivery === "email"){
         // Generate mailto link with updated Homestaff Solutions subject
-        const emailURL = `mailto:barbarabemara@gmail.com?subject=Homestaff%20Solutions%20Inquiry&body=${encodeURIComponent(fullMessage)}`;
+        const emailURL = `mailto:homestaffsolutionsuganda@gmail.com?subject=Homestaff%20Solutions%20Inquiry&body=${encodeURIComponent(fullMessage)}`;
 
         // Trigger default email client
         window.location.href = emailURL;
@@ -362,7 +362,7 @@ ${message}`;
     if (this.checked) {
       // Open Gmail directly with the Homestaff Solutions subject updated
       window.open(
-        "https://mail.google.com/mail/?view=cm&to=barbarabemara@gmail.com&su=Homestaff%20Solutions%20Inquiry",
+        "https://mail.google.com/mail/?view=cm&to=homestaffsolutionsuganda@gmail.com&su=Homestaff%20Solutions%20Inquiry",
         "_blank",
         "noopener"
       );
