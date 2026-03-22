@@ -11,66 +11,66 @@
 
 <!-- ================= SEO META ================= -->
 <meta name="description" content="Homestaff Solutions provides professional house maids, home nurses, private chefs, childcare and senior care services in Uganda. Highly vetted domestic staff for your home in Kampala and beyond.">
-
 <meta name="keywords" content="house maids Uganda, maids Kampala, domestic workers Uganda, home nurses Uganda, nanny services Uganda, private chefs Uganda, house help Kampala, childcare Uganda, senior care Uganda, Homestaff Solutions">
-
 <meta name="author" content="Homestaff Solutions">
-
 <meta name="robots" content="index, follow">
-
-<meta name="geo.region" content="UGANDA">
+<meta name="geo.region" content="UG-UGA">
 <meta name="geo.placename" content="Kampala">
 
-<!-- UPDATED CANONICAL LINK -->
-<link rel="canonical" href="https://bemarabarbra.github.io/homestaff_solutions/">
+<!-- ================= CANONICAL LINK ================= -->
+<link rel="canonical" href="https://homestaffsolutionsuganda.netlify.app/">
 
 <!-- ================= OPEN GRAPH ================= -->
 <meta property="og:title" content="Homestaff Solutions | Professional Home Staff Services">
 <meta property="og:description" content="Professional house maids, childcare, senior care, home nurses and private chefs in Uganda.">
 <meta property="og:image" content="photos/3maids_in_uniform.png">
-<!-- UPDATED OG URL -->
-<meta property="og:url" content="https://bemarabarbra.github.io/homestaff_solutions/">
+<meta property="og:url" content="https://homestaffsolutionsuganda.netlify.app/">
 <meta property="og:type" content="website">
 
+<!-- ================= TWITTER CARD ================= -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Homestaff Solutions | Professional Home Staff Services">
+<meta name="twitter:description" content="Professional house maids, childcare, senior care, home nurses and private chefs in Uganda.">
+<meta name="twitter:image" content="photos/3maids_in_uniform.png">
+
 <!-- ================= FONT ================= -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <!-- ================= CSS ================= -->
 <link rel="stylesheet" href="index.css">
 
-<!-- ================= RESPONSIVENESS FIXES (Added to fix images cut halfway on phones) ================= -->
+<!-- ================= RESPONSIVENESS FIXES ================= -->
 <style>
-    /* Prevents side-scrolling and ensures columns stack perfectly on mobile */
-    html, body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-    /* Ensures no image ever overflows its container */
-    img {
-        max-width: 100%;
-        height: auto;
-    }
-    /* Forces slider and hero images to fit perfectly without being cut off or stretched */
-    .slide, .hero-image img {
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.slide, .hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+@media screen and (max-width: 768px) {
+    .row, .hero-row {
+        display: flex;
+        flex-direction: column;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
     }
-    /* Ensures mobile devices wrap the content nicely */
-    @media screen and (max-width: 768px) {
-        .row, .hero-row {
-            display: flex;
-            flex-direction: column;
-            width: 100%;
-        }
-        .col, .hero-image, .hero-text {
-            width: 100%;
-            max-width: 100%;
-            padding: 15px;
-            box-sizing: border-box;
-        }
+    .col, .hero-image, .hero-text {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        box-sizing: border-box;
     }
+}
 </style>
 
 <!-- ================= SCHEMA FOR GOOGLE ================= -->
@@ -83,14 +83,14 @@
  "description": "Professional house maids, childcare, home nurses, private chefs and senior care services in Uganda.",
  "address": {
    "@type": "PostalAddress",
-   "streetAddress": "Plot 443, Akright Estate",
+   "streetAddress": "Plot 443, Akright Estate, Entebbe Road",
    "addressLocality": "Kampala",
    "addressCountry": "Uganda"
  },
  "telephone": "+256762620970",
- "email": "homestaffsolutions2026@gmail.com",
+ "email": "homestaffsolutionsuganda@gmail.com",
  "areaServed": "Uganda",
- "url": "https://bemarabarbra.github.io/homestaff_solutions/"
+ "url": "https://homestaffsolutionsuganda.netlify.app/"
 }
 </script>
 
@@ -100,331 +100,160 @@
 
 <!-- ================= NAVBAR ================= -->
 <nav class="navbar">
-
-<div class="logo">
-<a href="index.html">HOMESTAFF SOLUTIONS</a>
-</div>
-
-<div class="menu-toggle" id="menuToggle">
-<span></span><span></span><span></span>
-</div>
-
-<div class="nav-links" id="navLinks">
-
-<a href="about.html">About</a>
-<a href="localmaids.html">House Maids</a>
-<a href="experienced_maids.html">Home Nurses</a>
-<a href="home_chefs.html">Private Chefs</a>
-<a href="book_now.html">Contact Us</a>
-
-</div>
-
+    <div class="logo"><a href="index.html">HOMESTAFF SOLUTIONS</a></div>
+    <div class="menu-toggle" id="menuToggle"><span></span><span></span><span></span></div>
+    <div class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="localmaids.html">House Maids</a>
+        <a href="experienced_maids.html">Home Nurses</a>
+        <a href="home_chefs.html">Private Chefs</a>
+        <a href="book_now.html">Contact Us</a>
+    </div>
 </nav>
 
 <!-- ================= HERO SLIDER ================= -->
-
 <header class="slider">
-
-<img src="photos/womanwithbabyplaying.png" class="slide active" alt="Professional nanny taking care of baby in Uganda" loading="eager">
-
-<img src="photos/hss_maidwith3childr3ninkitchen.png" class="slide" alt="Professional house maid working in kitchen in Kampala" loading="lazy">
-
-<img src="photos/hss_manironinginuniform.png" class="slide" alt="Domestic worker ironing clothes professionally" loading="lazy">
-
-<img src="photos/hss_oldladywithmaid.png" class="slide" style="object-position: 70% center;" alt="Home nurse caring for elderly woman in Uganda" loading="lazy">
-
-<img src="photos/dogwithmaid.png" class="slide" alt="Domestic helper taking care of a dog" loading="lazy">
-
-<div class="overlay"></div>
-
-<div class="hero-content">
-
-<h1 id="hero-title"></h1>
-<p id="hero-subtitle"></p>
-
-</div>
-
+    <img src="photos/womanwithbabyplaying.png" class="slide active" alt="Professional nanny taking care of baby in Uganda" loading="eager">
+    <img src="photos/hss_maidwith3childr3ninkitchen.png" class="slide" alt="Professional house maid working in kitchen in Kampala" loading="lazy">
+    <img src="photos/hss_manironinginuniform.png" class="slide" alt="Domestic worker ironing clothes professionally" loading="lazy">
+    <img src="photos/hss_oldladywithmaid.png" class="slide" style="object-position: 70% center;" alt="Home nurse caring for elderly woman in Uganda" loading="lazy">
+    <img src="photos/dogwithmaid.png" class="slide" alt="Domestic helper taking care of a dog" loading="lazy">
+    <div class="overlay"></div>
+    <div class="hero-content">
+        <h1 id="hero-title"></h1>
+        <p id="hero-subtitle"></p>
+    </div>
 </header>
 
 <!-- ================= WHATSAPP BUTTON ================= -->
-
-<!-- UPDATED WHATSAPP NUMBER -->
-<a href="https://wa.me/256762620970?text=Hello%20Homestaff%20Solutions.%20I%20am%20looking%20for%20professional%20house%20help,%20home%20nurses,%20childcare%20or%20private%20chef%20services%20in%20Uganda.%20Please%20assist." 
-
-target="_blank"
-
-class="floating-whatsapp">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-
-alt="Chat with Homestaff Solutions on WhatsApp"
-
-class="whatsapp-icon">
-
-Chat with us
-
+<a href="https://wa.me/256762620970?text=Hello%20Homestaff%20Solutions.%20I%20am%20looking%20for%20professional%20house%20help,%20home%20nurses,%20childcare%20or%20private%20chef%20services%20in%20Uganda.%20Please%20assist." target="_blank" class="floating-whatsapp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Chat with Homestaff Solutions on WhatsApp" class="whatsapp-icon">
+    Chat with us
 </a>
 
 <!-- ================= HERO CONTENT ================= -->
-
 <div class="hero-section">
-
-<div class="hero-row">
-
-<div class="hero-image">
-
-<img src="photos/3maids_in_uniform.png"
-
-alt="Homestaff Solutions professional house maids team in Uganda"
-
-loading="lazy">
-
-<div class="cover-star"></div>
-
-</div>
-
-<div class="hero-text glass-box">
-
-<h1><strong>HOMESTAFF SOLUTIONS</strong></h1>
-
-<h3><strong>Your Home. Perfectly Managed.</strong></h3>
-
-<p>
-
-Tired of the stress of finding reliable domestic help in Uganda?
-
-At <strong>Homestaff Solutions</strong>, we provide highly vetted house maids, professional home nurses, experienced childcare providers, and private chefs who ensure your household runs smoothly and efficiently.
-
-</p>
-
-<p>
-
-Our carefully selected staff deliver professional housekeeping, elderly care, child care, and home management services for families across Kampala and Uganda.
-
-</p>
-
-<h4><strong><em>Professional home staffing you can trust.</em></strong></h4>
-
-</div>
-
-</div>
-
+    <div class="hero-row">
+        <div class="hero-image">
+            <img src="photos/3maids_in_uniform.png" alt="Homestaff Solutions professional house maids team in Uganda" loading="lazy">
+            <div class="cover-star"></div>
+        </div>
+        <div class="hero-text glass-box">
+            <h1><strong>HOMESTAFF SOLUTIONS</strong></h1>
+            <h3><strong>Your Home. Perfectly Managed.</strong></h3>
+            <p>Tired of the stress of finding reliable domestic help in Uganda? At <strong>Homestaff Solutions</strong>, we provide highly vetted house maids, professional home nurses, experienced childcare providers, and private chefs who ensure your household runs smoothly and efficiently.</p>
+            <p>Our carefully selected staff deliver professional housekeeping, elderly care, child care, and home management services for families across Kampala and Uganda.</p>
+            <h4><strong><em>Professional home staffing you can trust.</em></strong></h4>
+        </div>
+    </div>
 </div>
 
 <!-- ================= STANDARD ================= -->
-
 <section class="standard-section">
-
-<h2>The Homestaff Solutions Standard</h2>
-
-<div class="row">
-
-<div class="col">
-
-<img src="photos/excellence_icon.png" alt="Professional excellence">
-
-<h5>Excellence</h5>
-
-<p>Delivering top-quality professional domestic staff.</p>
-
-</div>
-
-<div class="col">
-
-<img src="photos/Discretion_icon.png" alt="Discretion service">
-
-<h5>Discretion</h5>
-
-<p>Complete privacy and respect for your home.</p>
-
-</div>
-
-<div class="col">
-
-<img src="photos/Precision_icon.png" alt="Attention to detail">
-
-<h5>Precision</h5>
-
-<p>Attention to detail in every household task.</p>
-
-</div>
-
-<div class="col">
-
-<img src="photos/Reliability_icon.png" alt="Reliable staff">
-
-<h5>Reliability</h5>
-
-<p>Dependable domestic professionals you can trust.</p>
-
-</div>
-
-<div class="col">
-
-<img src="photos/Selectivity_icon.png" alt="Top staff selection">
-
-<h5>Selectivity</h5>
-
-<p>We recruit only the best domestic workers.</p>
-
-</div>
-
-</div>
-
+    <h2>The Homestaff Solutions Standard</h2>
+    <div class="row">
+        <div class="col">
+            <img src="photos/excellence_icon.png" alt="Professional excellence" loading="lazy">
+            <h5>Excellence</h5>
+            <p>Delivering top-quality professional domestic staff.</p>
+        </div>
+        <div class="col">
+            <img src="photos/Discretion_icon.png" alt="Discretion service" loading="lazy">
+            <h5>Discretion</h5>
+            <p>Complete privacy and respect for your home.</p>
+        </div>
+        <div class="col">
+            <img src="photos/Precision_icon.png" alt="Attention to detail" loading="lazy">
+            <h5>Precision</h5>
+            <p>Attention to detail in every household task.</p>
+        </div>
+        <div class="col">
+            <img src="photos/Reliability_icon.png" alt="Reliable staff" loading="lazy">
+            <h5>Reliability</h5>
+            <p>Dependable domestic professionals you can trust.</p>
+        </div>
+        <div class="col">
+            <img src="photos/Selectivity_icon.png" alt="Top staff selection" loading="lazy">
+            <h5>Selectivity</h5>
+            <p>We recruit only the best domestic workers.</p>
+        </div>
+    </div>
 </section>
 
 <!-- ================= PROMISE ================= -->
-
 <section class="promise-section">
-
-<h2>Our Promise</h2>
-
-<p>
-
-Homestaff Solutions is committed to providing trusted house maids, home nurses, nannies and private chefs who bring professionalism, reliability and peace of mind to your home.
-
-We simplify household management so you can focus on what matters most.
-
-</p>
-
+    <h2>Our Promise</h2>
+    <p>Homestaff Solutions is committed to providing trusted house maids, home nurses, nannies and private chefs who bring professionalism, reliability and peace of mind to your home. We simplify household management so you can focus on what matters most.</p>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
-
-  <div class="row">
-
-    <!-- Logo Column -->
-    <div class="col">
-      <div class="logo">
-        <a href="index.html">Homestaff Solutions</a>
-      </div>
+    <div class="row">
+        <div class="col">
+            <div class="logo"><a href="index.html">Homestaff Solutions</a></div>
+        </div>
+        <div class="col">
+            <h4>Address</h4>
+            <p>Plot 443, Akright Estate, Entebbe Road, Uganda</p>
+        </div>
+        <div class="col">
+            <h4>Contact</h4>
+            <p>Client Relationship</p>
+            <a href="https://wa.me/256762620970" target="_blank" class="tooltip whatsapp-link" data-tooltip="Chat on WhatsApp">+256 762 620 970</a>
+        </div>
+        <div class="col">
+            <h4>Email</h4>
+            <p><a href="mailto:homestaffsolutionsuganda@gmail.com" class="tooltip email-link" data-tooltip="Send us an email">homestaffsolutionsuganda@gmail.com</a></p>
+        </div>
+        <div class="col">
+            <h4>Social</h4>
+            <p><a href="#" class="tooltip social-link facebook" data-tooltip="Follow us on Facebook">Facebook</a></p>
+            <p><a href="#" class="tooltip social-link linkedin" data-tooltip="Connect on LinkedIn">LinkedIn</a></p>
+        </div>
+        <div class="col copyright">
+            <p>© 2026 Homestaff Solutions. All rights reserved.</p>
+        </div>
     </div>
-
-    <!-- Address Column -->
-    <div class="col">
-      <h4>Address</h4>
-      <p>Plot 443, Akright Estate, Entebbe Road, Uganda</p>
-    </div>
-
-    <!-- Contact / WhatsApp Column -->
-    <div class="col">
-      <h4>Contact</h4>
-      <p>Client Relationship</p>
-      <!-- UPDATED WHATSAPP NUMBER -->
-      <a href="https://wa.me/256762620970" target="_blank" class="tooltip whatsapp-link" data-tooltip="Chat on WhatsApp">
-        +256 762 620 970
-      </a>
-    </div>
-
-    <!-- Email Column -->
-    <div class="col">
-      <h4>Email</h4>
-      <p>
-        <!-- UPDATED EMAIL ADDRESS -->
-        <a href="mailto:homestaffsolutionsuganda@gmail.com" class="tooltip email-link" data-tooltip="Send us an email">
-          homestaffsolutionsuganda@gmail.com
-        </a>
-      </p>
-    </div>
-
-    <!-- Socials Column -->
-    <div class="col">
-      <h4>Social</h4>
-      <!-- Added tooltip & social-link classes, and data-tooltip attributes -->
-      <p><a href="#" class="tooltip social-link facebook" data-tooltip="Follow us on Facebook">Facebook</a></p>
-      <p><a href="#" class="tooltip social-link linkedin" data-tooltip="Connect on LinkedIn">LinkedIn</a></p>
-    </div>
-
-    <!-- Copyright Column -->
-    <div class="col copyright">
-      <p>© 2026 Homestaff Solutions. All rights reserved.</p>
-    </div>
-
-  </div>
-
 </footer>
 
 <!-- ================= JS ================= -->
-
-<script>
-
+<script defer>
 document.addEventListener('DOMContentLoaded', () => {
-
-const toggle = document.getElementById('menuToggle');
-
-toggle.addEventListener('click', () => {
-
-toggle.classList.toggle('active');
-
-});
-
+    const toggle = document.getElementById('menuToggle');
+    toggle.addEventListener('click', () => { toggle.classList.toggle('active'); });
 });
 
 const slides = document.querySelectorAll('.slide');
-
 const heroTitle = document.getElementById('hero-title');
-
 const heroSubtitle = document.getElementById('hero-subtitle');
-
 const heroContent = document.querySelector('.hero-content');
 
 let index = 0;
-
 const textData = [
-
-{title:"Professional Child Care",subtitle:"Trusted nannies and childcare providers."},
-
-{title:"Expert House Maids",subtitle:"Reliable domestic workers for your home."},
-
-{title:"Professional Housekeeping",subtitle:"Spotless cleaning and organization."},
-
-{title:"Compassionate Senior Care",subtitle:"Qualified home nurses for elderly care."},
-
-{title:"Complete Home Care",subtitle:"Domestic help for every part of your household."}
-
+    {title:"Professional Child Care",subtitle:"Trusted nannies and childcare providers."},
+    {title:"Expert House Maids",subtitle:"Reliable domestic workers for your home."},
+    {title:"Professional Housekeeping",subtitle:"Spotless cleaning and organization."},
+    {title:"Compassionate Senior Care",subtitle:"Qualified home nurses for elderly care."},
+    {title:"Complete Home Care",subtitle:"Domestic help for every part of your household."}
 ];
 
 function showSlide(i){
-
-slides.forEach(slide=>slide.classList.remove('active'));
-
-slides[i].classList.add('active');
-
-heroContent.classList.remove('animate');
-
-void heroContent.offsetWidth;
-
-heroTitle.textContent=textData[i].title;
-
-heroSubtitle.textContent=textData[i].subtitle;
-
-heroContent.classList.add('animate');
-
+    slides.forEach(slide=>slide.classList.remove('active'));
+    slides[i].classList.add('active');
+    heroContent.classList.remove('animate');
+    void heroContent.offsetWidth;
+    heroTitle.textContent=textData[i].title;
+    heroSubtitle.textContent=textData[i].subtitle;
+    heroContent.classList.add('animate');
 }
 
 showSlide(0);
-
-setInterval(()=>{
-
-index=(index+1)%slides.length;
-
-showSlide(index);
-
-},5000);
-
-</script>
-
-<script>
+setInterval(()=>{ index=(index+1)%slides.length; showSlide(index); },5000);
 
 window.addEventListener("scroll",function(){
-
-const navbar=document.querySelector(".navbar");
-
-navbar.classList.toggle("scrolled",window.scrollY>50);
-
+    const navbar=document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled",window.scrollY>50);
 });
-
 </script>
 
 </body>

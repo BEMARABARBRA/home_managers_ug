@@ -6,7 +6,7 @@
   outline: none;
 }
 
-/* Accessibility & SEO utility class (Hides elements visually but keeps them for search engines) */
+/* SEO Utility Class */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -18,7 +18,6 @@
   border: 0;
 }
 
-/* Basic Body Styling */
 body { 
   margin: 0;
   padding: 0;
@@ -45,7 +44,6 @@ body::before {
   transition: background-image 1.5s ease-in-out;
 }
 
-/* Overlay Layer to dim background */
 body::after {
   content: "";
   position: fixed;
@@ -58,7 +56,6 @@ body::after {
   pointer-events: none; 
 }
 
-/* Keyframes for changing background images */
 @keyframes backgroundSlider {
   0%   { background-image: url("photos/hss_clean_laundryimage.jpeg"); }
   20%  { background-image: url("photos/hss_maidwith3childr3ninkitchen.png"); }
@@ -78,13 +75,14 @@ body::after {
 .page-wrapper { 
   display: flex; 
   justify-content: center; 
-  padding: 40px 20px; 
+  padding: 40px 15px; 
 }
 
 .main-card { 
   background: rgb(253, 253, 253); 
   width: 100%; 
-  max-width: 1200px; 
+  /* Widened significantly to 1500px to perfectly fit 4 columns on one line */
+  max-width: 1500px; 
   border-radius: 15px; 
   overflow: hidden; 
   box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
@@ -140,25 +138,24 @@ body::after {
   font-weight: 600;
 }
 
-/* --- MASTER PACKAGES GRID (Combines Image & Text) --- */
+/* --- MASTER PACKAGES GRID --- */
 .packages-master-section {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 40px;
-  /* Maintains exact color separation of original design */
-  background: linear-gradient(to bottom, rgb(253, 253, 253) 400px, #fafafa 400px); 
+  /* Forces exactly 4 columns on one line for large screens */
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 18px; /* Slightly tighter gap to allow wider cards */
+  padding: 40px 25px;
+  background: linear-gradient(to bottom, rgb(253, 253, 253) 340px, #fafafa 340px); 
 }
 
 .package-column {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 18px;
 }
 
-/* Keeps the 3 images perfectly aligned on desktop */
 .image-wrapper {
-  height: 360px; 
+  height: 280px; /* Optimized height for a 4-column layout */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -166,11 +163,17 @@ body::after {
 
 .gallery-item {
   width: 100%;
+  height: 100%;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0,0,0,0.06);
   background: #fafafa;
   position: relative;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.03); 
 }
 
 .gallery-item img {
@@ -180,25 +183,15 @@ body::after {
   display: block;
 }
 
-.side-item {
-  height: 280px;
-}
-
-.center-item {
-  height: 340px;
-  transform: scale(1.05);
-  z-index: 2;
-}
-
 /* --- TEXT COLUMNS --- */
 .text-column { 
   background: #fff; 
-  padding: 25px; 
+  padding: 20px; /* Reduced slightly to give text breathing room in 4 columns */
   border: 1px solid #f0f0f0; 
   border-radius: 10px; 
   display: flex; 
   flex-direction: column;
-  flex-grow: 1; /* Makes cards equal height */
+  flex-grow: 1; 
   transition: 0.3s ease; 
 }
 
@@ -210,15 +203,17 @@ body::after {
 
 .title-price-row { 
   display: flex; 
-  justify-content: space-between; 
-  align-items: center; 
-  margin-bottom: 10px; 
+  flex-direction: column;
+  align-items: flex-start; 
+  gap: 8px;
+  margin-bottom: 12px; 
 }
 
 .package-name { 
   font-family: 'Oswald', sans-serif; 
-  font-size: 1.3rem; 
+  font-size: 1.2rem; 
   color: #2c2c2c; 
+  line-height: 1.2;
 }
 
 .package-price { 
@@ -227,7 +222,7 @@ body::after {
   padding: 4px 12px; 
   border-radius: 5px; 
   font-weight: bold; 
-  font-size: 0.95rem; 
+  font-size: 0.85rem; 
   font-family: 'Oswald', sans-serif;
 }
 
@@ -237,7 +232,7 @@ body::after {
 }
 
 .package-desc { 
-  font-size: 0.85rem; 
+  font-size: 0.82rem; 
   line-height: 1.6; 
   color: #555; 
   flex-grow: 1; 
@@ -251,8 +246,8 @@ body::after {
   background-color: #f4f4f4;
   color: #2c2c2c;
   font-weight: 600;
-  font-size: 0.75rem;
-  padding: 6px 10px;
+  font-size: 0.7rem;
+  padding: 6px 8px;
   margin: 3px 2px;
   border-radius: 6px;
   border: 1px solid #e0e0e0; 
@@ -260,7 +255,7 @@ body::after {
 
 .perk-highlight i {
   color: #555; 
-  font-size: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .book-btn { 
@@ -292,7 +287,6 @@ body::after {
   align-items: center; 
 }
 
-/* Places Email strictly under Phone */
 .footer-contact { 
   display: flex;
   flex-direction: column; 
@@ -395,30 +389,33 @@ body::after {
   transform: translateX(0); 
 }
 
-/* --- RESPONSIVE ADJUSTMENTS (Instantly pairs Image + Text vertically) --- */
-@media (max-width: 992px) { 
+/* --- RESPONSIVE ADJUSTMENTS --- */
+
+/* Tablets & Small Laptops (Changes to 2x2 Grid) */
+@media (max-width: 1100px) {
+  .packages-master-section {
+      grid-template-columns: repeat(2, 1fr); 
+      background: #fafafa;
+      gap: 30px;
+  }
+}
+
+/* Mobile Screens (Changes to single vertical stack) */
+@media (max-width: 768px) { 
   .packages-master-section { 
-      grid-template-columns: 1fr; /* Stacks everything natively in correct order */
+      grid-template-columns: 1fr; 
       padding: 30px 20px; 
-      gap: 40px; /* Separation between packages */
-      background: #fafafa; /* Solid clean background for mobile */
+      gap: 30px; 
   } 
   .package-column {
-      gap: 15px; /* Pulls image and text tighter together on mobile */
+      gap: 15px; 
   }
   .image-wrapper {
-      height: auto; /* Lets images size naturally */
+      height: auto; 
   }
   .gallery-item { 
       height: 280px; 
   }
-  .center-item { 
-      transform: scale(1); /* Resets zoom so it looks uniform on mobile */
-      height: 280px; 
-  }
-}
-
-@media (max-width: 768px) {
   .wa-text-bubble { 
       display: none; 
   }
@@ -443,6 +440,6 @@ body::after {
       text-align: center;
   }
   .footer-contact {
-      align-items: center; /* Centers stacked phone/email on mobile screens */
+      align-items: center;
   }
 }
