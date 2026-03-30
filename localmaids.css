@@ -81,7 +81,6 @@ body::after {
 .main-card { 
   background: rgb(253, 253, 253); 
   width: 100%; 
-  /* Widened significantly to 1500px to perfectly fit 4 columns on one line */
   max-width: 1500px; 
   border-radius: 15px; 
   overflow: hidden; 
@@ -141,9 +140,8 @@ body::after {
 /* --- MASTER PACKAGES GRID --- */
 .packages-master-section {
   display: grid;
-  /* Forces exactly 4 columns on one line for large screens */
   grid-template-columns: repeat(4, 1fr); 
-  gap: 18px; /* Slightly tighter gap to allow wider cards */
+  gap: 18px; 
   padding: 40px 25px;
   background: linear-gradient(to bottom, rgb(253, 253, 253) 340px, #fafafa 340px); 
 }
@@ -155,7 +153,7 @@ body::after {
 }
 
 .image-wrapper {
-  height: 280px; /* Optimized height for a 4-column layout */
+  height: 280px; 
   display: flex;
   align-items: center;
   justify-content: center;
@@ -186,7 +184,7 @@ body::after {
 /* --- TEXT COLUMNS --- */
 .text-column { 
   background: #fff; 
-  padding: 20px; /* Reduced slightly to give text breathing room in 4 columns */
+  padding: 20px; 
   border: 1px solid #f0f0f0; 
   border-radius: 10px; 
   display: flex; 
@@ -239,6 +237,14 @@ body::after {
   margin-bottom: 20px; 
 }
 
+/* Container for perfectly aligned tags */
+.care-package-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 15px 0;
+}
+
 .perk-highlight {
   display: inline-flex;
   align-items: center;
@@ -248,7 +254,6 @@ body::after {
   font-weight: 600;
   font-size: 0.7rem;
   padding: 6px 8px;
-  margin: 3px 2px;
   border-radius: 6px;
   border: 1px solid #e0e0e0; 
 }
@@ -390,8 +395,6 @@ body::after {
 }
 
 /* --- RESPONSIVE ADJUSTMENTS --- */
-
-/* Tablets & Small Laptops (Changes to 2x2 Grid) */
 @media (max-width: 1100px) {
   .packages-master-section {
       grid-template-columns: repeat(2, 1fr); 
@@ -400,7 +403,6 @@ body::after {
   }
 }
 
-/* Mobile Screens (Changes to single vertical stack) */
 @media (max-width: 768px) { 
   .packages-master-section { 
       grid-template-columns: 1fr; 
